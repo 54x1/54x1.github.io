@@ -10,13 +10,13 @@ $(document).ready(function () {
 
 
     $(window).scroll(function () {
-    var bottom = $(window).scrollTop() + $(window).height() > $(document).height() - 50;
+    var bottom = $(window).scrollTop() + $(window).height() > $(document).height() - 100;
     if ($(window).scrollTop() + $(window).height() > $(document).height() - 1 && oncedone1 == false) {
             $(".breakpoint-1").fadeIn(2500).css({ "display": "grid" });
             $("#home-page-best-anime, .home-page-best-anime, #home-page-season-anime, .home-page-season-anime").hide();
-            if ($(window).scrollTop() + $(window).height() > $(document).height() - 50 && oncedone2 == false) {
+            if ($(window).scrollTop() + $(window).height() > $(document).height() - 100 && oncedone2 == false) {
                 $("#home-page-best-anime, .home-page-best-anime").fadeIn(2500).css({ "display": "grid" });
-                if ($(window).scrollTop() + $(window).height() > $(document).height() - 50 && oncedone3 == false) {
+                if ($(window).scrollTop() + $(window).height() > $(document).height() - 100 && oncedone3 == false) {
                     $("#home-page-season-anime, .home-page-season-anime").fadeIn(2500).css({ "display": "grid" });
                     oncedone1 = true;
                     oncedone2 = true;
