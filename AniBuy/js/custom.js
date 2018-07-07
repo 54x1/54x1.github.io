@@ -7,16 +7,16 @@ $(document).ready(function () {
     var oncedone3 = false;
 
     $(window).scroll(function () {
-        if ($('.grid-container').scrollTop() > 2000 && oncedone1 == false) {
+        if ($(document).scrollTop() > 2500 && oncedone1 == false) {
                 $(".breakpoint-1").fadeIn(2500).css({ "display": "grid"});
                 $("#home-page-best-anime, .home-page-best-anime, #home-page-season-anime, .home-page-season-anime").hide();
                 oncedone1 = true;
             }
-        if ($(window).scrollTop() > 4200 && oncedone2 == false) {
+        if ($(document).scrollTop() > 4200 && oncedone2 == false) {
                 $("#home-page-best-anime, .home-page-best-anime").fadeIn(2500).css({ "display": "grid"});
                 oncedone2 = true;
             }
-        if ($(window).scrollTop() > 5280 && oncedone3 == false) {
+        if ($(document).scrollTop() > 5280 && oncedone3 == false) {
                 $("#home-page-season-anime, .home-page-season-anime").fadeIn(2500).css({ "display": "grid"});
                 oncedone3 = true;
             }
