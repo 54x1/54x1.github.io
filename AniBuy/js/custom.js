@@ -8,19 +8,16 @@ $(document).ready(function () {
 
     $(this, '.grid-container').scroll(function () {
         if ($(this, '.grid-container').scrollTop() > 2800 && oncedone1 == false) {
-                $(".breakpoint-1").fadeIn(2500);
-                $(".breakpoint-1").css({ "display": "grid" });
+                $(".breakpoint-1").fadeIn(2500).css({ "display": "grid"});
                 $("#home-page-best-anime, .home-page-best-anime, #home-page-season-anime, .home-page-season-anime").hide();
                 oncedone1 = true;
             }
             if ($(this, '.grid-container').scrollTop() > 4200 && oncedone2 == false) {
-                $("#home-page-best-anime, .home-page-best-anime").fadeIn(2500);
-                $("#home-page-best-anime, .home-page-best-anime").css({ "display": "grid" });
+                $("#home-page-best-anime, .home-page-best-anime").fadeIn(2500).css({ "display": "grid"});
                 oncedone2 = true;
             }
-            if ($(this, '.grid-container').scrollTop() > 5285 && oncedone3 == false) {
-                $("#home-page-season-anime, .home-page-season-anime").fadeIn(2500);
-                $("#home-page-season-anime, .home-page-season-anime").css({ "display": "grid"});
+            if ($(this, '.grid-container').scrollTop() > 5280 && oncedone3 == false) {
+                $("#home-page-season-anime, .home-page-season-anime").fadeIn(2500).css({ "display": "grid"});
                 oncedone3 = true;
             }
             
