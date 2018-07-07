@@ -6,20 +6,20 @@ $(document).ready(function () {
     var oncedone2 = false;
     var oncedone3 = false;
 
-        $(window).scroll(function () {
-            if ($(window).scrollTop() > 2800 && oncedone1 == false) {
+        $('.grid-container').scroll(function () {
+            if ($('.grid-container').scrollTop() > 2800 && oncedone1 == false) {
                 $(".breakpoint-1").fadeIn(2500);
                 $(".breakpoint-1").css({ "display": "grid" });
                 $("#home-page-best-anime, .home-page-best-anime, #home-page-season-anime, .home-page-season-anime").hide();
                 oncedone1 = true;
             }
-            if ($(window).scrollTop() > 4200 && oncedone2 == false) {
+            if ($('.grid-container').scrollTop() > 4200 && oncedone2 == false) {
                 oncedone1 = true;
                 $("#home-page-best-anime, .home-page-best-anime").fadeIn(2500);
                 $("#home-page-best-anime, .home-page-best-anime").css({ "display": "grid" });
                 oncedone2 = true;
             }
-            if ($(window).scrollTop() > 5285 && oncedone3 == false) {
+            if ($('.grid-container').scrollTop() > 5285 && oncedone3 == false) {
                 $("#home-page-season-anime, .home-page-season-anime").fadeIn(2500);
                 $("#home-page-season-anime, .home-page-season-anime").css({ "display": "grid", });
                 oncedone3 = true;
