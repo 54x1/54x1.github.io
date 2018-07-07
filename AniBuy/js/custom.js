@@ -7,8 +7,8 @@ $(document).ready(function () {
     var oncedone3 = false;
 
     $(window).scroll(function () {
-        var scrollpos = $(document).scrollTop();
-        if (scrollpos > 2800 && oncedone1 == false) {
+        var height = $(window).scrollTop();
+        if (height > 2800 && oncedone1 == false) {
                 $(".breakpoint-1").fadeIn(2500).css({ "display": "grid"});
                 $("#home-page-best-anime, .home-page-best-anime, #home-page-season-anime, .home-page-season-anime").hide();
                 oncedone1 = true;
