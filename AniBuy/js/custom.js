@@ -7,7 +7,7 @@ $(document).ready(function () {
     var oncedone3 = false;
 
     $(window).scroll(function () {
-        var height = $(window).scrollTop();
+        var height = $(this).scrollTop();
         if (height > 2800 && oncedone1 == false) {
                 $(".breakpoint-1").fadeIn(2500).css({ "display": "grid"});
                 $("#home-page-best-anime, .home-page-best-anime, #home-page-season-anime, .home-page-season-anime").hide();
