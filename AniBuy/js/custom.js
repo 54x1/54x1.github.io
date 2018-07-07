@@ -20,8 +20,8 @@ $(document).ready(function () {
                 oncedone2 = true;
             }
             if ($(this, '.grid-container').scrollTop() > 5285 && oncedone3 == false) {
-                $("#this, '.grid-container'-page-season-anime, .home-page-season-anime").fadeIn(2500);
-                $("#home-page-season-anime, .home-page-season-anime").css({ "display": "grid", });
+                $("#home-page-season-anime, .home-page-season-anime").fadeIn(2500);
+                $("#home-page-season-anime, .home-page-season-anime").css({ "display": "grid"});
                 oncedone3 = true;
             }
             
