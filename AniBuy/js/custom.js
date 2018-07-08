@@ -15,7 +15,7 @@ $(document).ready(function () {
         
         $(window).scroll(function () {
             //$(window).resize(function() {
-                if ($(window).scrollTop() + $(window).height() > $(document).height() - 100 && oncedone1v1 == false && $(window).width() < 768) {
+                if ($(window).scrollTop() + $(window).height() > $(document).height() - 100 && oncedone1v1 == false /*&& $(window).width() < 768*/) {
                     $(".breakpoint").fadeIn(2500).css({ "display": "grid" });
                     $("#home-page-best-anime, .home-page-best-anime, #home-page-season-anime, .home-page-season-anime, #home-page-genre-anime, #home-page-action-anime, .home-page-action-anime").hide();
                     if ($(window).scrollTop() + $(window).height() > $(document).height() - 100 && oncedone2v1 == false) {
@@ -32,7 +32,7 @@ $(document).ready(function () {
                         }
                     }
                 }
-                if ($(window).scrollTop() + $(window).height() > $(document).height() - 100 && oncedone1 == false && $(window).width() > 768) {
+                if ($(window).scrollTop() + $(window).height() > $(document).height() - 100 && oncedone1 == false /*&& $(window).width() > 768*/) {
                     $(".breakpoint-1").fadeIn(2500).css({ "display": "grid" });
                     $("#home-page-best-anime, .home-page-best-anime, #home-page-season-anime, .home-page-season-anime, #home-page-genre-anime, #home-page-action-anime, .home-page-action-anime").hide();
                     if ($(window).scrollTop() + $(window).height() > $(document).height() - 100 && oncedone2 == false) {
