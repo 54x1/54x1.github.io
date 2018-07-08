@@ -31,12 +31,12 @@ $(document).ready(function () {
                     }
                 }
             }
-            if ($(window).scrollTop() + $(window).height() > $(document).height() - 100 && oncedone1 == false && $(window).width() > 768) {
+            if ($(window).scrollTop() + $(window).height() > $(document).height() - 1 && oncedone1 == false && $(window).width() > 768) {
                 $(".breakpoint-1").fadeIn(2500).css({ "display": "grid" });
                 $("#home-page-best-anime, .home-page-best-anime, #home-page-season-anime, .home-page-season-anime, #home-page-genre-anime, #home-page-action-anime, .home-page-action-anime").hide();
-                if ($(window).scrollTop() + $(window).height() > $(document).height() - 100 && oncedone2 == false) {
+                if ($(window).scrollTop() + $(window).height() > $(document).height() - 1 && oncedone2 == false) {
                     $("#home-page-best-anime, .home-page-best-anime, #home-page-season-anime, .home-page-season-anime").fadeIn(2500).css({ "display": "grid" });
-                    if ($(window).scrollTop() + $(window).height() > $(document).height() - 100 && oncedone3 == false) {
+                    if ($(window).scrollTop() + $(window).height() > $(document).height() - 1 && oncedone3 == false) {
                         $("#home-page-genre-anime, #home-page-action-anime, .home-page-action-anime").fadeIn(2500).css({ "display": "grid" });
                         oncedone1 = true;
                         oncedone2 = true;
