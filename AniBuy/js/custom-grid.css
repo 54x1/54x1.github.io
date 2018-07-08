@@ -17,7 +17,7 @@
     text-decoration: none;
         background-color: transparent;
     }
-    .grid-container, .home-page-onsale, .home-page-new-rel, .home-page-pop-anime, .home-page-pop-manga-row-1, .home-page-pop-manga-row-2, .home-page-anime-row-1, .home-page-anime-row-2, .home-page-season-anime-row-1, .home-page-best-anime-row-1, .home-page-best-anime-row-2, .home-page-best-anime-row-3{
+    .grid-container, .home-page-onsale, .home-page-new-rel, .home-page-pop-anime, .home-page-pop-manga-row-1, .home-page-pop-manga-row-2, .home-page-anime-row-1, .home-page-anime-row-2, .home-page-season-anime-row-1, .home-page-best-anime-row-1, .home-page-best-anime-row-2, .home-page-best-anime-row-3, .home-page-action-anime-row-1, .home-page-action-anime-row-2{
         display: grid;
         grid-gap: 12px;
         position: relative;
@@ -76,12 +76,12 @@ display: grid;
     grid-template-columns: 1fr 1fr;   
     margin: 20px 0 45px 0;
 }
-.home-page-onsale > div, .home-page-new-rel > div, .home-page-pop-anime > div, .home-page-pop-manga-row-1 > div, .home-page-pop-manga-row-2 > div, .home-page-anime-row-2 > div, .home-page-season-anime-row-1 > div, .home-page-best-anime-row-1 > div, .home-page-best-anime-row-2 > div, .home-page-best-anime-row-3 > div{
+.home-page-onsale > div, .home-page-new-rel > div, .home-page-pop-anime > div, .home-page-pop-manga-row-1 > div, .home-page-pop-manga-row-2 > div, .home-page-anime-row-2 > div, .home-page-season-anime-row-1 > div, .home-page-best-anime-row-1 > div, .home-page-best-anime-row-2 > div, .home-page-best-anime-row-3 > div, .home-page-action-anime-row-1 >div, .home-page-action-anime-row-2 > div{
     position: relative;
 height: 100%;
 }
 
-.home-page-new-rel > div > div, .home-page-pop-manga-row-1 > div > div, .home-page-pop-manga-row-2 > div > div, .home-page-anime-row-2 > div > div, .grid-row-3, .grid-row-10, .home-page-season-anime-row-1 > div > div, .home-page-best-anime-row-1 > div > div, .home-page-best-anime-row-2 > div > div, .home-page-best-anime-row-3 > div > div{
+.home-page-new-rel > div > div, .home-page-pop-manga-row-1 > div > div, .home-page-pop-manga-row-2 > div > div, .home-page-anime-row-2 > div > div, .grid-row-3, .grid-row-10, .home-page-season-anime-row-1 > div > div, .home-page-best-anime-row-1 > div > div, .home-page-best-anime-row-2 > div > div, .home-page-best-anime-row-3 > div > div, .home-page-action-anime-row-1 > div > div, .home-page-action-anime-row-2 > div > div{
     height: 100%;
 }
 
@@ -238,10 +238,10 @@ div.buy-now:hover{
 
 }
 
-.home-page-pop-manga-row-1,.home-page-anime-row-1, .home-page-best-anime-row-1, .home-page-best-anime-row-2{
+.home-page-pop-manga-row-1,.home-page-anime-row-1, .home-page-best-anime-row-1, .home-page-best-anime-row-2, .home-page-action-anime-row-1{
         margin: 0 0 12px 0;
 }
-.home-page-anime-row-2, .home-page-season-anime-row-1, .home-page-best-anime-row-2 {
+.home-page-anime-row-2, .home-page-season-anime-row-1, .home-page-best-anime-row-2, .home-page-action-anime-row-1 {
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
 }
@@ -250,7 +250,7 @@ div.buy-now:hover{
     margin: 20px 0 45px 0;
 }
     
-.home-page-pop-manga, .home-page-anime, .home-page-season-anime-row-1, .home-page-best-anime{
+.home-page-pop-manga, .home-page-anime, .home-page-season-anime-row-1, .home-page-best-anime, .home-page-action-anime{
     
     margin: 20px 0 45px 0;
 }
@@ -258,7 +258,7 @@ div.buy-now:hover{
 .home-page-pop-manga-row-1{
     grid-template-columns: 1fr 1fr 1fr;
 }
-.home-page-pop-manga-row-2, .home-page-best-anime-row-1, .home-page-best-anime-row-3{
+.home-page-pop-manga-row-2, .home-page-best-anime-row-1, .home-page-best-anime-row-3, .home-page-action-anime-row-2{
     grid-template-columns: 1fr 1fr;
 }
 .grid-row-3{
