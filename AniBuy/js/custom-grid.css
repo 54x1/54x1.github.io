@@ -22,19 +22,11 @@
         grid-gap: 12px;
         position: relative;
     }
-    .breakpoint{
+
+    .breakpoint-1, .breakpoint-2{
         display: none;
         position: relative;
 
-    }
-    
-    .breakpoint-1-show{
-        display: grid;
-        transition: 1s;
-    }
-
-    .oncedone-1{
-        opacity: 1!important;
     }
 
     .show-more{
@@ -109,7 +101,7 @@ width: 100%;
 height: 100%;   
 }
 
-.img-pop-anime, .img-feat-anime, .img-new, .img-pop-manga, .img-season-anime, .img-best-anime{
+.img-pop-anime, .img-feat-anime, .img-new, .img-pop-manga, .img-season-anime, .img-best-anime, .img-action-anime{
     position: relative;
     border-bottom: 5px solid #00afec;
 }
