@@ -13,7 +13,8 @@
     }
 
     a{
-            color: #00AFEC;
+        color: #fff;
+            /*color: #00AFEC;*/
     text-decoration: none;
         background-color: transparent;
     }
@@ -66,7 +67,7 @@ display: grid;
     
 .home-page-onsale, .home-page-new-rel{
     grid-template-columns: 1fr 1fr;   
-    margin: 20px 0 45px 0;
+    margin: 20px 0 50px 0;
 }
 .home-page-onsale > div, .home-page-new-rel > div, .home-page-pop-anime > div, .home-page-pop-manga-row-1 > div, .home-page-pop-manga-row-2 > div, .home-page-anime-row-2 > div, .home-page-season-anime-row-1 > div, .home-page-best-anime-row-1 > div, .home-page-best-anime-row-2 > div, .home-page-best-anime-row-3 > div, .home-page-action-anime-row-1 >div, .home-page-action-anime-row-2 > div, .home-page-romance-anime-row-1 > div, .home-page-romance-anime-row-2 > div, .home-page-fantasy-anime-row-1 > div, .home-page-fantasy-anime-row-2 > div, .home-page-comedy-anime-row-1 > div, .home-page-comedy-anime-row-2 > div{
     position: relative;
@@ -75,13 +76,6 @@ height: 100%;
 
 .home-page-new-rel > div > div, .home-page-pop-manga-row-1 > div > div, .home-page-pop-manga-row-2 > div > div, .home-page-anime-row-2 > div > div, .grid-row-3, .grid-row-10, .home-page-season-anime-row-1 > div > div, .home-page-best-anime-row-1 > div > div, .home-page-best-anime-row-2 > div > div, .home-page-best-anime-row-3 > div > div, .home-page-action-anime-row-1 > div > div, .home-page-action-anime-row-2 > div > div, .home-page-romance-anime-row-1 > div > div, .home-page-romance-anime-row-2 > div > div, .home-page-fantasy-anime-row-1 > div > div, .home-page-fantasy-anime-row-2 > div > div, .home-page-comedy-anime-row-1 > div > div, .home-page-comedy-anime-row-2 > div > div{
     height: 100%;
-}
-
-div.buy-now > a{
-    color: #fff;
-}
-div.buy-now > a:hover{
-    color: #ececec;
 }
 
 .home-page-pop-anime-title, .home-page-pop-manga-title{
@@ -107,27 +101,63 @@ object-fit: cover;
     border-bottom: 5px solid #00afec;
 }
 
-h4.read-more, h4.buy{
+.read-more, .buy{
     background: url(../img/icons/highlight-background.png) no-repeat bottom left;
     bottom: 5px;
     color: #fff;
-    min-width: 140px;
-    padding: 10px 0 10px 10px;
+    max-height: 21px;
+    bottom: 10px!important;
     position: absolute;
     right: -5px;
     text-align: center;
     cursor: pointer;
     z-index: 1;
+    text-decoration: none;
     
 }
 
-h4.read-more{
-    margin-bottom: 46px;
+.read-more{
+    margin-bottom: 0px !important;
+    min-width: 128px!important;
+    padding: 10px 0 10px 10px!important;
 }
-h4.buy{
-    margin-bottom: 0px;
+.buy{
+    margin-bottom: 46px!important;
     
+    
+
 }
+
+.span-text-2{
+    display: inline-flex;
+}
+
+div.buy-now > a:hover,.read-more > a:hover{
+     border-bottom: 2px solid white;
+    border-top: 2px solid white;
+}
+
+div.buy-now > a:hover, .read-more > a:hover{
+    color: #ececec;
+}
+
+
+div.buy-now, .read-more, .buy{
+    
+    background: url(../img/icons/highlight-background.png) no-repeat bottom left;
+    bottom: 0px;
+    margin: -5px -5px;
+    min-width: 110px;
+    padding: 10px 0 10px 10px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    cursor: pointer;
+    z-index: 1;
+
+
+}
+
 
 .featured-image:hover{
         opacity: 0.75;
@@ -150,7 +180,7 @@ h2.featured-heading-1
 {
     background: url(../img/icons/shipping-banner.png) no-repeat center;
     text-align: center;
-    margin:-15px 0 30px 0px;
+    margin: -15px 0 35px 0px;
     font-size: 22.75px;
     line-height: 26px;
     float: right;
@@ -177,51 +207,27 @@ h2.featured-heading-2{
 }
 
 h2.featured-heading-3 {
-    display: inline-block;
-    background: url(../img/icons/highlight-background.png) no-repeat top right;
+display: inline-block;
+    background: url(../img/icons/highlight-background.png) no-repeat top left;
     color: #fff;
-    padding: 6px 20px 6px 30px;
+    padding: 6px 14px 6px 38px;
     margin: -5px -20px 15px 4em;
     font-weight: 500;
     font-size: 30px;
     text-align: center;
     position: relative;
     right: 0px;
+    width: 100px;
 }
 
-
-
-
-h2.featured-heading-3 > a
-    {
-        color: white;
-    }
 
 h2.featured-heading-3 > a:hover{
     border-bottom: 2px solid white;
     border-top: 2px solid white;
 }
 
-h2.featured-heading-4{
 
-}
-div.buy-now {
-    
-    background: url(../img/icons/highlight-background.png) no-repeat bottom left;
-    bottom: 0px;
-    margin: -5px -5px;
-    min-width: 110px;
-    padding: 10px 0 10px 10px;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    cursor: pointer
 
-}
-
-div.buy-now:hover, h4.read-more:hover, h4.buy:hover{
-    opacity:0.95;
-}
 
 .span-text{
     text-align: justify;    
@@ -328,9 +334,4 @@ div.buy-now:hover, h4.read-more:hover, h4.buy:hover{
     grid-column: 1/3;
     grid-row: 3;
 }
-    http://animelehti.fi/wordpress/wp-content/files/2016/03/kisshimnotme.jpg
-    http://dkfuy30sometm.cloudfront.net/wp-content/uploads/2015/08/9781632361226.jpg
-    http://www.previewsworld.com/catalogimages/STK_IMAGES/STK680001-700000/STK695167.jpg
-    http://onestopanime.com/images/MonsterHunterFlash1.jpg
-    
-  
+
