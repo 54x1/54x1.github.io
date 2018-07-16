@@ -59,7 +59,6 @@ display: block;
   color: #fff;
 }
 
-/* Top Container */
 .top-container {
   display: grid;
   grid-gap: 20px;
@@ -72,11 +71,12 @@ body {
     color: #333;
     background-color: #ececec;
     margin: 0px;
-    /**/display: none;
+    display: none;
 	}
 
     h1, h2, h3, h4, h5, h6 {
             font-weight: 500;
+            color: #fff;
     }
 
     a{
@@ -133,10 +133,20 @@ body {
 display: grid;
     grid-template-columns: 1fr;
 }
+
+.home-page-anime{
+    margin:0px 0 25px 0;
+    grid-row-gap: 17px;
+}
+
     
 .home-page-onsale, .home-page-new-rel{
     grid-template-columns: 1fr 1fr;   
-    margin: 20px 0 50px 0;
+    
+}
+
+.home-page-onsale{
+    margin: 20px 0px 50px 0;
 }
 .home-page-onsale > div, .home-page-new-rel > div, .home-page-pop-anime > div, .home-page-pop-manga-row-1 > div, .home-page-pop-manga-row-2 > div, .home-page-anime-row-2 > div, .home-page-season-anime-row-1 > div, .home-page-best-anime-row-1 > div, .home-page-best-anime-row-2 > div, .home-page-best-anime-row-3 > div, .home-page-action-anime-row-1 >div, .home-page-action-anime-row-2 > div, .home-page-romance-anime-row-1 > div, .home-page-romance-anime-row-2 > div, .home-page-fantasy-anime-row-1 > div, .home-page-fantasy-anime-row-2 > div, .home-page-comedy-anime-row-1 > div, .home-page-comedy-anime-row-2 > div{
     position: relative;
@@ -195,10 +205,6 @@ object-fit: cover;
     
     
 
-}
-
-.span-text-2{
-    display: inline-flex;
 }
 
 div.buy-now > a:hover,.read-more > a:hover{
@@ -265,7 +271,13 @@ h2.featured-heading-1
 
    
 }
+#anime-n-movies{
+    margin-bottom: 0;
+}
 
+#featured-anime{
+
+}
 h2.featured-heading-2{
      display: inline-block;
 		background: url('../img/icons/highlight-background-2.png') no-repeat top left;
@@ -313,25 +325,34 @@ h2.featured-heading-3 > a:hover{
 .home-page-anime-row-1 {
     grid-template-columns: 1fr 1fr 43.897%;
     grid-template-rows: 1fr 1fr 1fr;
-    margin: 0!important;
+    margin-top:3px;
 
 }
 
 
+.home-page-best-anime-row-1{
 
-.home-page-pop-manga-row-1,.home-page-anime-row-1, .home-page-best-anime-row-1, .home-page-best-anime-row-2, .home-page-action-anime-row-1, .home-page-romance-anime-row-1, .home-page-fantasy-anime-row-1, .home-page-comedy-anime-row-1{
+ margin: 20px 0 17px 0;
+}
+.home-page-pop-manga-row-1, .home-page-best-anime-row-2, .home-page-romance-anime-row-1, .home-page-fantasy-anime-row-1, .home-page-comedy-anime-row-1{
         margin: 0 0 17px 0;
 }
 .home-page-anime-row-2, .home-page-season-anime-row-1, .home-page-best-anime-row-2, .home-page-action-anime-row-1, .home-page-romance-anime-row-1, .home-page-fantasy-anime-row-1, .home-page-comedy-anime-row-1{
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
 }
-
-.home-page-manga{
-    margin: 20px 0 45px 0;
+ .home-page-season-anime-row-1, .home-page-best-anime-row-2, .home-page-action-anime-row-1, .home-page-romance-anime-row-1, .home-page-fantasy-anime-row-1, .home-page-comedy-anime-row-1{
+    margin: 20px 0 25px 0;
 }
-    
-.home-page-pop-manga, .home-page-anime, .home-page-season-anime-row-1, .home-page-best-anime, .home-page-action-anime, .home-page-romance-anime, .home-page-fantasy-anime, .home-page-comedy-anime{
+
+.home-page-action-anime{
+    margin: 0 0 25px 0;
+}
+.home-page-season-anime{
+    margin: 0 0 20px 0;
+}
+
+.home-page-manga, .home-page-new-rel,.home-page-pop-manga, .home-page-best-anime, .home-page-romance-anime, .home-page-fantasy-anime, .home-page-comedy-anime{
     
     margin: 20px 0 45px 0;
 }
@@ -387,11 +408,9 @@ h2.featured-heading-3 > a:hover{
     grid-row: 4;
     grid-column: 3;
     left: -11px;
-    top: 1px;
+    top: 2px;
 }
-.home-page-anime{
-    grid-row-gap: 17px
-}
+
 .grid-row-11, .grid-row-12, .grid-row-13{
     height: 100%;
 }
