@@ -5,18 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AniBUY Nonstop Anime</title>
-		<link rel="icon" href="../img/icons/favicon.ico" type="image/x-icon">
-    <!-- Bootstrap core CSS -->
-    <link href="../js/custom-grid.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="icon" href="../img/icons/favicon.ico" type="image/x-icon" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="../js/custom.js"></script>
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />-->
+    <link href="../js/custom-grid.css" rel="stylesheet" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <!---->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
 <body>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="slider-buy buy-now buy"><a href="#">BUY NOW</a></div>
+                <div h4 class="slider-read read-more"><a href="#">READ MORE</a></div>
+                <img src="../img/slides/bleach.jpg" />
+            </div>
+
+            <div class="item">
+                <div class="slider-buy buy-now buy"><a href="#">BUY NOW</a></div>
+                <div h4 class="slider-read read-more"><a href="#">READ MORE</a></div>
+                <img src="../img/slides/naruto.jpg" />
+            </div>
+
+            <div class="item">
+                <div class="slider-buy buy-now buy"><a href="#">BUY NOW</a></div>
+                <div h4 class="slider-read read-more"><a href="#">READ MORE</a></div>
+                <img src="../img/slides/one.jpg" />
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
     <div class="nav-wrapper">
-        
+
         <div class="main-nav">
             <ul>
                 <li class="navbar-home"><a href="#"><img src="../img/icons/logo-anibuy.jpg"></a></li>
@@ -36,12 +75,13 @@
                     <a href="#" class="tab-links">Contact</a>
                 </li>
                 <li class="item">
-                    <a href="#"><i class="fas fa-shopping-cart"></i><span class="cart-num">0</span></a>
+                    <a href="#"><div class="glyphicon glyphicon-shopping-cart"></div><span class="cart-num">0</span></a>
                 </li>
             </ul>
         </div>
     </div>
     <div class="grid-container">
+        
         <div id="home-page" class="home-page">
             <h2 class="featured-heading-2">On Sale Now!</h2>
             <div class="home-page-onsale">
@@ -544,7 +584,6 @@
                         </div>
                     </div>
                 </div>
-                
                     <div class="home-page-romance-anime bpshow">
                     <h2 id="home-page-romance-anime" class="featured-heading-2">Romance</h2>
                     <div class="home-page-romance-anime-row-1">
@@ -600,6 +639,65 @@
                             <div h4 class="read-more"><a href="#">READ MORE</a></div>
                             <div class="grid-col-1">
                                 <img class="featured-image img-romance-anime" src="../img/kk2.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-page-fantasy-anime bpshow">
+                    <h2 id="home-page-fantasy-anime" class="featured-heading-2">Fantasy</h2>
+                    <div class="home-page-fantasy-anime-row-1">
+                        <div class="grid-col-5">
+                            <div class="buy-now buy"><a href="#">BUY NOW</a></div>
+                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div class="featured-image img-fantasy-anime">
+                                <a target="_blank" href="#">
+                                    <img src="../img/hun.jpg">
+
+                                </a>
+                            </div>
+                        </div>
+                        <div class="grid-col-5">
+                            <div class="buy-now buy"><a href="#">BUY NOW</a></div>
+                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div class="featured-image img-fantasy-anime">
+                                <a target="_blank" href="#">
+                                    <img src="../img/kon.jpg">
+
+                                </a>
+                            </div>
+                        </div>
+                        <div class="grid-col-5">
+                            <div class="buy-now buy"><a href="#">BUY NOW</a></div>
+                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div class="featured-image img-fantasy-anime">
+                                <a target="_blank" href="#">
+                                    <img src="../img/ste.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="grid-col-5">
+                            <div class="buy-now buy"><a href="#">BUY NOW</a></div>
+                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div class="featured-image img-fantasy-anime">
+                                <a target="_blank" href="#">
+                                    <img src="../img/dead.jpg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home-page-fantasy-anime-row-2">
+                        <div class="grid-row-8">
+                            <div class="buy-now buy"><a href="#">BUY NOW</a></div>
+                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div class="grid-col-1">
+                                <img class="featured-image img-fantasy-anime" src="../img/deathp.jpg">
+                            </div>
+                        </div>
+                        <div class="grid-row-8">
+                            <div class="buy-now buy"><a href="#">BUY NOW</a></div>
+                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div class="grid-col-1">
+                                <img class="featured-image img-fantasy-anime" src="../img/kk2.jpg">
                             </div>
                         </div>
                     </div>
