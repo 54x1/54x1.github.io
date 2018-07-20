@@ -10,8 +10,6 @@
     <script src="../js/custom.js"></script>
     <link href="../js/custom-grid.css" rel="stylesheet" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
-    <!---->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
 <body>
@@ -21,26 +19,50 @@
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+            <li data-target="#myCarousel" data-slide-to="5"></li>
+            <li data-target="#myCarousel" data-slide-to="6"></li>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
                 <div class="slider-buy buy-now buy"><a href="#">BUY NOW</a></div>
-                <div h4 class="slider-read read-more"><a href="#">READ MORE</a></div>
+                <div h4 class="slider-read read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                 <img src="../img/slides/bleach.jpg" />
             </div>
 
             <div class="item">
                 <div class="slider-buy buy-now buy"><a href="#">BUY NOW</a></div>
-                <div h4 class="slider-read read-more"><a href="#">READ MORE</a></div>
-                <img src="../img/slides/naruto.jpg" />
+                <div h4 class="slider-read read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
+                <img src="../img/slides/nar.jpg" />
             </div>
 
             <div class="item">
                 <div class="slider-buy buy-now buy"><a href="#">BUY NOW</a></div>
-                <div h4 class="slider-read read-more"><a href="#">READ MORE</a></div>
+                <div h4 class="slider-read read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                 <img src="../img/slides/one.jpg" />
+            </div>
+            <div class="item">
+                <div class="slider-buy buy-now buy"><a href="#">BUY NOW</a></div>
+                <div h4 class="slider-read read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
+                <img src="../img/slides/gar.jpg" />
+            </div>
+            <div class="item">
+                <div class="slider-buy buy-now buy"><a href="#">BUY NOW</a></div>
+                <div h4 class="slider-read read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
+                <img src="../img/slides/gui.jpg" />
+            </div>
+            <div class="item">
+                <div class="slider-buy buy-now buy"><a href="#">BUY NOW</a></div>
+                <div h4 class="slider-read read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
+                <img src="../img/slides/re.jpg" />
+            </div>
+            <div class="item">
+                <div class="slider-buy buy-now buy"><a href="#">BUY NOW</a></div>
+                <div h4 class="slider-read read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
+                <img src="../img/slides/snow.jpg" />
             </div>
         </div>
 
@@ -54,9 +76,14 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    <div class="nav-wrapper">
 
-        <div class="main-nav">
+    <nav class="nav-wrapper navbar">
+        <div class="navbar-header main-nav">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <ul>
                 <li class="navbar-home"><a href="#"><img src="../img/icons/logo-anibuy.jpg"></a></li>
                 <li class="item">
@@ -79,13 +106,13 @@
                 </li>
             </ul>
         </div>
-    </div>
-    <div class="grid-container">
+    </nav>
+    <div class="grid-container container-fluid">
         
         <div id="home-page" class="home-page">
             <h2 class="featured-heading-2">On Sale Now!</h2>
             <div class="home-page-onsale">
-                <div class="grid-row-1">
+                <div class="grid-row-1 h-p-o-1">
                     <div class="grid-col-1">
                         <img class="featured-image img-responsive" src="../img/home/sale/divine.jpg">
                     </div>
@@ -96,7 +123,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid-row-1">
+                <div class="grid-row-1 h-p-o-2">
                     <div class="grid-col-1">
                         <img class="featured-image img-responsive" src="../img/home/sale/c.jpg">
                     </div>
@@ -107,25 +134,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid-row-2">
+                <div class="grid-row-2 h-p-o-3">
                     <div class="grid-col-1">
                         <img class="featured-image img-responsive" src="../img/home/sale/say.jpg">
                     </div>
                     <div class="grid-col-2">
                         <h2 class="featured-heading">Say "I Love You"</h2>
                         <div class="grid-col-3">
-                            <div class="span-text">Say "I Love You" follows Mei Tachibana a cute, anti-social loner, because of a trumatic incident in the past. She now dates the popular and out going Yamato Kurosawa. How will their developing relationship? As well as their frequent disagreements, and how hard it really is to say "I love you"!<br></div><div class="buy-now"><a href="#">BUY NOW</a></div>
+                            <div class="span-text">Say "I Love You" follows Mei Tachibana a cute, anti-social loner, because of a trumatic incident in the past. She now dates the popular and out going Yamato Kurosawa. How will their relationship develop? As well as their frequent disagreements, and how hard is it to say "I love you" !<br></div><div class="buy-now"><a href="#">BUY NOW</a></div>
                         </div>
                     </div>
                 </div>
-                <div class="grid-row-2">
+                <div class="grid-row-2 h-p-o-4">
                     <div class="grid-col-1">
                         <img class="featured-image img-responsive" src="../img/home/sale/ano.jpg">
                     </div>
                     <div class="grid-col-2">
                         <h2 class="featured-heading">AnoHana</h2>
                         <div class="grid-col-3">
-                            <div class="span-text">Jinta Yadomi lives a peacful and boring life, skiping school and playing video games instead. One day he is able to see the ghost of his childhood friend Menma. At first he though he was hallucinating because of the summer heat but its all real! How will he beable to move on? <br></div><div class="buy-now"><a href="#">BUY NOW</a></div>
+                            <div class="span-text">Jinta Yadomi lives a peacful and boring life, skiping school and playing video games instead. One day he is able to see the ghost of his childhood friend Menma. At first he though he was hallucinating because of the summer heat but its all real! How will he beable to move on ? <br></div><div class="buy-now"><a href="#">BUY NOW</a></div>
                         </div>
                     </div>
                 </div>
@@ -138,7 +165,7 @@
             <div class="home-page-pop-anime">
                 <div class="grid-row-3">
                     <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                    <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                    <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                     <div class="featured-image img-pop-anime">
                     <a target="_blank" href="#">
                         <img src="../img/home/best/mlm.jpg">
@@ -148,7 +175,7 @@
                 </div>
                 <div class="grid-row-4">
                     <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                    <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                    <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                     <div class="featured-image img-pop-anime">
                         <a target="_blank" href="#">
                             <img src="../img/home/best/dfrag.jpg">
@@ -157,7 +184,7 @@
                 </div>
                 <div class="grid-row-5">
                     <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                    <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                    <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                     <div class="featured-image img-pop-anime">
                         <a target="_blank" href="#">
                             <img src="../img/home/best/parasyte.jpg">
@@ -167,7 +194,7 @@
                 </div>
                 <div class="grid-row-6">
                     <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                    <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                    <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                     <div class="featured-image img-pop-anime">
                         <a target="_blank" href="#">
                             <img src="../img/home/best/from.jpg">
@@ -178,31 +205,31 @@
             </div>
             <h2 class="featured-heading-2">New Releases</h2>
             <div class="home-page-new-rel">
-                <div class="grid-row-7">
+                <div class="grid-row-7 h-p-o-1">
                     <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                    <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                    <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                     <div class="grid-col-1">
                         <img class="featured-image img-new" src="../img/home/season/atale.jpg">
                     </div>
                 </div>
-                <div class="grid-row-7">
+                <div class="grid-row-7 h-p-o-2">
                     <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                    <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                    <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                     <div class="grid-col-1">
                         <img class="featured-image img-new" src="../img/home/season/dimen.jpg">
                     </div>
                 </div>
-                <div class="grid-row-8">
+                <div class="grid-row-8 h-p-o-3">
                     <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                    <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                    <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                     <div class="grid-col-1">
                         <img class="featured-image img-new" src="../img/home/season/grim.jpg">
                         
                     </div>
                 </div>
-                <div class="grid-row-8">
+                <div class="grid-row-8 h-p-o-4">
                     <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                    <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                    <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                     <div class="grid-col-1">
                         <img class="featured-image img-new" src="../img/home/season/erased.jpg">
                     </div>
@@ -216,7 +243,7 @@
                     <div class="home-page-pop-manga-row-1">
                         <div class="grid-row-9">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="grid-col-4">
                                 <div class="featured-image img-pop-manga">
                                     <a target="_blank" href="#">
@@ -228,7 +255,7 @@
                         </div>
                         <div class="grid-row-9">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="grid-col-4">
                                 <div class="featured-image img-pop-manga">
                                     <a target="_blank" href="#">
@@ -241,7 +268,7 @@
                         </div>
                         <div class="grid-row-9">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="grid-col-4">
                                 <div class="featured-image img-pop-manga">
                                     <a target="_blank" href="#">
@@ -255,14 +282,14 @@
                     <div class="home-page-pop-manga-row-2">
                             <div class="grid-row-8">
                                 <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                                <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                                <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                                 <div class="grid-col-1">
                                     <img class="featured-image img-new" src="../img/home/bakuman.jpg">
                                 </div>
                             </div>
                             <div class="grid-row-8">
                                 <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                                <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                                <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                                 <div class="grid-col-1">
                                     <img class="featured-image img-new" src="../img/fruit.jpg">
                                 </div>
@@ -278,7 +305,7 @@
                         <div class="grid-row-10">
                             
                              <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                                <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                                <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                            
                                 <div class="featured-image img-pop-anime">
                                     <a target="_blank" href="#">
@@ -290,7 +317,7 @@
 
                             <div class="grid-col-6">
                                 <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                                <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                                <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             </div>
 
                             <div class="featured-image img-pop-anime">
@@ -304,7 +331,7 @@
                         <div class="grid-row-12">
                             <div class="grid-col-7">
                                 <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                                <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                                <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             </div>
                             
                                 <div class="featured-image img-pop-anime">
@@ -318,7 +345,7 @@
                         <div class="grid-row-13">
                             <div class="grid-col-8">
                                 <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                                <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                                <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             </div>
                             
                                 <div class="featured-image img-pop-anime">
@@ -332,7 +359,7 @@
                     <div class="home-page-anime-row-2">
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-feat-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/char.jpg">
@@ -341,7 +368,7 @@
                         </div>
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-feat-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/kon.jpg">
@@ -350,7 +377,7 @@
                         </div>
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-feat-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/ste.jpg">
@@ -359,7 +386,7 @@
                         </div>
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-feat-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/dead.jpg">
@@ -374,14 +401,14 @@
                     <div class="home-page-best-anime-row-1">
                         <div class="grid-row-8">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="grid-col-1">
                                 <img class="featured-image img-best-anime" src="../img/pycho.jpg">
                             </div>
                         </div>
                         <div class="grid-row-8">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="grid-col-1">
                                 <img class="featured-image img-best-anime" src="../img/one.jpg">
                             </div>
@@ -393,13 +420,13 @@
                                 <a target="_blank" href="#">
                                     <img src="../img/hun.jpg">
                                     <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                                    <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                                    <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                                 </a>
                             </div>
                         </div>
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-best-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/kon.jpg">
@@ -408,7 +435,7 @@
                         </div>
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-best-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/ste.jpg">
@@ -417,7 +444,7 @@
                         </div>
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-best-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/dead.jpg">
@@ -428,14 +455,14 @@
                     <div class="home-page-best-anime-row-3">
                         <div class="grid-row-8">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="grid-col-1">
                                 <img class="featured-image img-best-anime" src="../img/deathp.jpg">
                             </div>
                         </div>
                         <div class="grid-row-8">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="grid-col-1">
                                 <img class="featured-image img-best-anime" src="../img/kk2.jpg">
                             </div>
@@ -448,7 +475,7 @@
                     <div class="home-page-season-anime-row-1">
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-season-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/death.jpg">
@@ -457,7 +484,7 @@
                         </div>
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-season-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/boru.png">
@@ -466,7 +493,7 @@
                         </div>
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-season-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/scho.jpg">
@@ -475,7 +502,7 @@
                         </div>
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-season-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/ryu.jpg">
@@ -484,7 +511,7 @@
                         </div>
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-season-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/cal.jpg">
@@ -493,7 +520,7 @@
                         </div>
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-season-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/blackc.jpg">
@@ -502,7 +529,7 @@
                         </div>
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-season-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/how.jpg">
@@ -511,7 +538,7 @@
                         </div>
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-season-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/darl.jpg">
@@ -529,7 +556,7 @@
                     <div class="home-page-action-anime-row-1">
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-action-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/hun.jpg">
@@ -538,7 +565,7 @@
                         </div>
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-action-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/kon.jpg">
@@ -547,7 +574,7 @@
                         </div>
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-action-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/ste.jpg">
@@ -556,7 +583,7 @@
                         </div>
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-action-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/dead.jpg">
@@ -568,7 +595,7 @@
                     <div class="home-page-action-anime-row-2">
                         <div class="grid-row-8">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="grid-col-1">
                                 <img class="featured-image img-action-anime" src="../img/deathp.jpg">
 
@@ -576,7 +603,7 @@
                         </div>
                         <div class="grid-row-8">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="grid-col-1">
                                 <img class="featured-image img-action-anime" src="../img/kk2.jpg">
 
@@ -589,7 +616,7 @@
                     <div class="home-page-romance-anime-row-1">
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-romance-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/hun.jpg">
@@ -599,7 +626,7 @@
                         </div>
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-romance-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/kon.jpg">
@@ -609,7 +636,7 @@
                         </div>
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-romance-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/ste.jpg">
@@ -618,7 +645,7 @@
                         </div>
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-romance-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/dead.jpg">
@@ -629,14 +656,14 @@
                     <div class="home-page-romance-anime-row-2">
                         <div class="grid-row-8">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="grid-col-1">
                                 <img class="featured-image img-romance-anime" src="../img/deathp.jpg">
                             </div>
                         </div>
                         <div class="grid-row-8">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="grid-col-1">
                                 <img class="featured-image img-romance-anime" src="../img/kk2.jpg">
                             </div>
@@ -648,7 +675,7 @@
                     <div class="home-page-fantasy-anime-row-1">
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-fantasy-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/hun.jpg">
@@ -658,7 +685,7 @@
                         </div>
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-fantasy-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/kon.jpg">
@@ -668,7 +695,7 @@
                         </div>
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-fantasy-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/ste.jpg">
@@ -677,7 +704,7 @@
                         </div>
                         <div class="grid-col-5">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="featured-image img-fantasy-anime">
                                 <a target="_blank" href="#">
                                     <img src="../img/dead.jpg">
@@ -688,14 +715,14 @@
                     <div class="home-page-fantasy-anime-row-2">
                         <div class="grid-row-8">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="grid-col-1">
                                 <img class="featured-image img-fantasy-anime" src="../img/deathp.jpg">
                             </div>
                         </div>
                         <div class="grid-row-8">
                             <div class="buy-now buy"><a href="#">BUY NOW</a></div>
-                            <div h4 class="read-more"><a href="#">READ MORE</a></div>
+                            <div h4 class="read-more" data-toggle="modal" data-target="#read-more-1"><a href="#">READ MORE</a></div>
                             <div class="grid-col-1">
                                 <img class="featured-image img-fantasy-anime" src="../img/kk2.jpg">
                             </div>
@@ -705,5 +732,51 @@
             </div>
         </div> 
         </div>
+    <div class="modal fade read-more-1" id="read-more-1" tabindex="-1" role="dialog" aria-labelledby="read-more-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" type="button" data-dissmiss="modal" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title text-center">Bleach</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="center-block">
+                                    <img class="read-more-1 img-responsive img-anime-modal" src="../img/slides/bleach.jpg">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <h4>About</h4>
+                                <p>In Karakura Town, a 15-year-old high school student Ichigo Kurosaki becomes a substitute Soul Reaper when Rukia Kuchiki, a Soul Reaper, cannot fulfill her duties after engaging in battle with a particularly powerful Hollow. Although initially reluctant to accept the heavy responsibility, he begins eliminating Hollows in Rukia's place and during this time discovers that several of his friends and classmates are spiritually aware and have powers of their own: Uryū Ishida is a Quincy who can use spirit particles, Orihime Inoue possesses a group of protective spirits known as the Shun Shun Rikka and Yasutora Sado ("Chad") has strength equal to the Hollows encased in his tough right arm.</p>
+                                <hr />
+                                <p>Retail Price: $295</p>
+                                <p>Our Price: $197</p>
+                                <form action="add-cart.php method="post">
+                                    <div class="form-group">
+                                        <div class="quantity-form col-xs-3">
+                                            <label for="quantity">QUANTITY</label>
+                                            <div class="quantity">
+                                            <input type="number" name="quantity" id="quantity" class="quantity-value" value="1" min="1">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-info" type="submit"><span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart</button>
+                    <button class="btn btn-info" type="submit"><span class="glyphicon glyphicon-shopping-star"></span>Add to Wishlist</button>
+                    <button class="btn btn-default" data-dissmiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
