@@ -1,4 +1,4 @@
-.navbar{
+﻿.navbar{
    /*border-radius: 0 0 20px 20px!important;*/
    border-radius: 0!important;
     min-height: 0!important; 
@@ -181,6 +181,39 @@ body {
         display: grid;
     }
     }
+/**/
+
+@media (max-width:790) and (min-width:768) {
+    .grid-row-3 {
+        height:100%!important;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .grid-row-3 {
+        height: 100%
+    }
+}
+@media screen and (min-width: 992px) {
+    .grid-row-3 {
+        height: 100%
+    }
+}
+
+
+
+@media screen and (min-width: 1200px) {
+    .grid-row-3 {
+        height: 100%
+    }
+}
+
+
+
+
+
+
 
 /**/
 
@@ -188,15 +221,15 @@ body {
 @media screen and (max-width: 992px) {
     .home-page-onsale, .home-page-new-rel {
         grid-template-areas: 
-            "h-p-o-1 h-p-o-2" 
-            "h-p-o-3 h-p-o-4";
+            "h-p-1 h-p-2" 
+            "h-p-3 h-p-4";
     }
 }
 @media screen and (min-width: 992px) {
     .home-page-onsale, .home-page-new-rel {
         grid-template-areas: 
-            "h-p-o-1 h-p-o-2" 
-            "h-p-o-3 h-p-o-4";
+            "h-p-1 h-p-2" 
+            "h-p-3 h-p-4";
     }
 }
 
@@ -205,8 +238,8 @@ body {
 @media screen and (min-width: 1200px) {
     .home-page-onsale,.home-page-new-rel {
         grid-template-areas: 
-            "h-p-o-1 h-p-o-2" 
-            "h-p-o-3 h-p-o-4";
+            "h-p-1 h-p-2" 
+            "h-p-3 h-p-4";
     }
 }
 
@@ -214,57 +247,74 @@ body {
 @media screen and (max-width: 768px) {
     .home-page-onsale,.home-page-new-rel {
         grid-template-areas:
-        "h-p-o-1 h-p-o-1"
-        "h-p-o-2 h-p-o-2" 
-        "h-p-o-3 h-p-o-3"
-        "h-p-o-4 h-p-o-4";
+        "h-p-1 h-p-1"
+        "h-p-2 h-p-2" 
+        "h-p-3 h-p-3"
+        "h-p-4 h-p-4";
     }
     }
 
+/**/
 
-
-
-/*
-
-@media screen and (min-width: 768px) {
-    .home-page-onsale {
-        grid-template-areas:
-        "h-p-o-1 h-p-o-1"
-        "h-p-o-2 h-p-o-2" 
-        "h-p-o-3 h-p-o-3"
-        "h-p-o-4 h-p-o-4";
+@media screen and (max-width: 992px) {
+            .home-page-pop-anime{
+             grid-template-columns: 43.897% 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        "grid-row-3 grid-row-4 grid-row-4"
+        "grid-row-3 grid-row-5 grid-row-5"
+        "grid-row-3 grid-row-6 grid-row-6";
     }
-    }
+}
 
 
 @media screen and (min-width: 992px) {
-    .home-page-onsale {
-        grid-template-areas: 
-            "h-p-o-1 h-p-o-2" 
-            "h-p-o-3 h-p-o-4";
+             .home-page-pop-anime{
+             grid-template-columns: 43.897% 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        "grid-row-3 grid-row-4 grid-row-4"
+        "grid-row-3 grid-row-5 grid-row-5"
+        "grid-row-3 grid-row-6 grid-row-6";
     }
 }
+
 
 @media screen and (min-width: 1200px) {
-    .home-page-onsale {
-        grid-template-areas: 
-            "h-p-o-1 h-p-o-2" 
-            "h-p-o-3 h-p-o-4";
+            .home-page-pop-anime{
+             grid-template-columns: 43.897% 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        "grid-row-3 grid-row-4 grid-row-4"
+        "grid-row-3 grid-row-5 grid-row-5"
+        "grid-row-3 grid-row-6 grid-row-6";
     }
 }
-    */
 
-.h-p-o-1{
-    grid-area:h-p-o-1;
+
+@media screen and (max-width: 768px) {
+        .home-page-pop-anime{
+         grid-template-columns: 1fr 1fr;
+         grid-template-rows: 0fr 0fr 0fr 0.0fr;
+    grid-template-areas:
+        "grid-row-3 grid-row-3"
+        "grid-row-4 grid-row-4"
+        "grid-row-5 grid-row-5"
+        "grid-row-6 grid-row-6";
+    }
 }
-.h-p-o-2{
-    grid-area:h-p-o-2;
+
+.h-p-o-1, .h-p-nr-1{
+    grid-area:h-p-1;
 }
-.h-p-o-3{
-    grid-area:h-p-o-3;
+.h-p-o-2, .h-p-nr-2{
+    grid-area:h-p-2;
 }
-.h-p-o-4{
-    grid-area:h-p-o-4
+.h-p-o-3, .h-p-nr-3{
+    grid-area:h-p-3;
+}
+.h-p-o-4, .h-p-nr-4{
+    grid-area:h-p-4
 }
 .home-page{
 display: grid;
@@ -416,10 +466,17 @@ h2.featured-heading-1
     letter-spacing: 1.25px;
     color: #fff;
     padding: 2px;
-    padding-top: 3px;
     overflow: hidden;
     line-height: inherit;
 }
+
+@media screen and (max-width: 450px){
+    h2.featured-heading-1{
+        letter-spacing: 0.25px;
+    }
+}
+
+
 
 #anime-n-movies{
     margin-bottom: 0;
@@ -470,8 +527,6 @@ h2.featured-heading-3 > a:hover{
     line-height: 1.4;
 }
 .home-page-pop-anime {
-    grid-template-columns: 43.897% 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
     margin: 20px 0 40px 0;
 }
 .home-page-anime-row-1 {
@@ -524,19 +579,23 @@ h2.featured-heading-3 > a:hover{
 .grid-row-3{
     grid-column: 1;
     grid-row: 1 / 4;
+    grid-area: grid-row-3;
 }
 
 .grid-row-4{
     grid-column: 2/4;
     grid-row: 1;
+    grid-area: grid-row-4;
 }
 .grid-row-5{
     grid-column: 2/4;
     grid-row: 2;
+    grid-area: grid-row-5;
 }
 .grid-row-6{
     grid-column: 2/4;
     grid-row: 3;
+    grid-area: grid-row-6;
 }
 
 .grid-row-10{
