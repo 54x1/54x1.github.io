@@ -263,8 +263,7 @@ body {
     }
 	.grid-container {
 		background-color: white;
-		margin-top: 24px;
-		padding-top: 0px;
+		padding-top: 20px;
 		border: 12px solid white;
 		border-top:9px solid white;
 	}
@@ -272,11 +271,23 @@ body {
     .grid-container {
         width: 1170px;
         margin: auto;
-        padding: 30px 0px;
+        padding: 20px 0px;
         grid-template-columns: 1fr;
         display: grid;
     }
     }
+@media screen and (min-width: 1440px) {
+    .grid-container {
+        width: 1404px;
+            font-size: 18px;
+    }
+
+    .span-text{
+        font-size: 21.5px!important;
+    }
+}
+
+
 /**/
 
 @media (max-width:790) and (min-width:768) {
@@ -470,7 +481,7 @@ object-fit: cover;
     width: fit-content;
     padding: 10px 40px 10px 20px;
     font-size: 24px;
-    margin-bottom:42px!important;
+    margin-bottom:30px!important;
 }
 
 .item > div.slider-read{
@@ -479,6 +490,15 @@ object-fit: cover;
     font-size: 24px;
     min-width: fit-content;
     width: 200px;
+}
+
+@media screen and (max-width: 768px){
+    .item > div.slider-buy{
+       left: 25px;
+    }
+    .item > div.slider-read{
+        right: 25px;
+    }
 }
 .read-more, .buy{
     background: url(../img/icons/highlight-background.png) no-repeat bottom left;
@@ -500,7 +520,7 @@ object-fit: cover;
     padding: 10px 0 10px 10px!important;
 }
 .buy{
-    margin-bottom: 30px!important;  
+    margin-bottom: 50px!important;  
 }
 
 div.buy-now > a:hover,.read-more > a:hover{
@@ -547,11 +567,22 @@ h2.featured-heading{
     font-size: 22.75px;
     line-height: 36px;
 }
+
+@media screen and (min-width: 1440px){
+    h2.featured-heading{
+        font-size: 28.25px!important;
+        font-weight: 500;
+    }
+    h2.featured-heading-2, h2.featured-heading-3{
+        font-size:31.5px!important;
+    }
+}
 @media screen and (max-width:800px){
     h2.featured-heading-1{
         padding: 5px;
     }
 }
+
 
 h2.featured-heading-1
 {
