@@ -89,11 +89,11 @@ $(document).ready(function () {
    
     $(window).on('scroll resize', function (i) {
         var vscroll = $(this).scrollTop();
-        if ($(window).width() > 992) {
+        if ($(window).width() > 1200) {
             $('.slider-buy').css({ "transform": "translate(" + vscroll / 1.5 + "px, -" + vscroll / 20 + "px)" });
             $('.slider-read').css({ "transform": "translate(-" + vscroll / 3 + "px, -" + vscroll / 5 + "px)" });
         }
-        if ($(window).width() < 992) {
+        if ($(window).width() < 1200) {
             $('.slider-buy, .slider-read').css({ "transform": "translate(0,0)" });
         }
         
