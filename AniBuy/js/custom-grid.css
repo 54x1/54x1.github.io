@@ -20,7 +20,7 @@
     margin: 14px 0 16px 0;
     padding: 0;
     list-style: none;
-    grid-template-columns: 1fr 1fr 1fr 0.5fr 0.55fr 0fr 0.38fr 0fr;
+    grid-template-columns: 0.5fr 1fr 1fr 0.5fr 0.55fr 0fr 0.38fr 0fr;
 }
 
 
@@ -474,7 +474,7 @@ object-fit: cover;
 }
 
 .item > div.slider-read{
-    margin-bottom: 42px!important;
+    margin-bottom: 30px!important;
     right: 100px;
     font-size: 24px;
     min-width: fit-content;
@@ -500,7 +500,7 @@ object-fit: cover;
     padding: 10px 0 10px 10px!important;
 }
 .buy{
-    margin-bottom: 46px!important;  
+    margin-bottom: 30px!important;  
 }
 
 div.buy-now > a:hover,.read-more > a:hover{
