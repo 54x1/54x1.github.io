@@ -3,7 +3,38 @@ $(document).ready(function () {
     $(document).ready(onresize);
     $(window).ready(onresize);
 
-    //fix this bug on 784px
+
+   
+    $('.navbar-toggle').on('click load', function (e) {
+
+        $('.nav-expand').show(0,function () {
+
+            $("body").css({ "overflow-x": "hidden", "width": "100%", "margin-left": "250px" });
+            $('.header-sidebar-overlay').addClass('header-sidebar-opened');
+        });
+        $('.header-sidebar-overlay').click(function () {
+            $(".nav-expand").width(0).css({ "display": "none" });
+            $("body").css({ "margin-left": "0px" });
+            $('.header-sidebar-overlay').removeClass('header-sidebar-opened');
+        });
+        $('.closebtn').click(function () {
+            $(".nav-expand").width(0).css({ "display": "none" });
+            $("body").css({ "margin-left": "0px" });
+            $('.header-sidebar-overlay').removeClass('header-sidebar-opened');
+        });
+    });
+
+
+
+
+
+    /*$(".nav-expand").width(500);
+    $("body").css({ "overflow-x": "hidden", "width": "100%", "margin-left": "500px" });
+    $('.main-nav > button.navbar-toggle').css({ "display": "none" })
+    $(".nav-expand").width(0).css({ "display": "none" });
+    $("body").css({ "margin-left": "0px" });*/
+
+
     $(window).on('load resize', function (i) {
         var vheight = $('.grid-row-3').height();
         var vheight2 =$('.grid-row-4').height();
@@ -17,7 +48,18 @@ $(document).ready(function () {
         }
        else if (winw>768){
             gdr3.css({"height":"100%"});
-        }
+       }
+
+
+
+
+
+
+            
+
+
+
+
     });
 
 
@@ -62,3 +104,6 @@ $(document).ready(function () {
         });
     });
 });
+
+
+
