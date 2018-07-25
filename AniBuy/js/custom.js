@@ -28,12 +28,19 @@ $(document).ready(function () {
         var gdr3 = $('.grid-row-3');
         var gdr4 = $('.grid-row-4');
         var gdr5 = $('.grid-row-5');
+        var gdr9 = $('.grid-row-9');
+        var gdr10 = $('.grid-row-10');
         var winw = window.innerWidth;
         if(winw < 768 | winw < 768 && vheight > vheight2){
-            gdr3.height(gdr4.height()+gdr5.height());
+            gdr3.height(gdr4.height() + gdr5.height());
+            gdr9.height(gdr4.height() + gdr5.height());
+            gdr10.height(gdr4.height() + gdr5.height());
         }
+
        else if (winw>768){
-            gdr3.css({"height":"100%"});
+           gdr3.css({ "height": "100%" });
+           gdr9.css({ "height": "100%" });
+           gdr10.css({ "height": "100%" });
        }
 
 

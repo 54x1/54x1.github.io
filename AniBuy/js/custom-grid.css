@@ -434,6 +434,9 @@ body {
     }
 }
 
+/**/
+
+
 .h-p-o-1, .h-p-nr-1{
     grid-area:h-p-1;
 }
@@ -745,9 +748,19 @@ h2.featured-heading-3 > a:hover{
     grid-template-columns: 1fr 1fr 1fr;
     display: grid;
 }
+
+
 .home-page-pop-manga-row-2, .home-page-best-anime-row-1, .home-page-best-anime-row-3, .home-page-action-anime-row-2, .home-page-romance-anime-row-2, .home-page-fantasy-anime-row-2, .home-page-comedy-anime-row-2{
     grid-template-columns: 1fr 1fr;
     display: grid;
+}
+
+
+@media screen and (max-width: 768px){
+    .home-page-pop-manga-row-1, .home-page-pop-manga-row-2{
+    grid-template-columns: 1fr;
+}
+
 }
 
 .grid-row-3{
@@ -843,7 +856,7 @@ h2.featured-heading-3 > a:hover{
     margin: auto 0;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 460px) {
   h2.featured-heading-1, .home-page,.home-page-onsale, .home-page-new-rel,.home-page-pop-anime {
 width: 86vw;
     }
@@ -878,4 +891,53 @@ width: 86vw;
 li.navbar-home {
     grid-column: 3;
 }
+}
+
+
+@media screen and (max-width: 992px) {
+            .home-page-anime-row-1{
+             grid-template-columns: 1fr 1fr 43.897% ;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        "grid-row-11 grid-row-11 grid-row-10"
+        "grid-row-12 grid-row-12 grid-row-10"
+        "grid-row-13 grid-row-13 grid-row-10";
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+             .home-page-anime-row-1{
+             grid-template-columns: 1fr 1fr 43.897% ;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        "grid-row-11 grid-row-11 grid-row-10"
+        "grid-row-12 grid-row-12 grid-row-10"
+        "grid-row-13 grid-row-13 grid-row-10";
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+            .home-page-anime-row-1{
+             grid-template-columns: 1fr 1fr 43.897% ;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        "grid-row-11 grid-row-11 grid-row-10"
+        "grid-row-12 grid-row-12 grid-row-10"
+        "grid-row-13 grid-row-13 grid-row-10";
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+        .home-page-anime-row-1{
+         grid-template-columns: 1fr 1fr;
+         grid-template-rows: 0fr 0fr 0fr 0fr;
+    grid-template-areas:
+        "grid-row-10 grid-row-10"
+        "grid-row-11 grid-row-11"
+        "grid-row-12 grid-row-12"
+        "grid-row-13 grid-row-13";
+    }
 }
