@@ -71,7 +71,7 @@ $(document).ready(function () {
     //mobile sceen widths for containers
     $(document).resize(function () {
       if ($(window).width() < 375) {
-          $('.grid-container, .container-fluid, #myCarousel, .navbar').css({ "width": "93vw", "padding-left": "0", "padding-right": "0" })
+          $('.container-fluid, #myCarousel, .navbar').css({ "width": "93vw", "padding-left": "0", "padding-right": "0" })
       }
       if ($(window).width() < 1200) {
           $('.buy-now.buy').css({"bottom-margin":"45px"})
