@@ -281,6 +281,16 @@ body {
 		border-top:9px solid white;
 	}
 
+
+@media screen and (min-width: 1200px) {
+    .grid-container {
+        width: 1170px;
+        margin: auto;
+        padding: 20px 0px;
+        grid-template-columns: 1fr;
+        display: grid;
+    }
+    }
     @media screen and (min-width: 1440px) {
     .grid-container {
         width: 1404px;
@@ -291,15 +301,12 @@ body {
         font-size: 21.5px!important;
     }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 425px) {
     .grid-container {
-        width: 1170px;
+        width: 93vw;
         margin: auto;
-        padding: 20px 0px;
-        grid-template-columns: 1fr;
-        display: grid;
     }
-    }
+}
 
 
 
@@ -341,14 +348,12 @@ body {
 /**/
 
 
-@media screen and (max-width: 375px) {
-   .home-page,.home-page-onsale, .home-page-new-rel,.home-page-pop-anime {
-width: 86vw;
+@media screen and (max-width: 992px) {
+    .home-page-onsale, .home-page-new-rel {
+        grid-template-areas: 
+            "h-p-1 h-p-2" 
+            "h-p-3 h-p-4";
     }
-
-   .container-fluid{
-       padding: 0!important;
-   }
 }
 @media screen and (min-width: 992px) {
     .home-page-onsale, .home-page-new-rel {
@@ -474,11 +479,6 @@ height: 100%;
     grid-template-columns: 1fr 0.243fr;
 }
 
-@media screen and (max-width: 375px){
-    .home-page-pop-anime-title, .home-page-pop-manga-title{
-        grid-template-columns: 1fr!important;
-    }
-}
 
 .grid-col-1, .grid-row-1{
     width: 100%;
@@ -519,20 +519,6 @@ object-fit: cover;
     width: 200px;
 }
 
-@media screen and (max-width: 768px){
-    .item > div.slider-buy{
-       left: 25px;
-    }
-    .item > div.slider-read{
-        right: 25px;
-    }
-}
-@media screen and (max-width: 460px){
-    .item > div.slider-buy{
-        bottom: 80px!important;
-    }
-}
-
 .read-more, .buy{
     background: url(../img/icons/highlight-background.png) no-repeat bottom left;
     bottom: 5px;
@@ -555,6 +541,23 @@ object-fit: cover;
 .buy{
     margin-bottom: 50px!important;  
 }
+
+
+@media screen and (min-width: 1440px){
+    .read-more{
+    min-width: 151px!important;
+}
+.buy{
+    min-width: 131px!important;
+    margin-bottom: 50px!important;  
+}
+
+.buy-now{
+    min-width: 131px!important;
+}
+}
+
+
 
 div.buy-now > a:hover,.read-more > a:hover{
      border-bottom: 2px solid white;
@@ -614,6 +617,9 @@ h2.featured-heading{
     }
 }
 
+
+
+
 h2.featured-heading-1
 {
     background: url(../img/icons/shipping-banner.png) no-repeat center;
@@ -636,10 +642,6 @@ h2.featured-heading-1
 @media screen and (max-width: 375px){
     h2.featured-heading-3{
         right: 15px!important;
-    }
-
-    h2.featured-heading-1{
-        font-size: 15.75px;
     }
 }
 @media screen and (max-width:800px){
@@ -839,4 +841,41 @@ h2.featured-heading-3 > a:hover{
 .center-block > img{
     vertical-align: middle;
     margin: auto 0;
+}
+
+@media screen and (max-width: 375px) {
+  h2.featured-heading-1, .home-page,.home-page-onsale, .home-page-new-rel,.home-page-pop-anime {
+width: 86vw;
+    }
+
+   .container-fluid{
+       padding: 0!important;
+   }
+
+   .home-page-pop-anime-title, .home-page-pop-manga-title{
+        grid-template-columns: 1fr!important;
+    }
+   h2.featured-heading-1{
+       font-size:15.75px;
+   }
+}
+
+@media screen and (max-width: 768px){
+    .item > div.slider-buy{
+       left: 25px;
+    }
+    .item > div.slider-read{
+        right: 25px;
+    }
+}
+@media screen and (max-width: 460px){
+.item > div.slider-buy {
+    bottom: 80px!important;
+}
+}
+
+@media screen and (max-width: 375px){
+li.navbar-home {
+    grid-column: 3;
+}
 }
