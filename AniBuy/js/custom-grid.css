@@ -857,7 +857,7 @@ h2.featured-heading-3 > a:hover{
 }
 
 @media screen and (max-width: 460px) {
-  h2.featured-heading-1, .home-page-onsale,.home-page-grid,.home-page-new-rel,.home-page-pop-manga,.breakpoint-1,.breakpoint-2{
+  h2.featured-heading-1, .grid-container.home-page-onsale,.home-page-grid,.home-page-new-rel,.home-page-pop-manga,.breakpoint-1,.breakpoint-2{
 width: 86vw!important;
     }
 
