@@ -86,6 +86,12 @@ $(document).ready(function () {
         }
            
     });
+
+    $(document).resize(function () {
+      if ($(window).width() < 375) {
+          $('.grid-container, .container-fluid, #myCarousel, .navbar,').css({ "width": "93vw", "padding-left": "0", "padding-right": "0" })
+    }
+    });
    
     $(window).on('scroll resize', function (i) {
         var vscroll = $(this).scrollTop();

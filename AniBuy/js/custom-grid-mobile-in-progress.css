@@ -111,14 +111,7 @@ div.item img{
     }
 }
 
-@media screen and (max-width: 320px){
-    li.navbar-home{
-        grid-column: 2;
-    }
-    .navbar-toggle{
-        margin: 20px 20px!important;
-    }
-}
+
 
 .header-sidebar-overlay.header-sidebar-opened {
     width: 100%!important;
@@ -281,16 +274,7 @@ body {
 		border-top:9px solid white;
 	}
 
-    @media screen and (min-width: 1440px) {
-    .grid-container {
-        width: 1404px;
-        font-size: 18px;
 
-    }
-        .span-text{
-        font-size: 21.5px!important;
-    }
-}
 @media screen and (min-width: 1200px) {
     .grid-container {
         width: 1170px;
@@ -300,6 +284,23 @@ body {
         display: grid;
     }
     }
+@media screen and (min-width: 1440px) {
+    .grid-container {
+        width: 1404px;
+            font-size: 18px;
+    }
+
+@media screen and (max-width: 376px) {
+    .grid-container {
+        width: 327px;
+        margin: auto;
+    }
+    }
+
+    .span-text{
+        font-size: 21.5px!important;
+    }
+}
 
 
 
@@ -332,7 +333,18 @@ body {
     }
 }
 
+@media screen and (max-width: 376px){
+    li.navbar-home{
+        grid-column: 2;
+    }
+    .navbar-toggle{
+        margin: 20px 20px!important;
+    }
 
+    .home-page-onsale, .home-page-new-rel, .home-page-pop-anime{
+        width: 92vw;
+    }
+}
 
 
 
@@ -341,14 +353,12 @@ body {
 /**/
 
 
-@media screen and (max-width: 375px) {
-   .home-page,.home-page-onsale, .home-page-new-rel,.home-page-pop-anime {
-width: 86vw;
+@media screen and (max-width: 992px) {
+    .home-page-onsale, .home-page-new-rel {
+        grid-template-areas: 
+            "h-p-1 h-p-2" 
+            "h-p-3 h-p-4";
     }
-
-   .container-fluid{
-       padding: 0!important;
-   }
 }
 @media screen and (min-width: 992px) {
     .home-page-onsale, .home-page-new-rel {
@@ -429,6 +439,25 @@ width: 86vw;
     }
 }
 
+@media screen and (max-width: 768px) {
+.home-page-pop-grid{
+    grid-template-rows: 0fr 0fr 0fr;
+    display: grid;
+}
+
+.home-page-pop-anime-title, .home-page-pop-manga-title{
+grid-template-rows: 0fr 0fr 0fr;
+}
+
+h2.featured-heading-2{
+    grid-row: 1;
+}
+
+h2.featured-heading-3{
+    grid-row: 2;
+}
+}
+
 .h-p-o-1, .h-p-nr-1{
     grid-area:h-p-1;
 }
@@ -474,11 +503,6 @@ height: 100%;
     grid-template-columns: 1fr 0.243fr;
 }
 
-@media screen and (max-width: 375px){
-    .home-page-pop-anime-title, .home-page-pop-manga-title{
-        grid-template-columns: 1fr!important;
-    }
-}
 
 .grid-col-1, .grid-row-1{
     width: 100%;
@@ -508,11 +532,11 @@ object-fit: cover;
     width: fit-content;
     padding: 10px 40px 10px 20px;
     font-size: 24px;
-    margin-bottom:30px!important;
+    margin-bottom:20px!important;
 }
 
 .item > div.slider-read{
-    margin-bottom: 30px!important;
+    margin-bottom: 20px!important;
     right: 100px;
     font-size: 24px;
     min-width: fit-content;
@@ -527,12 +551,6 @@ object-fit: cover;
         right: 25px;
     }
 }
-@media screen and (max-width: 460px){
-    .item > div.slider-buy{
-        bottom: 80px!important;
-    }
-}
-
 .read-more, .buy{
     background: url(../img/icons/highlight-background.png) no-repeat bottom left;
     bottom: 5px;
@@ -553,7 +571,7 @@ object-fit: cover;
     padding: 10px 0 10px 10px!important;
 }
 .buy{
-    margin-bottom: 50px!important;  
+    margin-bottom: 45px!important;  
 }
 
 div.buy-now > a:hover,.read-more > a:hover{
@@ -613,6 +631,12 @@ h2.featured-heading{
          height: fit-content;
     }
 }
+@media screen and (max-width:800px){
+    h2.featured-heading-1{
+        padding: 5px;
+    }
+}
+
 
 h2.featured-heading-1
 {
@@ -631,21 +655,6 @@ h2.featured-heading-1
     padding: 2px;
     overflow: hidden;
     line-height: inherit;
-}
-
-@media screen and (max-width: 375px){
-    h2.featured-heading-3{
-        right: 15px!important;
-    }
-
-    h2.featured-heading-1{
-        font-size: 15.75px;
-    }
-}
-@media screen and (max-width:800px){
-    h2.featured-heading-1{
-        padding: 5px;
-    }
 }
 
 #anime-n-movies{
