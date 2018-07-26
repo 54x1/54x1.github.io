@@ -51,21 +51,32 @@ $(document).ready(function () {
         }
         if (my.height($(window).height() - 74) < 500 && $(window).width() < 768) {
             my.height($(window).height() - 74);
+
         }
+
+        if (my.height($(window).height() - 74) < 250 && $(window).width() < 375) {
+            my.height($(window).height() - 74);
+
+        }
+
     });
+
     
     //nav sticky/fixed effect
     var nav = $('.nav-wrapper');
     var NavTp = $('.nav-wrapper').offset().top;
     $(document).scroll(function () {
-        var scroll = $(window).scrollTop();
-        if (scroll <= NavTp) {  
-            nav.css({ "position": "static"});
-            nav.removeClass('addfix');
+        var my = $("#myCarousel, .carousel-inner, .carousel-control, div.item, div.item img");
+        var bottom = nav.position().top - nav.height();
+        var bot2 = my.position().top + my.height();
+        if ($(window).scrollTop() >= bottom) {
+                nav.css({ "position": "static"});
+                nav.addClass('addfix');
         }
-        else {
-            nav.addClass('addfix');
+        if ($(window).scrollTop() <= bot2) {
+                nav.removeClass('addfix');
         }
+
     });
 
     //mobile sceen widths for containers
