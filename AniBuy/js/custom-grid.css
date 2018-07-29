@@ -175,7 +175,10 @@ overflow: hidden;
     position: fixed;
 }
 
-
+footer{
+    background: lightblue;
+    height: 74px;
+}
 .carousel-control{
     width: 5%!important;
 }
@@ -279,159 +282,7 @@ body {
 	}
 
 
-@media screen and (min-width: 1200px) {
-    .grid-container {
-        width: 1170px;
-        min-width: 74%;
-        margin: auto;
-        padding: 20px 0px;
-        grid-template-columns: 1fr;
-        display: grid;
-    }
-    }
- /*   @media screen and (min-width: 1440px) {
-    .grid-container {
-        width: 74%;
-        font-size: 18px;
 
-    }
-    */
-        .span-text{
-        font-size: 21.5px!important;
-    }
-}
-    @media screen and (max-width: 425px) {
-    .grid-container {
-        width: 93vw;
-        margin: auto;
-    }
-}
-
-
-
-
-/**/
-
-@media (max-width:790) and (min-width:768) {
-    .grid-row-3 {
-        height:100%!important;
-    }
-}
-
-
-@media screen and (max-width: 992px) {
-    .grid-row-3 {
-        height: 100%
-    }
-}
-@media screen and (min-width: 992px) {
-    .grid-row-3 {
-        height: 100%
-    }
-}
-
-
-
-@media screen and (min-width: 1200px) {
-    .grid-row-3 {
-        height: 100%
-    }
-}
-
-
-
-
-
-
-
-/**/
-
-
-@media screen and (max-width: 992px) {
-    .home-page-onsale, .home-page-new-rel {
-        grid-template-areas: 
-            "h-p-1 h-p-2" 
-            "h-p-3 h-p-4";
-    }
-}
-@media screen and (min-width: 992px) {
-    .home-page-onsale, .home-page-new-rel {
-        grid-template-areas: 
-            "h-p-1 h-p-2" 
-            "h-p-3 h-p-4";
-    }
-}
-
-
-
-@media screen and (min-width: 1200px) {
-    .home-page-onsale,.home-page-new-rel {
-        grid-template-areas: 
-            "h-p-1 h-p-2" 
-            "h-p-3 h-p-4";
-    }
-}
-
-
-@media screen and (max-width: 768px) {
-    .home-page-onsale,.home-page-new-rel {
-        grid-template-areas:
-        "h-p-1 h-p-1"
-        "h-p-2 h-p-2" 
-        "h-p-3 h-p-3"
-        "h-p-4 h-p-4";
-    }
-    }
-
-/**/
-
-@media screen and (max-width: 992px) {
-            .home-page-pop-anime{
-             grid-template-columns: 43.897% 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas:
-        "grid-row-3 grid-row-4 grid-row-4"
-        "grid-row-3 grid-row-5 grid-row-5"
-        "grid-row-3 grid-row-6 grid-row-6";
-    }
-}
-
-
-@media screen and (min-width: 992px) {
-             .home-page-pop-anime{
-             grid-template-columns: 43.897% 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas:
-        "grid-row-3 grid-row-4 grid-row-4"
-        "grid-row-3 grid-row-5 grid-row-5"
-        "grid-row-3 grid-row-6 grid-row-6";
-    }
-}
-
-
-@media screen and (min-width: 1200px) {
-            .home-page-pop-anime{
-             grid-template-columns: 43.897% 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas:
-        "grid-row-3 grid-row-4 grid-row-4"
-        "grid-row-3 grid-row-5 grid-row-5"
-        "grid-row-3 grid-row-6 grid-row-6";
-    }
-}
-
-
-@media screen and (max-width: 768px) {
-        .home-page-pop-anime{
-         grid-template-columns: 1fr 1fr;
-         grid-template-rows: 0fr 0fr 0fr 0.0fr;
-    grid-template-areas:
-        "grid-row-3 grid-row-3"
-        "grid-row-4 grid-row-4"
-        "grid-row-5 grid-row-5"
-        "grid-row-6 grid-row-6";
-    }
-}
 
 /**/
 
@@ -619,8 +470,8 @@ h2.featured-heading{
     }
 
     h2.featured-heading-3{
-        padding:7px 25px 6px 12px!important;
-        right: -36px!important;
+        padding:7px -1px 6px 12px!important;
+        right: 0px!important;
     }
 }
 
@@ -641,7 +492,7 @@ h2.featured-heading-1
     text-transform: uppercase;
     letter-spacing: 1.25px;
     color: #fff;
-    padding: 2px;
+    padding: 12px;
     overflow: hidden;
     line-height: inherit;
 }
@@ -759,13 +610,6 @@ h2.featured-heading-3 > a:hover{
     display: grid;
 }
 
-
-@media screen and (max-width: 768px){
-    .home-page-pop-manga-row-1, .home-page-pop-manga-row-2{
-    grid-template-columns: 1fr;
-}
-
-}
 
 .grid-row-3{
     grid-column: 1;
@@ -900,28 +744,31 @@ width: 84vw!important;
         right: 25px;
     }
 }
-@media screen and (max-width: 460px){
-.item > div.slider-buy {
-    bottom: 80px!important;
-    width: 180px;
-    min-width: fit-content;
-    padding:9px 40px 3px 20px;
-    min-height: 50px!important;
-}
-    .item > div.slider-read{
-     padding:9px 5px 3px 5px!important;
-     min-height: 50px;
-    }
-    .read-more{
-min-height: 40px
-    }
-    .buy{
-        min-height: 40px!important;
-    }
-    div.buy-now{
-        min-height: 40px!important;
+@media screen and (max-width: 460px) {
+    .item > div.slider-buy {
+        bottom: 80px !important;
+        width: 180px;
+        min-width: fit-content;
+        padding: 9px 40px 3px 20px;
+        min-height: 50px !important;
     }
 
+    .item > div.slider-read {
+        padding: 9px 5px 3px 5px !important;
+        min-height: 50px;
+    }
+
+    .read-more {
+        min-height: 40px;
+    }
+
+    .buy {
+        min-height: 40px !important;
+    }
+
+    div.buy-now {
+        min-height: 40px !important;
+    }
 }
 
 
@@ -947,6 +794,9 @@ li.navbar-home {
         "grid-row-12 grid-row-12 grid-row-10"
         "grid-row-13 grid-row-13 grid-row-10";
     }
+    .home-page-anime-row-2 {
+        padding-top: 12px;
+    }
 }
 
 
@@ -958,6 +808,9 @@ li.navbar-home {
         "grid-row-11 grid-row-11 grid-row-10"
         "grid-row-12 grid-row-12 grid-row-10"
         "grid-row-13 grid-row-13 grid-row-10";
+    }
+    .home-page-anime-row-2 {
+        padding-top: 12px;
     }
 }
 
@@ -971,40 +824,248 @@ li.navbar-home {
         "grid-row-12 grid-row-12 grid-row-10"
         "grid-row-13 grid-row-13 grid-row-10";
     }
+    .home-page-anime-row-2 {
+        padding-top: 12px;
+    }
 }
 
 
 @media screen and (max-width: 768px) {
-        .home-page-anime-row-1{
-         grid-template-columns: 1fr 1fr;
-         grid-template-rows: 0fr 0fr 0fr 0fr;
+    .home-page-anime-row-2,.home-page-season-anime-row-1,.home-page-action-anime-row-1,.home-page-romance-anime-row-1,.home-page-fantasy-anime-row-1,.home-page-comedy-anime-row-1{
+     grid-template-columns: 1fr 1fr;
+         grid-template-rows: 0f 0fr;
     grid-template-areas:
+        "grid-col-5 grid-col-5"
+        "grid-col-5 grid-col-5";
+    }
+
+    .home-page-anime-row-2{
+        padding-top: 12px;
+    }
+
+    .home-page-anime-row-1 {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0fr 0fr 0fr 0fr;
+        grid-template-areas: 
         "grid-row-10 grid-row-10"
         "grid-row-11 grid-row-11"
         "grid-row-12 grid-row-12"
         "grid-row-13 grid-row-13";
     }
-        .grid-row-10{
-    grid-column: 1/3;
-    grid-row: 1;
-    grid-area: grid-row-10;
+    .grid-row-10 {
+        grid-column: 1/3;
+        grid-row: 1;
+        grid-area: grid-row-10;
+    }
+    .grid-row-11 {
+        grid-column: 1/3;
+        grid-row: 2;
+        grid-area: grid-row-11;
+    }
+
+    .grid-row-12 {
+        grid-column: 1/3;
+        grid-row: 3;
+        grid-area: grid-row-12;
+    }
+
+    .grid-row-13 {
+        grid-column: 1/3;
+        grid-row: 4;
+        grid-area: grid-row-13;
+    }
+    .grid-row-8{
+        grid-area: grid-row-8;
+    }
+    .grid-row-7{
+        grid-area: grid-row-7;
+    }
 }
-.grid-row-11{
-    grid-column: 1/3;
-    grid-row: 2;
-    grid-area: grid-row-11;
+@media screen and (min-width: 1200px) {
+    .grid-container {
+        width: 1170px;
+        min-width: 74%;
+        margin: auto;
+        padding: 20px 0px;
+        grid-template-columns: 1fr;
+        display: grid;
+    }
+    }
+ /*   @media screen and (min-width: 1440px) {
+    .grid-container {
+        width: 74%;
+        font-size: 18px;
+
+    }
+    */
+        .span-text{
+        font-size: 21.5px!important;
+    }
+}
+    @media screen and (max-width: 425px) {
+    .grid-container {
+        width: 93vw;
+        margin: auto;
+    }
 }
 
-.grid-row-12{
-    grid-column: 1/3;
-    grid-row: 3;
-    grid-area: grid-row-12;
+
+
+
+/**/
+
+@media (max-width:790) and (min-width:768) {
+    .grid-row-3 {
+        height:100%!important;
+    }
 }
 
-.grid-row-13{
-    grid-column: 1/3;
-    grid-row: 4;
-    grid-area: grid-row-13;
+
+@media screen and (max-width: 992px) {
+    .grid-row-3 {
+        height: 100%
+    }
+}
+@media screen and (min-width: 992px) {
+    .grid-row-3 {
+        height: 100%
+    }
 }
 
+
+
+@media screen and (min-width: 1200px) {
+    .grid-row-3 {
+        height: 100%
+    }
+}
+
+
+
+
+
+
+
+/**/
+
+
+@media screen and (max-width: 992px) {
+    .home-page-onsale, .home-page-new-rel {
+        grid-template-areas: 
+            "h-p-1 h-p-2" 
+            "h-p-3 h-p-4";
+    }
+}
+@media screen and (min-width: 992px) {
+    .home-page-onsale, .home-page-new-rel {
+        grid-template-areas: 
+            "h-p-1 h-p-2" 
+            "h-p-3 h-p-4";
+    }
+}
+
+
+
+@media screen and (min-width: 1200px) {
+    .home-page-onsale,.home-page-new-rel {
+        grid-template-areas: 
+            "h-p-1 h-p-2" 
+            "h-p-3 h-p-4";
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .home-page-onsale, .home-page-new-rel {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0fr 0fr 0fr 0fr;
+        grid-template-areas: 
+            "h-p-1"
+            "h-p-2"
+            "h-p-3"
+            "h-p-4";
+    }
+    }
+
+/**/
+
+@media screen and (max-width: 992px) {
+            .home-page-pop-anime{
+             grid-template-columns: 43.897% 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        "grid-row-3 grid-row-4 grid-row-4"
+        "grid-row-3 grid-row-5 grid-row-5"
+        "grid-row-3 grid-row-6 grid-row-6";
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+             .home-page-pop-anime{
+             grid-template-columns: 43.897% 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        "grid-row-3 grid-row-4 grid-row-4"
+        "grid-row-3 grid-row-5 grid-row-5"
+        "grid-row-3 grid-row-6 grid-row-6";
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+            .home-page-pop-anime{
+             grid-template-columns: 43.897% 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        "grid-row-3 grid-row-4 grid-row-4"
+        "grid-row-3 grid-row-5 grid-row-5"
+        "grid-row-3 grid-row-6 grid-row-6";
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .home-page-best-anime-row-2 {
+       margin-bottom: -10px;
+    }
+    .home-page-pop-anime, .home-page-best-anime-row-2 {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0fr 0fr 0fr 0fr;
+        grid-template-areas: "grid-row-3 grid-row-3" "grid-row-4 grid-row-4" "grid-row-5 grid-row-5" "grid-row-6 grid-row-6";
+    }
+   .grid-col-6{
+       left: 0;
+   }
+   .grid-col-7{
+    left: 0;
+    top: -14px;
+   }
+   .grid-col-8{
+       left: 0;
+       top: -14px;
+   }
+}
+
+/**/
+
+
+@media screen and (max-width: 768px){
+    .home-page-pop-manga-row-1{
+    grid-template-columns: 1fr;
+}
+    .home-page-pop-manga-row-2,.home-page-best-anime-row-1,.home-page-best-anime-row-3,.home-page-action-anime-row-2,.home-page-romance-anime-row-2,.home-page-comedy-anime-row-2,.home-page-fantasy-anime-row-2{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        display: grid;
+        grid-template-areas:
+            "grid-row-7"
+            "grid-row-8";
+    }
+}
+
+@media screen and (max-width: 460px) {
+    #myCarousel, .carousel-inner, .carousel-control, div.item, div.item img{
+        min-height: 425px;
+    }
 }

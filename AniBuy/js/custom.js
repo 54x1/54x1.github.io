@@ -40,12 +40,8 @@ $(document).ready(function () {
             if (my.height($(window).height() - 74) > 600 && $(window).width() > 768) {
                 my.height($(window).height() - 74);
             }
-            if (my.height($(window).height() - 74) < 250 && $(window).width() < 460) {
-                my.height(607);
-
-            }
-            if (my.height($(window).height() - 74) < 600 && $(window).width() > 375) {
-                my.height($(window).height());
+            if (my.height($(window).height() - 74) > 1 && $(window).width() < 460) {
+                my.height(425);
 
             }
 
@@ -61,13 +57,6 @@ $(document).ready(function () {
             }
             if ($(window).width() < 460) {
                 $('.buy-now.buy').css({ "bottom-margin": "0px", "height": "30px" });
-            }
-            var ifh = $('#myCarousel, .carousel-inner');
-            ifh.css({ "min-height": "100%" });
-            if ($(ifh).height() < 500 && $(window).width() < 460) {
-                if (ifh.outerHeight() < $(window).height()) {
-                    ifh.height($window.height());
-                }
             }
 
         });
@@ -115,7 +104,11 @@ $(document).ready(function () {
 
         });
    
-        $(window).on('scroll resize', function (i) {
+        $(window).on('scroll resize load', function (i) {
+
+            if ($('.nav-wrapper').width() == 250){
+                $('.nav-wrapper').css({"margin-left":"250px"});
+            }
             //buy-now+read-more moving effect
             var vscroll = $(this).scrollTop();
             if ($(window).width() > 1200) {
