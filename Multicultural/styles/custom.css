@@ -1,0 +1,496 @@
+/* sources
+Image References
+
+ACT GOV LOGO. [online] Available at: https://www.multiculturalfestival.com.au/__data/assets/image/0009/1237383/actgovlogo.png?v=0.1.1 [Accessed 5 Mar. 2019].
+
+CBR Logo. (2019). [image] Available at: https://canberra.com.au/wp-content/uploads/2016/11/logo.svg [Accessed 21 Feb. 2019].
+
+Entertainment cover. [online] Available at: https://www.outincanberra.com.au/wp-content/uploads/2018/01/multi1.jpg [Accessed 5 Mar. 2019].
+
+Food Cover. (2019). [image] Available at: https://www.outincanberra.com.au/wp-content/uploads/2019/02/canberra-multi-fest.jpg [Accessed 20 Feb. 2019].
+
+Map cover. [online] Available at: https://canberra.com.au/wp-content/uploads/2017/02/CBRSET01_MCV2009-1920x1281.jpg [Accessed 5 Mar. 2019].
+
+Multicultural Festival Logo. (n.d.). [image] Available at: https://www.multiculturalfestival.com.au/__data/assets/image/0015/1223223/logo_large.png?v=0.1.1 [Accessed 20 Feb. 2019].
+
+Overlay cover 1. (n.d.). [image] Available at: https://www.outincanberra.com.au/wp-content/uploads/2018/02/MultiCulti-1200-2-1200x640-1200x640.jpg [Accessed 20 Feb. 2019].
+
+Overlay cover 2. (2019). [image] Available at: https://hercanberra.com.au/wp-content/uploads/2015/02/MCF.jpg [Accessed 20 Feb. 2019].
+
+UC LOGO. [online] Available at: https://upload.wikimedia.org/wikipedia/en/thumb/0/02/University_of_Canberra.svg/1200px-University_of_Canberra.svg.png [Accessed 5 Mar. 2019].
+
+ */
+
+
+ /* remove padding and morgin on the body and html  & set body font*/
+html, body{
+    font-family: "baufra-bold",Arial;
+    margin: 0px;
+    padding: 0px;
+}
+
+.overlay-home{
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    background: linear-gradient(to bottom, #0808088a 100%, rgba(22, 22, 22, 0.5) 75%, rgba(22, 22, 22, 0.1) 0%), url(../img/cover2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+
+}
+
+/* overlay image on pages below */
+.overlay-food, .overlay-map, .overlay-stalls, .overlay-entertainment{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.overlay-food{
+  background: linear-gradient(to bottom, #0808088a 100%, rgba(22, 22, 22, 0.5) 75%, rgba(22, 22, 22, 0.1) 0%), url(../img/food1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+.overlay-map{
+  background: linear-gradient(to bottom, #0808088a 100%, rgba(22, 22, 22, 0.5) 75%, rgba(22, 22, 22, 0.1) 0%), url(../img/map2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.overlay-stalls{
+  background: linear-gradient(to bottom, #0808088a 100%, rgba(22, 22, 22, 0.5) 75%, rgba(22, 22, 22, 0.1) 0%), url(../img/cover1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.overlay-entertainment{
+  background: linear-gradient(to bottom, #0808088a 100%, rgba(22, 22, 22, 0.5) 75%, rgba(22, 22, 22, 0.1) 0%), url(../img/enter.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* sclaes up but not down */
+@media screen and (min-width: 1200px) {
+.body-container, .nav-container{
+    width: 1170px;
+    min-width: 74%;
+}
+}
+
+/* set center */
+.body-container-food, .body-container-stalls .body-container-entertainment{
+  margin: 0 auto;
+}
+
+/* differnt nav banner colors*/
+/*
+ .food-banner-color{
+  background-color: #bdce30!important;
+}
+
+.map-banner-color{
+  background-color: #fabb13!important;
+}
+
+.stalls-banner-color{
+  background-color: #231f20!important;
+}
+.entertainment-banner-color{
+  background-color: #6a2b84!important;
+}
+.stalls-logo{
+    border-radius: 15px 0;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+*/
+
+/* .stalls-list> .items{
+      border-radius: 15px 0;
+      height: fit-content;
+      background-color: rgba(255, 255, 255, 0.5);
+} */
+
+/* nav below */
+.nav-banner{
+  background-color: #e02626;
+  height: 80px;
+  padding: 12px 12px;
+  position: fixed;
+  width: auto;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0 auto;
+  right:0px;
+  left:0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  z-index: 1;
+}
+
+.nav-container{
+  position: relative;
+  margin: 0 auto;
+}
+
+.banner-icons ul{
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  top: 6px;
+  grid-gap: 12px;
+  width: 992px;
+  margin: 12px auto;
+  justify-items: center;
+}
+
+.nav-icons ul, .banner-icons ul{
+  list-style: none;
+  display: grid;
+  position: relative;
+}
+
+.banner-ul{
+  font-size: 12px;
+  padding: 0px;
+  width: 992px
+
+}
+
+.banner-ul li > a{
+  display: block;
+  text-align: center;
+  /* background-color: red; */
+}
+
+.banner-items ul > li {
+  position: relative;
+}
+
+.nav-icons ul{
+  top: 80vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 0 24px;
+  grid-gap: 80px;
+}
+
+.nav-icons > ul >li.items{
+  padding: 12px 12px;
+  border-radius:24px 24px 0 0;
+}
+
+.banner-icons ul >li > a{
+  font-weight: 500!important;
+  padding: 12px;
+}
+
+/* nav links */
+.nav-icons > ul >li > a, .banner-icons ul >li > a{
+  position: relative;
+  display: block;
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.3em;
+  max-height: 24px;
+}
+
+/* hover nav links below */
+.nav-icons > ul.grid-ul > li.items:nth-child(1):hover{
+  background-color: #bdce30!important;
+  -webkit-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+}
+
+.nav-icons > ul.grid-ul > li.items:nth-child(1){
+  background-color: rgba(189, 206, 48, 0.75);
+}
+
+.nav-icons > ul.grid-ul > li.items:nth-child(2){
+  background-color: rgba(250, 187, 19, 0.75);
+}
+
+.nav-icons > ul.grid-ul > li.items:nth-child(2):hover{
+  background-color: #fabb13!important;
+  -webkit-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+}
+
+.nav-icons > ul.grid-ul > li.items:nth-child(3){
+  background-color: rgba(35, 31, 32, 0.75);
+}
+
+.nav-icons > ul.grid-ul > li.items:nth-child(3):hover{
+  background-color: #231f20!important;
+  -webkit-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+}
+
+.nav-icons > ul.grid-ul > li.items:nth-child(4){
+  background-color: rgba(106, 43, 132, 0.75);
+}
+
+.nav-icons > ul.grid-ul > li.items:nth-child(4):hover{
+  background-color: #6a2b84!important;
+  -webkit-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+}
+
+.nav-icons > ul.grid-ul > li.items{
+  background-color: rgba(35, 31, 32, 0.75)!important;
+}
+
+.logo-img{
+  top: -30px;
+  left: 0px;
+  position: relative;
+  width: auto;
+  object-fit: contain;
+  height: 80px;
+}
+
+/* main body for pages below */
+.main-body, .main-body-food, .main-body-stalls, .main-body-entertainment{
+  position: absolute;
+  color: white;
+  width: auto;
+  margin: 0 80px;
+  top: 30vh;
+
+}
+.main-body-food, .main-body-stalls, .main-body-entertainment {
+  width: fit-content;
+  margin: 0 auto;
+  position: relative;
+  top: 70vh;
+}
+.main-body{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 80px;
+  margin: 0 auto;
+  width: 1170px;
+  right: 0;
+  left: 0;
+
+}
+
+.main-cbr-logo{
+  width: 100%;
+  text-align: center;
+}
+.main-body-title{
+  font-size: 7em;
+
+}
+
+.cbr-logo{
+  height: 100%;
+}
+
+/* pages content position & height & background image below */
+.content-food, .content-map, .content-stalls, .content-entertainment{
+  min-height: 100vh;
+  width: 100%;
+  height: 85vh;
+  position: absolute;
+}
+
+.content-food{
+  background-color: #bdce30;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  min-height: 80vh;
+}
+
+.content-stalls{
+  background-color: #231f20;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  min-height: 110vh;
+}
+
+.content-entertainment{
+  background-color: #6a2b84;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.map-container{
+  background: url(../img/map.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  height: 130vh;
+  background-color: #e6f9db;
+}
+
+.food-container, .stalls-container, .entertainment-container{
+  width: 992px;
+  margin: 100px auto;
+}
+
+/* second title on pages below */
+.food-container-header > span, .stalls-container-header>span, .entertainment-container-header>span{
+  color: white;
+  font-size: 5em;
+}
+
+.food-container-header, .stalls-container-header, .entertainment-container-header{
+  padding: 50px 0;
+  color: #222;
+  font-weight: 100!important;
+  width: 992px;
+  line-height: 1.8em;
+}
+
+.food-container-body, .stalls-container-body, .entertainment-container-body{
+  width: auto;
+  margin: 45px auto;
+  padding: 25px 0;
+  color: white;
+}
+
+/* footer heights from top below */
+.footer, .map-footer{
+  clear: both;
+  width: 100%;
+  height: auto;
+  background-color: #231f20;
+  position: absolute;
+  top: 100vh;
+}
+
+.map-footer{
+  top: 130vh;
+}
+
+.stalls-footer{
+  top: 110vh;
+}
+
+.food-footer{
+  top: 80vh;
+}
+
+.content-footer{
+  width: auto;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap:24px;
+  justify-content: center;
+}
+
+.content-footer>div:nth-child(3){
+  width: 250px;
+}
+
+.uc-logo, .act-logo{
+  height: 80px;
+  padding: 12px;
+}
+
+.sponsored{
+  text-align: center;
+}
+
+.sponsored > span:nth-child(1){
+  padding: 24px 24px 12px 24px;
+  font-size: 1.5em;
+  display: grid;
+  color: white;
+  grid-template-columns: 1fr 1fr;
+  font-weight: 550;
+}
+
+.multicultural-footer-logo{
+  padding: 24px;
+  display: grid;
+  color: white;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.multic-logo{
+  border-radius: 15px 0;
+  height: fit-content;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 6px;;
+  height: 80px;
+}
+
+/* footer stuff formating items */
+.home-footer{
+  color: white;
+  display: grid;
+  font-size: 1em;
+  padding: 24px;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+
+.home-footer>span>a, .multicultural-footer-logo>span>a, .food-container-body>span>a{
+  text-decoration: none!important;
+  color: white!important;
+
+}
+
+.food-container-body>span>a{
+  text-decoration: underline!important;
+}
+
+.home-footer> span:nth-child(1){
+  font-size: 1.5em;
+  font-weight: 550;
+}
+
+.home-footer>span:nth-child(2){
+  padding-top: 5px;
+}
+
+.home-footer>span:nth-child(5){
+  margin-bottom: -5px;
+}
+
+/* table formating below */
+.stalls-table tr {
+  background-color: white;
+}
+
+.stalls-table{
+  color: #231f20;
+  margin: 48px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.stalls-table th {
+  padding: 14px 12px;
+  background-color: white;
+}
+
+.stalls-table tr> td{
+  padding: 0 12px;
+}
