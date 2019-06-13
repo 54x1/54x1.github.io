@@ -36,7 +36,6 @@ nav>ul>li {
 
 nav>ul>li.logo {
   width: 112px;
-  padding: 0 100px;
 }
 
 a>img.logo-img {
@@ -159,7 +158,14 @@ section.home-image>div>img {
     top: -5px;
   }
 
-  #navbar-toggle:checked>.container-nav>li.item {
+
+  @media only screen and (max-width: 992px) {
+    .container-nav>li.logo{
+      padding: 0 37%;
+    }
+  }
+
+  #navbar-toggle:checked > .container-nav>li.item {
     flex-direction: column;
   }
 
