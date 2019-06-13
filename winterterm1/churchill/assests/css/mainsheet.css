@@ -325,7 +325,7 @@ grid-area: grid3;
   grid-column-start: 4;
   grid-column-end: 4;
   background-image: url(../images/extra2-robin.jpg);
-  background-position: 630px 105px;
+  /* background-position: 630px 105px; */
   background-repeat: no-repeat;
   background-size: contain;
   background-attachment: fixed;
