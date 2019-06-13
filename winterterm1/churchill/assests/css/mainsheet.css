@@ -188,7 +188,7 @@ section.home-image>div>img {
     grid-column-start: 2;
     grid-column-end: 2;
     background-image: url(../images/extra2-robin.jpg);
-    background-position: 630px 105px;
+    background-position: calc(100% + 200px) 105px;
     background-repeat: no-repeat;
     background-size: contain;
     background-attachment: fixed;
