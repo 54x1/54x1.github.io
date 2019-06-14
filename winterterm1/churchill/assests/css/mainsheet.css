@@ -264,53 +264,71 @@ section.home-image>div>img {
   }
 
   .robin-content, .history-content {
+    display: grid;
     grid-template-columns: 12px 1fr 12px;
-    grid-template-rows: 12px 1fr 6px 1fr 12px;
+    grid-template-rows: 12px 0.7fr auto 1.3fr 12px;
   }
 
   .history-content {
     grid-template-areas:
-      "grid3 grid3"
-      "grid4 grid4";
+      "grid4"
+      "grid3";
   }
 
   .robin-content {
     grid-template-areas:
-      "grid2 grid2"
-      "grid1 grid1";
+      "grid2"
+      "grid1";
   }
 
   .grid-row-1 {
     width: auto;
     grid-area: grid1;
-    grid-row: 2;
+    grid-row: 4;
     grid-column-start: 2;
     grid-column-end: 2;
     text-align: justify;
   }
 
   .grid-row-2 {
-    grid-row: 3;
+    width: auto;
+    display: grid;
+    grid-area: grid2;
+    grid-row: 2;
     grid-column-start: 2;
     grid-column-end: 2;
     background-image: url(../images/extra2-robin.jpg);
-    background-position: calc(100vw - 58vw) 105px;
+    background-position: calc(100vw - 150vw) 131px;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  .grid-row-3 {
+    width: auto;
+    display: grid;
+    height: fit-content;
+    grid-area: grid3;
+    grid-row: 4;
+    grid-column-start: 2;
+    grid-column-end: 2;
+  }
+  }
+  .grid-row-4 {
+    width: auto;
+    display: grid;
+    grid-area: grid4;
+    grid-row: 2;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    background-image: url(../images/churchill-house-1.jpg);
+    background-position: calc(100vw - 195vw) -30px;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-attachment: fixed;
   }
 }
 
-.grid-row-3 {
-  width: auto;
-  display: grid;
-  height: fit-content;
-  grid-area: grid3;
-  grid-row: 2;
-  grid-column-start: 2;
-  grid-column-end: 2;
-}
-}
+
 
 @media only screen and (min-width: 768px) {
   section.container {
@@ -410,7 +428,19 @@ section.home-image>div>img {
       position: sticky;
       padding-bottom: 50px;
   }
-
+  .grid-row-2 {
+    width: auto;
+    display: grid;
+    grid-area: grid2;
+    grid-row: 2;
+    grid-column-start: 4;
+    grid-column-end: 4;
+    background-image: url(../images/extra2-robin.jpg);
+    /* background-position: 630px 105px; */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+  }
 }
 .grid-row-1>p, .grid-row-3>p {
   line-height: 2.5em;
@@ -444,34 +474,9 @@ section.home-image>div>img {
   text-align: center;
 }
 
-.grid-row-2 {
-  width: auto;
-  display: grid;
-  grid-area: grid2;
-  grid-row: 2;
-  grid-column-start: 4;
-  grid-column-end: 4;
-  background-image: url(../images/extra2-robin.jpg);
-  /* background-position: 630px 105px; */
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-attachment: fixed;
-}
 
-.grid-row-4 {
-  width: auto;
-  height: auto;
-  display: grid;
-  grid-area: grid4;
-  grid-row: 2;
-  grid-column-start: 4;
-  grid-column-end: 4;
-  background-image: url(../images/churchill-house-1.jpg);
-  background-position: calc(100vw - 74vw) 27px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-attachment: fixed;
-}
+
+
 
 .grid-row-5 {
   width: 100%;

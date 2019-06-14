@@ -10,9 +10,17 @@ html, body {
   color: #987A3E;
 }
 
-header {}
-
-.container-nav {}
+header {
+  background-color: #A9C7B6;
+  grid-area: header;
+  position: sticky;
+  top: 0px;
+  height: 100%;
+  margin-top: 0px;
+  width: -webkit-fill-available;
+  z-index: 1;
+  padding: 22px 0;
+}
 
 h1, h2 {
   font-family: Flama-Book;
@@ -36,6 +44,7 @@ nav>ul>li {
 
 nav>ul>li.logo {
   width: 112px;
+  padding: 0 100px;
 }
 
 a>img.logo-img {
@@ -50,19 +59,11 @@ nav>ul>li>a {
   font-size: 1em;
 }
 
-nav>ul>li.item:nth-child(4), nav>ul>li.item:nth-child(5) {
-  padding: 19px 48px;
-  border-left: 1.75px solid #F5EFDC;
-}
-
-nav>ul>li.item:nth-child(1), nav>ul>li.item:nth-child(2) {
-  padding: 19px 48px;
-  border-right: 1.75px solid #F5EFDC;
-}
-
 .volunteering-content {
   border-top: 16.75px solid #987A3E;
   border-bottom: 16.75px solid #987A3E;
+  padding: 0 38px;
+  text-align: center;
 }
 
 .volunteering-content>p:nth-child(1) {
@@ -78,7 +79,7 @@ nav>ul>li.item:nth-child(1), nav>ul>li.item:nth-child(2) {
   width: fit-content;
   margin: 0 auto 24px auto;
   font-size: 1.25em;
-  line-height: 1.25em;
+  line-height: 1.75em;
 }
 
 .volunteering-btn {
@@ -101,10 +102,10 @@ nav>ul>li.item:nth-child(1), nav>ul>li.item:nth-child(2) {
 section.home-image {
   position: relative;
   width: 100%;
-  min-height: 50vh;
-  height: 540px;
+  height: calc(100vh - 61px);
   background-color: #9a8149;
   background-blend-mode: soft-light;
+  /* wish the image was 1080p */
   background-image: url(../images/churchill-house-25.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -123,7 +124,7 @@ section.home-image>div>img {
   top: 55%;
   margin: 0 auto;
   /* color: #F5EFDC; */
-  color: #fff9e5;
+  color: #fdfdfd;
 }
 
 @media only screen and (max-width: 768px) {
@@ -132,92 +133,124 @@ section.home-image>div>img {
   }
 }
 
-@media only screen and (min-width: 375px) {
-  header {
-    background-color: #A9C7B6;
-    grid-area: header;
-    position: sticky;
-    top: 0px;
-    height: 61px;
-    margin-top: 0px;
-    min-width: -webkit-fill-available;
-    width: 100%;
-    z-index: 1;
-    padding: 22px 0;
-  }
+.robin-content {
+  display: grid;
+  grid-template-columns: 12px 1fr 6px 1fr 12px;
+  grid-template-rows: 12px 1fr 6px 1fr 12px;
+  grid-gap: 6px;
+  grid-template-areas:
+    "grid1 grid1"
+    "grid2 grid2";
+}
 
-  .container-nav>li.item {
-    flex-direction: column;
+@media only screen and (max-width: 1980px) {
+  section.home-image {
+    height: calc(100vh - 270px) !important;;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  section.home-image {
+    height: calc(100vh - 212px) !important;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  section.home-image {
+    height: calc(100vh - 205px) !important;
   }
 }
 
 @media only screen and (max-width: 1064px) {
-  .icon-menu {
+  html, body {
+    /* goes to id smoothly  */
+    scroll-behavior: smooth;
+    /* makes padding top for navbar */
+    scroll-padding: 21.5em;
+  }
+
+  header {
+    padding: 22px 0 0;
+  }
+
+  .navbar-toggle {
+    display: none !important;
     font-size: 2.5em;
-    position: relative;
-    top: -5px;
+    position: absolute;
+    top: 22px;
+    right: 30px;
   }
 
-
-  @media only screen and (max-width: 992px) {
-    .container-nav>li.logo{
-      padding: 0 37%;
-    }
+  .icon-menu {
+    display: block !important;
+    font-size: 2.5em;
+    position: absolute;
+    top: 22px;
+    right: 30px;
   }
 
-  #navbar-toggle:checked > .container-nav>li.item {
-    flex-direction: column;
+  /* + adjacent sibling selector(kinda redoes css after it) + */
+  .navbar-toggle:checked+.container-nav>li.item {
+    display: grid;
   }
 
-  #navbar-toggle {
+  .container-nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-gap: 6px;
+    text-align: center;
+    justify-content: center;
+    grid-template-areas:
+      "logo"
+      "item1"
+      "item2"
+      "item3"
+      "item4"
+      "item5";
+  }
+
+  .container-nav>li.item {
+    border-bottom: 1.75px solid #F5EFDC;
+    padding: 19px 48px;
     display: none;
   }
 
-  @media only screen and (max-width: 375px) {
-    section.container {
-      width: 100%;
-      background-color: #fafafafa;
-    }
-
-    .home-text {
-      top: 48%;
-    }
-
-    .robin-content, .history-content {
-      display: grid;
-      grid-template-columns: 12px 1fr 12px;
-      grid-template-rows: 12px 1fr 6px 1fr 12px;
-      grid-gap: 6px;
-      grid-template-areas:
-        "grid1 grid1"
-        "grid2 grid2";
-    }
-
-    .container-nav>li.item {
-      display: none;
-    }
-
-    .container-nav>li.logo {}
-
-    header {
-      background-color: #A9C7B6;
-      grid-area: header;
-      position: sticky;
-      top: 0px;
-      height: 61px;
-      margin-top: 0px;
-      min-width: -webkit-fill-available;
-      width: 100%;
-      z-index: 1;
-      padding: 22px 0;
-    }
-
-    .icon-menu {
-      padding-left: 85px;
-    }
+  .container-nav>li.item:nth-child(1) {
+    grid-area: item1;
+    grid-row: 2;
   }
 
-  .robin-content {}
+  .container-nav>li.item:nth-child(2) {
+    grid-area: item2;
+    grid-row: 3;
+  }
+
+  .container-nav>li.item:nth-child(3) {
+    grid-area: item3;
+    grid-row: 4;
+  }
+
+  .container-nav>li.item:nth-child(4) {
+    grid-area: item4;
+    grid-row: 5;
+  }
+
+  .container-nav>li.item:nth-child(5) {
+    grid-area: item5;
+    grid-row: 6;
+  }
+
+  .container-nav>li.logo {
+    width: 112px;
+    margin: 0 auto;
+    grid-area: logo;
+    grid-row: 1;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container-nav>li.logo {}
 }
 
 @media only screen and (min-width: 480px) {
@@ -226,54 +259,42 @@ section.home-image>div>img {
     background-color: #fafafafa;
   }
 
-  header {
-    background-color: #A9C7B6;
-    grid-area: header;
-    position: sticky;
-    top: 0px;
-    height: 61px;
-    margin-top: 0px;
-    min-width: -webkit-fill-available;
-    width: 100%;
-    z-index: 1;
-    padding: 22px 0;
-  }
-
-  .container-nav>li.item {
-    display: flex;
+  .navbar-toggle {
+    display: none !important;
   }
 
   .robin-content, .history-content {
-    display: grid;
     grid-template-columns: 12px 1fr 12px;
     grid-template-rows: 12px 1fr 6px 1fr 12px;
-    grid-gap: 6px;
-    grid-template-areas:
-      "grid1 grid1"
-      "grid2 grid2";
   }
 
-  .history-content {}
+  .history-content {
+    grid-template-areas:
+      "grid3 grid3"
+      "grid4 grid4";
+  }
 
-  .robin-content {}
+  .robin-content {
+    grid-template-areas:
+      "grid2 grid2"
+      "grid1 grid1";
+  }
 
   .grid-row-1 {
     width: auto;
-    display: grid;
     grid-area: grid1;
-    grid-row: 4;
+    grid-row: 2;
     grid-column-start: 2;
     grid-column-end: 2;
     text-align: justify;
   }
 
   .grid-row-2 {
-    grid-row: 2;
+    grid-row: 3;
     grid-column-start: 2;
     grid-column-end: 2;
     background-image: url(../images/extra2-robin.jpg);
-    /* background-position: 630px 105px; */
-    background-position: center;
+    background-position: calc(100vw - 58vw) 105px;
     background-repeat: no-repeat;
     background-size: contain;
     background-attachment: fixed;
@@ -285,7 +306,7 @@ section.home-image>div>img {
   display: grid;
   height: fit-content;
   grid-area: grid3;
-  grid-row: 1;
+  grid-row: 2;
   grid-column-start: 2;
   grid-column-end: 2;
 }
@@ -298,19 +319,6 @@ section.home-image>div>img {
 }
 
 @media only screen and (min-width: 992px) {
-  header {
-    background-color: #A9C7B6;
-    grid-area: header;
-    position: sticky;
-    top: 0px;
-    height: 61px;
-    margin-top: 0px;
-    min-width: -webkit-fill-available;
-    width: 100%;
-    z-index: 1;
-    padding: 22px 0;
-  }
-
   section.container {
     width: 90%;
     margin: 0 auto;
@@ -334,11 +342,27 @@ section.home-image>div>img {
   }
 }
 
+@media only screen and (min-width: 1064px) {
+  .icon-menu {
+    display: none;
+  }
+
+  nav>ul>li.item:nth-child(4), nav>ul>li.item:nth-child(5) {
+    padding: 19px 48px;
+    border-left: 1.75px solid #F5EFDC;
+  }
+
+  nav>ul>li.item:nth-child(1), nav>ul>li.item:nth-child(2) {
+    padding: 19px 48px;
+    border-right: 1.75px solid #F5EFDC;
+  }
+}
+
 @media only screen and (min-width: 1200px) {
   section.container {
     width: 82%;
     margin: 0 auto;
-    background-color: #fafafafa;
+    background-color: #fdfdfd;
   }
 
   .robin-content, .history-content {
@@ -354,7 +378,7 @@ section.home-image>div>img {
   }
 
   .history-content {
-    grid-template-rows: 0fr auto 12px;
+    grid-template-rows: 6px auto 12px;
     grid-template-areas:
       "grid3 grid4";
   }
@@ -381,6 +405,13 @@ section.home-image>div>img {
   }
 }
 
+@media only screen and (min-width:1980px) {
+  .home-text {
+      position: sticky;
+      padding-bottom: 50px;
+  }
+
+}
 .grid-row-1>p, .grid-row-3>p {
   line-height: 2.5em;
   padding: 0px 24px;
@@ -421,7 +452,7 @@ section.home-image>div>img {
   grid-column-start: 4;
   grid-column-end: 4;
   background-image: url(../images/extra2-robin.jpg);
-  background-position: 630px 105px;
+  /* background-position: 630px 105px; */
   background-repeat: no-repeat;
   background-size: contain;
   background-attachment: fixed;
@@ -436,7 +467,7 @@ section.home-image>div>img {
   grid-column-start: 4;
   grid-column-end: 4;
   background-image: url(../images/churchill-house-1.jpg);
-  background-position: 433px 27px;
+  background-position: calc(100vw - 72vw) 27px;
   background-repeat: no-repeat;
   background-size: contain;
   background-attachment: fixed;
