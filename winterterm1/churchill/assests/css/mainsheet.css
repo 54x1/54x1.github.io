@@ -145,7 +145,7 @@ section.home-image>div>img {
 
 @media only screen and (max-width: 1980px) {
   section.home-image {
-    height: calc(100vh - 320px) !important;
+    height: calc(100vh - 270px) !important;;
   }
 }
 
