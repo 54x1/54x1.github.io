@@ -72,8 +72,9 @@ nav>ul>li>a {
   color: #987A3E;
   width: fit-content;
   margin: 0 auto;
-  line-height: 2.75em;
-  font-size: 2em
+  line-height: 1.5em;
+  font-size: 2em;
+  padding: 12px;
 }
 
 .volunteering-content>p:nth-child(2) {
