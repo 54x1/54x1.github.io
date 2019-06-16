@@ -23,6 +23,28 @@ header {
   padding: 22px 0;
 }
 
+/* scroll bar */
+::-webkit-scrollbar{
+  width: 12px;
+
+}
+::-webkit-scrollbar-track{
+  width: 12px;
+  background: #A9C7B6;
+  	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-thumb{
+  background: #987A3E;
+  	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+@media only screen and (max-height: 625px){
+  section.home-image{
+    min-height: 600px;
+  }
+  .home-text{
+    top: 40%;
+  }
+}
 h1,
 h2 {
   font-family: Flama-Book;
