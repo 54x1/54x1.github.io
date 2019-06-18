@@ -197,6 +197,9 @@ section.home-image>div>img {
   section.home-image {
     height: calc(100vh - 140px) !important;
   }
+  h1{
+    font-size: 10em;
+  }
 }
 
 @media only screen and (max-width: 1980px) {
