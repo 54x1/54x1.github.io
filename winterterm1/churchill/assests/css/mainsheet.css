@@ -307,6 +307,7 @@ section.home-image>div>img {
   .home-text {
     top: 40%;
   }
+}
 
   @media only screen and (max-width: 542px) {
     .signifigance-text>h2 {
@@ -320,7 +321,7 @@ section.home-image>div>img {
       background-size: cover !importafnt;
     }
   }
-}
+
 
 /* @media only screen and (max-width: 768px) {
   .container-nav>li.logo {}
