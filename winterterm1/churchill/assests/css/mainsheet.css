@@ -292,9 +292,10 @@ section.home-image>div>img {
 
   .container-nav>li.logo {
     height: 100%;
-    margin: 0 auto;
+    left: 0px;
     grid-area: logo;
     grid-row: 1;
+    padding: 0 30px;
   }
 }
 
