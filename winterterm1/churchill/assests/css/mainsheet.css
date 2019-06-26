@@ -341,8 +341,8 @@ section.home-image>div>img {
 
 @media only screen and (min-width:992px) {
   .grid-row-2 {
-    background-position: calc(100vw - 70vw) 105px !important;
-    background-size: cover !importafnt;
+    background-position:calc(100vw - 122vw) 105px !important;
+    background-size: cover !important;
   }
 }
 
@@ -476,7 +476,7 @@ section.home-image>div>img {
   margin: 0.5em 5em;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1024px) {
   .container {
     width: 90%;
     margin: 0 auto;
