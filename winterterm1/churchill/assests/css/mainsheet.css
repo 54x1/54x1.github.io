@@ -339,13 +339,6 @@ section.home-image>div>img {
   }
 }
 
-@media only screen and (min-width:992px) {
-  .grid-row-2 {
-    background-position:calc(100vw - 122vw) 105px !important;
-    background-size: cover !important;
-  }
-}
-
 /* @media only screen and (max-width: 768px) {
   .container-nav>li.logo {}
 } */
@@ -426,7 +419,7 @@ section.home-image>div>img {
     grid-column-start: 2;
     grid-column-end: 2;
     background-image: url(../images/churchill-house-1.jpg);
-    background-position: right bottom;
+    background-position: right bottom !important;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -473,6 +466,13 @@ section.home-image>div>img {
   list-style: disc;
   padding: 0px 0px 6px;
   margin: 0.5em 5em;
+}
+
+@media only screen and (min-width:992px) {
+  .grid-row-2 {
+    background-position: calc(100vw - 122vw) 105px;
+    background-size: cover;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -553,18 +553,10 @@ section.home-image>div>img {
 }
 
 @media only screen and (min-width: 1200px) {
+  @media only screen and (max-width: 768px) {
 
-  /* .robin-content, .history-content {
-    display: grid;
-    grid-template-columns: 12px 1.3fr 6px 0.7fr 12px;
-    grid-gap: 6px;
   }
 
-  .robin-content {
-    grid-template-rows: 12px auto 0fr;
-    grid-template-areas:
-      "grid1 grid2";
-  } */
   .grid-row-1 {
     grid-row: 2;
     grid-column-start: 2;
@@ -575,7 +567,7 @@ section.home-image>div>img {
     grid-row: 2;
     grid-column-start: 4;
     grid-column-end: 4;
-    background-position: calc(100vw - 58vw) 105px;
+    background-position: calc(100vw - 69vw) 105px;
     /* background-size: contain; */
   }
 }
