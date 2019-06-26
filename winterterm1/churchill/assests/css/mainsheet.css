@@ -163,6 +163,7 @@ section.home-image>div>img {
   /* color: #F5EFDC; */
   color: #fdfdfd;
 }
+
 .signifigance-text>h2 {
   color: #fff9e5;
   position: relative;
@@ -172,6 +173,7 @@ section.home-image>div>img {
   margin: 0 auto;
   letter-spacing: 6px;
 }
+
 @media only screen and (max-width: 768px) {
   .home-text>h1 {
     font-size: 3.25em;
@@ -221,7 +223,7 @@ section.home-image>div>img {
     /* goes to id smoothly  */
     scroll-behavior: smooth;
     /* makes padding top for navbar */
-    scroll-padding: 21.5em;
+    scroll-padding: 20.5em;
   }
 
   header {
@@ -297,6 +299,10 @@ section.home-image>div>img {
     grid-row: 1;
     padding: 0px 30px;
   }
+
+  .signifigance-text>h2 {
+    top: 3%;
+  }
 }
 
 @media only screen and (max-height: 625px) {
@@ -309,25 +315,40 @@ section.home-image>div>img {
   }
 }
 
-  @media only screen and (max-width: 542px) {
-    .signifigance-text>h2 {
-      letter-spacing: normal;
-    }
+@media only screen and (max-width: 542px) {
+  .signifigance-text>h2 {
+    letter-spacing: normal;
   }
+}
 
-  @media only screen and (min-width:992px) {
-    .grid-row-2 {
-      background-position: calc(100vw - 70vw) 105px !important;
-      background-size: cover !importafnt;
-    }
+@media only screen and (max-width: 622px) {
+  .grid-row-4 {
+    background-position: calc(100vw - 218vw) -30px !important;
   }
+}
 
+@media only screen and (max-width: 544px) {
+  .grid-row-4 {
+    background-position: calc(100vw - 234vw) -30px !important;
+  }
+}
+
+@media only screen and (max-width: 506px) {
+  .grid-row-4 {
+    background-position: calc(100vw - 244vw) -30px !important;
+  }
+}
+
+@media only screen and (min-width:992px) {
+  .grid-row-2 {
+    background-position: calc(100vw - 70vw) 105px !important;
+    background-size: cover !importafnt;
+  }
+}
 
 /* @media only screen and (max-width: 768px) {
   .container-nav>li.logo {}
 } */
-
-
 @media only screen and (min-width: 320px) {
   .container {
     width: 100%;
@@ -405,7 +426,6 @@ section.home-image>div>img {
     grid-column-start: 2;
     grid-column-end: 2;
     background-image: url(../images/churchill-house-1.jpg);
-    /* background-position: calc(100vw - 195vw) -30px; */
     background-position: right bottom;
     background-repeat: no-repeat;
     /* background-size: contain; */
@@ -474,6 +494,7 @@ section.home-image>div>img {
   }
 
   .history-content {
+    grid-template-columns: 12px 1fr 6px 1.5fr 12px;
     grid-template-rows: 6px auto 12px;
     grid-template-areas: "grid3 grid4";
   }
@@ -497,7 +518,7 @@ section.home-image>div>img {
     grid-column-start: 4;
     grid-column-end: 4;
     background-position: calc(100vw - 69vw) 105px;
-    background-size: contain;
+    background-size: cover;
   }
 
   .grid-row-3 {
@@ -510,7 +531,7 @@ section.home-image>div>img {
     grid-row: 2;
     grid-column-start: 4;
     grid-column-end: 4;
-    background-size: contain;
+    background-size: cover;
   }
 }
 
@@ -556,7 +577,7 @@ section.home-image>div>img {
     grid-column-start: 4;
     grid-column-end: 4;
     background-position: calc(100vw - 58vw) 105px;
-    background-size: contain;
+    /* background-size: contain; */
   }
 }
 
@@ -620,8 +641,6 @@ section.home-image>div>img {
   width: 100%;
 }
 
-
-
 .grid-row-6>p {
   line-height: 2.5em;
   padding: 0px 24px;
@@ -650,5 +669,5 @@ footer {
 
 footer>p {
   margin: 0;
-  padding: 12px 5px;
+  padding: 30px 15px;
 }
