@@ -180,14 +180,6 @@ section.home-image>div>img {
   }
 }
 
-.robin-content {
-  display: grid;
-  grid-template-columns: 12px 1fr 6px 1fr 12px;
-  grid-template-rows: 12px 1fr 6px 1fr 12px;
-  grid-gap: 6px;
-  grid-template-areas: "grid1 grid1""grid2 grid2";
-}
-
 @media only screen and (min-width: 1980px) {
   section.home-image {
     height: calc(100vh - 183px)a !important;
@@ -215,6 +207,8 @@ section.home-image>div>img {
     height: calc(100vh - 219px) !important;
   }
 }
+
+
 
 @media only screen and (max-width: 1138px) {
 
@@ -315,12 +309,6 @@ section.home-image>div>img {
   }
 }
 
-@media only screen and (max-width: 542px) {
-  .signifigance-text>h2 {
-    letter-spacing: normal;
-  }
-}
-
 @media only screen and (max-width: 622px) {
   .grid-row-4 {
     background-position: calc(100vw - 218vw) -30px !important;
@@ -330,6 +318,12 @@ section.home-image>div>img {
 @media only screen and (max-width: 544px) {
   .grid-row-4 {
     background-position: calc(100vw - 234vw) -30px !important;
+  }
+}
+
+@media only screen and (max-width: 542px) {
+  .signifigance-text>h2 {
+    letter-spacing: normal;
   }
 }
 
@@ -389,7 +383,6 @@ section.home-image>div>img {
 
   .grid-row-2 {
     width: auto;
-    display: grid;
     grid-area: grid2;
     grid-row: 2;
     grid-column-start: 2;
@@ -475,6 +468,8 @@ section.home-image>div>img {
   }
 }
 
+
+
 @media only screen and (min-width: 1024px) {
   .container {
     width: 90%;
@@ -516,7 +511,7 @@ section.home-image>div>img {
     grid-row: 2;
     grid-column-start: 4;
     grid-column-end: 4;
-    background-position: calc(100vw - 69vw) 105px;
+    background-position: calc(100vw - 89vw) 105px;
     background-size: cover;
   }
 
@@ -531,6 +526,14 @@ section.home-image>div>img {
     grid-column-start: 4;
     grid-column-end: 4;
     background-size: cover;
+  }
+}
+
+@media only screen and (max-width: 1260px) and (min-width: 1024px) {
+  .robin-content {
+    grid-template-rows: 12px auto 0fr;
+    grid-template-columns: 12px 1fr 6px 1fr 12px;
+    grid-template-areas: "grid1 grid1""grid2 grid2";
   }
 }
 
@@ -634,8 +637,9 @@ section.home-image>div>img {
 }
 
 .grid-row-6>p:last-child {
-padding-bottom: 24px;
+  padding-bottom: 24px;
 }
+
 /* .grid-row-2:nth-child(1){
   grid-row:4;
   grid-column-start: 4;
