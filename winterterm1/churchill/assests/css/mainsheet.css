@@ -8,8 +8,10 @@ body {
   background-color: #F5EFDC;
   /* goes to id smoothly  */
   scroll-behavior: smooth;
+  -webkit-scroll-behavior: smooth;
   /* makes padding top for navbar */
   scroll-padding: 6em;
+  -webkit-scroll-padding: 6em;
   color: #987A3E;
 }
 
