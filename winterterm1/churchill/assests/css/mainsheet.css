@@ -560,11 +560,6 @@ section.home-image>div>img {
   }
 } */
 @media only screen and (min-width: 1024px) {
-  .container {
-    width: 90%;
-    margin: 0 auto;
-  }
-
   .robin-content,
   .history-content {
     grid-template-columns: 12px 1.3fr 6px 0.7fr 12px;
@@ -654,6 +649,11 @@ section.home-image>div>img {
       background-size: cover;
     }
   }
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
 }
 
 @media only screen and (min-width: 1138px) {
