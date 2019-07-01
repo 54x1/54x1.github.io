@@ -486,8 +486,8 @@ section.home-image>div>img {
     right: 30px;
   }
 
-  .icon-menu>label>.material-icons {
-    font-size: 3.25em;
+  .icon-menu>label {
+    font-size: 3.25em!important;
   }
 
   /* + adjacent sibling selector(kinda redoes css after it) + */
