@@ -486,7 +486,7 @@ section.home-image>div>img {
     right: 30px;
   }
 
-  .icon-menu>label {
+  .icon-menu>* {
     font-size: 3.25em!important;
   }
 
