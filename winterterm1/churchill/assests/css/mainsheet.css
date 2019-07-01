@@ -347,14 +347,7 @@ section.home-image>div>img {
   }
 }
 
-/* amazon tab */
-@media only screen and (max-width: 1280px) {
-  @media only screen and (max-height: 800px) {
-    .grid-row-2{
-      background-position: center top;
-    }
-  }
-}
+
 @media only screen and (max-height: 625px) {
   section.home-image {
     min-height: 600px;
@@ -700,6 +693,15 @@ section.home-image>div>img {
     grid-column-end: 4;
     background-position: calc(100vw - 69vw) 98px;
     /* background-size: contain; */
+  }
+}
+
+/* amazon tab */
+@media only screen and (max-width: 1280px) {
+  @media only screen and (max-height: 800px) {
+    .grid-row-2{
+      background-position: center top;
+    }
   }
 }
 
