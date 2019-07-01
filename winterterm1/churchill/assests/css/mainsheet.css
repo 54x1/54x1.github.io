@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display|Material+Icons:400,600&display=swap');
-@media all and (orientation: landscape) {
-}
 html,
 body {
   margin: 0px;
@@ -350,8 +348,8 @@ section.home-image>div>img {
 }
 
 /* amazon tab */
-@media only screen and (max-width 1280px) {
-  @media only screen and (max-height 800px) {
+@media only screen and (max-width: 1280px) {
+  @media only screen and (max-height: 800px) {
     .grid-row-2{
       background-position: center top;
     }
