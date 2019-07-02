@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display|Material+Icons:400,600&display=swap');
+
 html,
 body {
   margin: 0px;
@@ -13,6 +14,8 @@ body {
   /* testing */
   /* color: red; */
 }
+
+
 
 header {
   background-color: #A9C7B6;
@@ -347,7 +350,6 @@ section.home-image>div>img {
   }
 }
 
-
 @media only screen and (max-height: 625px) {
   section.home-image {
     min-height: 600px;
@@ -486,8 +488,8 @@ section.home-image>div>img {
     right: 30px;
   }
 
-  .icon-menu>* {
-    font-size: 3.25em!important;
+  li.icon-menu>* {
+    font-size: 3.25em !important;
   }
 
   /* + adjacent sibling selector(kinda redoes css after it) + */
@@ -560,6 +562,7 @@ section.home-image>div>img {
   }
 } */
 @media only screen and (min-width: 1024px) {
+
   .robin-content,
   .history-content {
     grid-template-columns: 12px 1.3fr 6px 0.7fr 12px;
@@ -649,9 +652,25 @@ section.home-image>div>img {
       background-size: cover;
     }
   }
+
   .container {
     width: 90%;
     margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 812px) {
+  @media only screen and (max-height: 500px) {
+    html, body{
+        scroll-padding: 7.25em;
+    }
+.navbar-toggle+.container-nav>li.item{
+  height: auto;
+}
+.navbar-toggle:checked+.container-nav{
+  height: 45vh;
+  overflow-y: scroll;
+}
   }
 
 }
@@ -699,7 +718,7 @@ section.home-image>div>img {
 /* amazon tab */
 @media only screen and (min-width: 1280px) {
   @media only screen and (max-height: 800px) {
-    .grid-row-2{
+    .grid-row-2 {
       background-position: -380px center;
     }
   }
