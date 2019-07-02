@@ -15,8 +15,6 @@ body {
   /* color: red; */
 }
 
-
-
 header {
   background-color: #A9C7B6;
   grid-area: header;
@@ -344,9 +342,37 @@ section.home-image>div>img {
   }
 }
 
-@media only screen and (max-width: 1366px) {
+@media only screen and (min-width: 1366px) {
+  @media only screen and (max-height: 1024px) {
+    .history-content {
+      grid-template-columns: 12px 1fr 6px 1.5fr 12px;
+      grid-template-rows: 6px auto 12px;
+      grid-template-areas: "grid3 grid4";
+    }
+
+    .grid-row-3 {
+      grid-row: 2;
+      grid-column-start: 2;
+      grid-column-end: 2;
+    }
+
+    .grid-row-4 {
+      grid-row: 2;
+      grid-column-start: 4;
+      grid-column-end: 4;
+      background-size: cover;
+    }
+
+    section.home-image {
+      height: 100vh !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
   section.home-image {
-    height: calc(100vh - 292px) !important;
+    height: 100vh !important;
+    background-image: url(../images/churchill-house-21.jpg);
   }
 }
 
@@ -384,11 +410,28 @@ section.home-image>div>img {
   }
 }
 
+@media only screen and (max-width: 414px) {
+  .grid-row-4 {
+    background-position: calc(100vw - 280vw) -420px !important;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .grid-row-4 {
+    background-position: calc(100vw - 298vw) -420px !important;
+  }
+}
+
+
 @media only screen and (max-width: 768px) {
   @media only screen and (max-height: 1024px) {
     .grid-row-2, .grid-row-4, .grid-row-5 {
+      /*
+        fixed the images that didnt display properly on real ipads and tabs
       background-size: auto;
-      background-attachment: scroll;
+      background-attachment: scroll; */
+      background-size: cover;
+      background-attachment: fixed;
     }
 
     section.home-image {
@@ -445,21 +488,6 @@ section.home-image>div>img {
     background-size: cover;
     background-attachment: scroll;
     height: 100vh !important;
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-  .grid-row-1 {
-    grid-row: 4;
-    grid-column-start: 2;
-    grid-column-end: 2;
-  }
-
-  .grid-row-2 {
-    grid-row: 2;
-    grid-column-start: 2;
-    grid-column-end: 2;
-    background-size: cover;
   }
 }
 
@@ -562,15 +590,12 @@ section.home-image>div>img {
   }
 } */
 @media only screen and (min-width: 1024px) {
-
   .robin-content {
     grid-template-columns: 12px 1.3fr 6px 0.7fr 12px;
     grid-gap: 6px;
     grid-template-rows: 12px auto 0fr;
     grid-template-areas: "grid1 grid1""grid2 grid2";
   }
-
-
 
   .significance-content {
     display: grid;
@@ -594,8 +619,6 @@ section.home-image>div>img {
     background-size: cover;
   }
 
-
-
   @media only screen and (max-height: 1366px) {
     .container {
       width: 100%;
@@ -618,6 +641,7 @@ section.home-image>div>img {
       grid-column-end: 2;
       background-position: center 105px;
       background-size: cover;
+      background-attachment: fixed;
     }
 
     .grid-row-3 {
@@ -632,45 +656,65 @@ section.home-image>div>img {
       grid-column-end: 2;
       background-size: cover;
     }
+
+    section.home-image {
+      background-image: url(../images/churchill-house-21.jpg);
+      height: 100vh !important
+    }
   }
 
   .container {
     width: 90%;
     margin: 0 auto;
   }
-  .history-content {
-    grid-template-columns: 12px 1fr 6px 1.5fr 12px;
-    grid-template-rows: 6px auto 12px;
-    grid-template-areas: "grid3 grid4";
-  }
-  .grid-row-3 {
-    grid-row: 2;
-    grid-column-start: 2;
-    grid-column-end: 2;
-  }
+}
 
-  .grid-row-4 {
-    grid-row: 2;
-    grid-column-start: 4;
-    grid-column-end: 4;
-    background-size: cover;
+@media only screen and (max-width: 1280px) {
+  @media only screen and (max-height: 800px) {
+    .history-content {
+      grid-template-columns: 12px 1fr 6px 1.5fr 12px;
+      grid-template-rows: 6px auto 12px;
+      grid-template-areas: "grid3 grid4";
+    }
   }
 }
 
 @media only screen and (max-width: 812px) {
   @media only screen and (max-height: 500px) {
-    html, body{
-        scroll-padding: 7.25em;
+    html, body {
+      scroll-padding: 7.25em;
     }
-.navbar-toggle+.container-nav>li.item{
-  height: auto;
+
+    .navbar-toggle+.container-nav>li.item {
+      height: auto;
+    }
+
+    .navbar-toggle:checked+.container-nav {
+      height: 45vh;
+      overflow-y: scroll;
+    }
+  }
 }
-.navbar-toggle:checked+.container-nav{
-  height: 45vh;
-  overflow-y: scroll;
-}
+
+@media only screen and (max-width: 1024px) {
+  .grid-row-1 {
+    grid-row: 4;
+    grid-column-start: 2;
+    grid-column-end: 2;
   }
 
+  .grid-row-2 {
+    grid-row: 2;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    background-size: cover;
+  }
+
+  @media only screen and (max-height: 768px) {
+    .history-content {
+      grid-template-columns: 12px auto 12px;
+    }
+  }
 }
 
 @media only screen and (min-width: 1138px) {
@@ -713,11 +757,43 @@ section.home-image>div>img {
   }
 }
 
+@media only screen and (min-width: 1366px) {
+  @media only screen and (max-height: 1024px) {
+    .history-content {
+      grid-template-columns: 12px 1fr 6px 1.5fr 12px;
+      grid-template-rows: 6px auto 12px;
+      grid-template-areas: "grid3 grid4";
+    }
+
+    .grid-row-3 {
+      grid-row: 2;
+      grid-column-start: 2;
+      grid-column-end: 2;
+    }
+
+    .grid-row-4 {
+      grid-row: 2;
+      grid-column-start: 4;
+      grid-column-end: 4;
+      background-size: cover;
+    }
+  }
+}
+
 /* amazon tab */
 @media only screen and (min-width: 1280px) {
   @media only screen and (max-height: 800px) {
-    .grid-row-2 {
-      background-position: -380px center;
+    .grid-row-4 {
+      grid-row: 2;
+      grid-column-start: 4;
+      grid-column-end: 4;
+      background-size: cover;
+    }
+
+    .grid-row-3 {
+      grid-row: 2;
+      grid-column-start: 2;
+      grid-column-end: 2;
     }
   }
 }
