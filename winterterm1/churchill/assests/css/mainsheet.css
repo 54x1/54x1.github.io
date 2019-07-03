@@ -665,7 +665,7 @@ section.home-image>div>img {
 @media only screen and (max-width: 812px) {
   @media only screen and (max-height: 500px) {
     html, body {
-      scroll-padding: 8.25em;
+      scroll-padding: 7.85em;
     }
 
     .navbar-toggle+.container-nav>li.item {
