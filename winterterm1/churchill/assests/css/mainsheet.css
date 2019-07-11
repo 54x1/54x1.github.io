@@ -266,6 +266,11 @@ footer>p {
   min-width: -moz-fit-content;
   padding: 30px 15px;
   line-height: 1.5em;
+
+}
+
+footer>p::first-letter{
+    font-size: 100%;
 }
 
 @media only screen and (max-width: 480px) {
