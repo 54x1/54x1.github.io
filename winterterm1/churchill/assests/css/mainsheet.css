@@ -23,6 +23,7 @@ header {
   height: auto;
   margin-top: 0px;
   width: -webkit-fill-available;
+  min-width: 100%;
   z-index: 1;
   padding: 22px 0;
 }
