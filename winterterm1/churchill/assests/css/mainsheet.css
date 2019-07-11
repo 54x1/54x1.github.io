@@ -930,7 +930,7 @@ section.home-image>div>img {
   @media only screen and (max-height: 800px) {
     .history-content {
       grid-template-columns: 20px 1fr 6px 1.5fr 20px;
-      grid-template-rows: 20px 0fr auto 0fr 20px;
+      grid-template-rows: 20px 0fr 20px auto;
       grid-template-areas: "grid3 grid4";
     }
   }
