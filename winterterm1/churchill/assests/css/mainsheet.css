@@ -320,7 +320,7 @@ nav>ul>li>a {
 .description-content {
   border-top: 8.75px solid #987A3E;
   border-bottom: 8.75px solid #987A3E;
-  padding: 0  42px;
+  padding: 12px 42px 0;
   text-align: center;
 }
 
