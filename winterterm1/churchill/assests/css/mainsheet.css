@@ -253,6 +253,8 @@ footer {
   background-color: #A9C7B6;
   color: #F5EFDC;
   width: 100%;
+  min-width: fit-content;
+  min-width: -moz-fit-content
   margin: 0 auto;
   text-align: center;
   grid-area: footer;
@@ -261,7 +263,7 @@ footer {
 footer>p {
   margin: 0 auto;
   width: fit-content;
-  width: -moz-fit-content;
+  min-width: -moz-fit-content
   padding: 30px 15px;
   line-height: 1.5em;
 }
