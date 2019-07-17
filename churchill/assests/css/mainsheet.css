@@ -1,3 +1,4 @@
+/* google fonts */
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display|Material+Icons:400,600&display=swap');
 
 html,
@@ -170,6 +171,7 @@ p::first-letter {
   position: relative;
   max-height: 0;
   overflow: hidden;
+  opacity: 0;
 }
 
 .more:target~.less, .more-2:target~.less-2, .more-3:target~.less3 {
@@ -197,8 +199,9 @@ p::first-letter {
 
 .more:target~.read-more, .more-2:target~.read-more-2, .more-3:target~.read-more-3 {
   max-height: fit-content;
-  transition: max-height 1s ease;
-  -webkit-transition: max-height 1s ease;
+  opacity: 1;
+  transition: all 1.5s ease-out;
+  -webkit-transition: all 1.5s  ease-out;
 }
 
 .read-more-2>.read-more-2-para>ul>li, .read-more>ul>li, .read-more-3>ul>li {
