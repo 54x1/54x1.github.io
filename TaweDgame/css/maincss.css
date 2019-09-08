@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    /* need to change everything below */
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #987A3E;
+}
+
+@media screen and (min-width: 300px) {
+  .main-header {
+    width: 90%;
+    margin: 0 auto;
+    height: 500px;
+  }
+
+  .logoT, .logoD, .logo {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .logoT {
+    z-index: 1;
+    height: 500px;
+  }
+
+  .logoD {
+    top: 170px;
+    position: absolute;
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .logoT, .logoD, .logo {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .logoT {
+    z-index: 1;
+    height: 500px;
+  }
+
+  .logoD {
+    top: 163px;
+    position: absolute;
+    height: 203px;
+  }
+}
+
+
