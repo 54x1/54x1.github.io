@@ -1,59 +1,21 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   viewBox="0 -256 1792 1792"
-   id="svg3013"
-   version="1.1"
-   inkscape:version="0.48.3.1 r9886"
-   width="100%"
-   height="100%"
-   sodipodi:docname="home_font_awesome.svg">
-  <metadata
-     id="metadata3023">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <defs
-     id="defs3021" />
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="640"
-     inkscape:window-height="480"
-     id="namedview3019"
-     showgrid="false"
-     inkscape:zoom="0.13169643"
-     inkscape:cx="896"
-     inkscape:cy="896"
-     inkscape:window-x="0"
-     inkscape:window-y="25"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="svg3013" />
-  <g
-     transform="matrix(1,0,0,-1,68.338983,1285.4237)"
-     id="g3015">
-    <path
-       d="M 1408,544 V 64 Q 1408,38 1389,19 1370,0 1344,0 H 960 V 384 H 704 V 0 H 320 q -26,0 -45,19 -19,19 -19,45 v 480 q 0,1 0.5,3 0.5,2 0.5,3 l 575,474 575,-474 q 1,-2 1,-6 z m 223,69 -62,-74 q -8,-9 -21,-11 h -3 q -13,0 -21,7 L 832,1112 140,535 q -12,-8 -24,-7 -13,2 -21,11 l -62,74 q -8,10 -7,23.5 1,13.5 11,21.5 l 719,599 q 32,26 76,26 44,0 76,-26 l 244,-204 v 195 q 0,14 9,23 9,9 23,9 h 192 q 14,0 23,-9 9,-9 9,-23 V 840 l 219,-182 q 10,-8 11,-21.5 1,-13.5 -7,-23.5 z"
-       id="path3017"
-       inkscape:connector-curvature="0"
-       style="fill:currentColor" />
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1"
+	 id="svg3013" inkscape:version="0.48.3.1 r9886" sodipodi:docname="home_font_awesome.svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 1080"
+	 style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#66CCFF;}
+</style>
+<sodipodi:namedview  bordercolor="#666666" borderopacity="1" gridtolerance="10" guidetolerance="10" id="namedview3019" inkscape:current-layer="svg3013" inkscape:cx="896" inkscape:cy="896" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-height="480" inkscape:window-maximized="0" inkscape:window-width="640" inkscape:window-x="0" inkscape:window-y="25" inkscape:zoom="0.13169643" objecttolerance="10" pagecolor="#ffffff" showgrid="false">
+	</sodipodi:namedview>
+<g id="g3015" transform="matrix(1,0,0,-1,68.338983,1285.4237)">
+	<path id="path3017" inkscape:connector-curvature="0" class="st0" d="M1241.4,684.3V395c0-10.4-3.8-19.5-11.5-27.1
+		c-7.6-7.6-16.7-11.5-27.1-11.5H971.4v231.4H817.1V356.4H585.7c-10.4,0-19.5,3.8-27.1,11.5c-7.6,7.6-11.5,16.7-11.5,27.1v289.3
+		c0,0.4,0.1,1,0.3,1.8c0.2,0.8,0.3,1.4,0.3,1.8l346.5,285.7l346.5-285.7C1241.2,687.1,1241.4,685.9,1241.4,684.3z M1375.8,725.9
+		l-37.4-44.6c-3.2-3.6-7.4-5.8-12.7-6.6h-1.8c-5.2,0-9.4,1.4-12.7,4.2l-417.1,347.7L477.2,678.9c-4.8-3.2-9.6-4.6-14.5-4.2
+		c-5.2,0.8-9.4,3-12.7,6.6l-37.4,44.6c-3.2,4-4.6,8.7-4.2,14.2c0.4,5.4,2.6,9.7,6.6,13l433.3,361c12.9,10.4,28.1,15.7,45.8,15.7
+		c17.7,0,32.9-5.2,45.8-15.7l147.1-122.9v117.5c0,5.6,1.8,10.2,5.4,13.9c3.6,3.6,8.2,5.4,13.9,5.4h115.7c5.6,0,10.2-1.8,13.9-5.4
+		c3.6-3.6,5.4-8.2,5.4-13.9V862.7l132-109.7c4-3.2,6.2-7.5,6.6-13C1380.4,734.6,1379,729.9,1375.8,725.9z"/>
+</g>
 </svg>

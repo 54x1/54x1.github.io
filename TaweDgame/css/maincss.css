@@ -7,65 +7,130 @@ body {
     scroll-behavior: smooth;
     /* need to change everything below */
     font-family: 'Poppins', sans-serif;
-    background-color: #000;
-    color: #987A3E;
+    background-color: #202040;
+    color: #b030b0;
 }
 
-@media screen and (orientation: landscape) {
-  html {
-    transform: rotate(-90deg);
-    transform-origin: left top;
-    width: 100vh;
-    overflow-x: hidden;
-    position: absolute;
-    top: 100%;
-    left: 0;
-  }
-}
+
 @media screen and (min-width: 300px) {
-  .main-header {
-    width: 90%;
-    margin: 0 auto;
-    height: 500px;
-  }
 
-  .logoT, .logoD, .logo {
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-  }
+    .main-section {
+        width: 90%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-rows: auto 1fr;
+    }
 
-  .logoT {
-    z-index: 1;
-    height: 500px;
-  }
+    .main-header {
+        display: grid;
+        grid-row: 2;
+        margin: 6% auto;
+        height: fit-content;
+        width: 50%;
+    }
 
-  .logoD {
-    top: 170px;
-    position: absolute;
-    height: 200px;
-  }
+    /*.logoT, .logoD, .logo {*/
+    /*  height: 100%;*/
+    /*  width: 100%;*/
+    /*  margin: 0 auto;*/
+    /*  position: relative;*/
+    /*}*/
+    .logoT {
+        margin: 25px auto;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    .logoD {
+        margin: 25px auto;
+        height: 100%;
+        width: 78.4%;
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    .logoOR {
+        margin: 25px auto;
+        height: 100%;
+        width: 100%;
+        grid-row: 1;
+        grid-column: 1;
+        transform: scale(0);
+        z-index: 2;
+        right: 45px;
+        position: relative;
+    }
+
+    .main-home {
+        grid-row: 2;
+    }
 }
 
-@media screen and (min-width: 480px) {
-  .logoT, .logoD, .logo {
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-  }
-
-  .logoT {
-    z-index: 1;
-    height: 500px;
-  }
-
-  .logoD {
-    top: 163px;
-    position: absolute;
-    height: 203px;
-  }
+.main-rules {
+    text-align: center;
+    text-transform: uppercase;
 }
 
+
+h2 {
+    font-size: 2.5em;
+}
+
+.rules > p {
+    font-size: 1.5em;
+    opacity: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .main-header {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main-header {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 6% auto;
+        height: fit-content;
+        width: 80%;
+    }
+}
+
+
+/*@media screen and (min-width: 350px) {*/
+/*  .logoD {*/
+/*    top: 150px;*/
+/*    position: absolute;*/
+/*    height: 30%;*/
+/*  }*/
+/*}*/
+
+/*@media screen and (min-width: 400px) {*/
+/*  .logoD {*/
+/*    top: 145px;*/
+/*    position: absolute;*/
+/*    height: 33%;*/
+/*  }*/
+/*}*/
+
+
+/*@media screen and (min-width: 480px) {*/
+/*  .logoD {*/
+/*    top: 115px;*/
+/*    position: absolute;*/
+/*    height: 40%;*/
+/*  }*/
+/*}*/
+
+/*@media screen and (min-width: 580px) {*/
+/*  .logoD {*/
+/*    top: 90px;*/
+/*    position: absolute;*/
+/*    height: 48%;*/
+/*  }*/
+/*}*/
 
