@@ -1,10 +1,10 @@
 $(document).ready(function () {
     $(window).on('scroll resize load', function () {
-        mainh = ($('.main-home').height()-($('.rules').height()));
+        mainh = ($('.main-home').height() - ($('.rules').height()) - 35);
         winh = $(this).height() - mainh;
 
 
-        $('.main-section').css({"grid-template-rows": ""+ (winh)+"px 1fr"});
+        $('.main-section').css({"grid-template-rows": "" + (winh) + "px 1fr"});
         if ($(this).width() <= 1024) {
             var hscroll = $(this).scrollTop();
             if ($(window).width() > 768) {
@@ -59,15 +59,44 @@ $(document).ready(function () {
             }
         });
     });
-
-
     var el = document.documentElement,
-        rfs = el.requestFullscreen
-            || el.webkitRequestFullScreen
-            || el.mozRequestFullScreen
-            || el.msRequestFullscreen
-    ;
-
+        rfs = el.requestFullscreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullscreen;
     rfs.call(el);
+});
+
+
+let orn = getOrientation();
+let out = document.getElementsByClassName('main-section');
+out.textContent = orn;
+
+function getOrientation() {
+    let _orn = screen.msOrientation ||
+        (screen.orientation || screen.mozOrientation).type;
+
+    switch(_orn){
+        case 'portrait-primary':
+        case 'portrait-secondary':
+
+            break;
+        case 'landscape-primary':
+            console.log('This is the laptop/desktop version')
+            break;
+        case 'landscape-secondary':
+            break;
+        case undefined:
+            //not supported
+            break;
+        default:
+        //something unknown
+    }
+    return _orn;
+}
+
+
+window.addEventListener('orientationchange', (ev)=>{
+    orn = getOrientation();
+    out.textContent = orn;
+    console.dir(ev)
 })
-;
+
+

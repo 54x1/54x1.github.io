@@ -8,6 +8,8 @@ body {
     /* need to change everything below */
     font-family: 'Poppins', sans-serif;
     background-color: #202040;
+    background: linear-gradient(0deg, #483567 0%, #202040 71%);
+    /*#2b1f3d 11%*/
     color: #b030b0;
 }
 
@@ -20,6 +22,7 @@ body {
         display: grid;
         grid-template-rows: auto 1fr;
     }
+
 
     .main-header {
         display: grid;
@@ -88,6 +91,22 @@ h2 {
     .main-header {
         width: 30%;
     }
+    .mobile-header {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-header{
+        grid-row: 1;
+        display: grid;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    h1{
+        font-size: 7em;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -98,7 +117,12 @@ h2 {
         height: fit-content;
         width: 80%;
     }
+    h1{
+        font-size: 5em;
+    }
 }
+
+
 
 
 /*@media screen and (min-width: 350px) {*/
