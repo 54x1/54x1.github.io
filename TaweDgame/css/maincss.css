@@ -97,6 +97,9 @@ h2 {
 }
 
 @media screen and (max-width: 768px) {
+    body {
+        color: #c836c8;
+    }
     .mobile-header{
         grid-row: 1;
         display: grid;
