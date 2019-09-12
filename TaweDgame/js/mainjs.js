@@ -5,6 +5,7 @@ $(document).ready(function () {
 
 
         $('.main-section').css({"grid-template-rows": "" + (winh) + "px 1fr"});
+        $('.main-section').css({"min-height":"400px"});
         if ($(this).width() <= 1024) {
             var hscroll = $(this).scrollTop();
             if ($(window).width() > 768) {
