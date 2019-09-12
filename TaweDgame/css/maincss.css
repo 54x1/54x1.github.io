@@ -111,6 +111,10 @@ h2 {
     h1{
         font-size: 7em;
     }
+
+    .main-section{
+        min-height: 400px!important;
+    }
 }
 
 @media screen and (max-width: 480px) {
