@@ -309,6 +309,7 @@ html, body{
 .content-food, .content-map, .content-stalls, .content-entertainment{
   min-height: 100vh;
   width: 100%;
+  min-width: 1200px;
   height: 85vh;
   position: absolute;
 }
@@ -379,6 +380,7 @@ html, body{
 .footer, .map-footer{
   clear: both;
   width: 100%;
+  min-width: 1200px;
   height: auto;
   background-color: #231f20;
   position: absolute;
