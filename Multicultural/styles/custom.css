@@ -27,6 +27,7 @@ html, body{
     font-family: "baufra-bold",Arial;
     margin: 0px;
     padding: 0px;
+    min-width: 1200px;
 }
 
 .overlay-home{
