@@ -33,6 +33,7 @@ html, body{
 .overlay-home{
     position: absolute;
     width: 100%;
+    min-width: 1200px;
     min-height: 100vh;
     height: 100%;
     background: linear-gradient(to bottom, #0808088a 100%, rgba(22, 22, 22, 0.5) 75%, rgba(22, 22, 22, 0.1) 0%), url(../img/cover2.jpg);
@@ -47,6 +48,7 @@ html, body{
 .overlay-food, .overlay-map, .overlay-stalls, .overlay-entertainment{
   position: relative;
   width: 100%;
+  min-width: 1200px;
   height: 100vh;
 }
 
