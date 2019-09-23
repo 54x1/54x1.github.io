@@ -75,6 +75,7 @@ body {
 .main-rules {
     text-align: center;
     text-transform: uppercase;
+    min-height: 1000px;
 }
 
 
