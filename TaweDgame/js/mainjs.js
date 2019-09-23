@@ -44,7 +44,7 @@ $(document).ready(function () {
                     $('.logoOR').css({"transform": "scale(0)"});
                     $('.main-rules').css({"transform": "translate(0,0)"});
                 } else {
-                    $('.logoOR').css({"transform": "scale(" + (hscroll / 100) + "px)"});
+                    $('.logoOR').css({"transform": "scale(" + (hscroll / 70) + "px)"});
                     $('.main-rules').css({"transform": "translateY(-" + (hscroll + 10) + "px)"});
                 }
             }
