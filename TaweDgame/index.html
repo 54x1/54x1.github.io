@@ -5,13 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Truth or Dare by TaweD</title>
     <link rel="icon" href="../TaweDgame/img/favicon.ico" type="image/x-icon">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="../TaweDgame/js/mainjs.js"></script>
     <link rel="stylesheet" href="../TaweDgame/css/maincss.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="../TaweDgame/js/mainjs.js"></script>
+
+
 
 </head>
-<body>
-<div class="main-section">
+<body onload="mainfunction();">
+  <div class="gofullscreen" onload="openFullscreen();">
+    <div class="go-home" id="go-home">
+
+        <div class="go-header">
+            <div class="go-logoT">
+                <img class="imglogoT" src="../TaweDgame/img/logoT.svg"/>
+            </div>
+            <div class="go-logoD">
+                <img class="imglogoD" src="../TaweDgame/img/logoD.svg"/>
+            </div>
+            <div class="go-logoOR">
+                <img class="imglogoOR" src="../TaweDgame/img/logoOR.svg"/>
+            </div>
+                <button class="btn" onclick="openFullscreen();">Go Fullscreen to play</button>
+        </div>
+
+  </div>
+<div class="main-section" id="main-section">
     <div class="mobile-header">
         <h1>Truth <br>or<br> Dare</h1>
     </div>

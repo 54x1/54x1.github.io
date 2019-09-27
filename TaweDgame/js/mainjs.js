@@ -1,5 +1,83 @@
+// var elem = document.documentElement;
+// openFullscreen()
+// function openFullscreen() {
+//   if (elem.requestFullscreen) {
+//     elem.requestFullscreen();
+//   } else if (elem.mozRequestFullScreen) { /* Firefox */
+//     elem.mozRequestFullScreen();
+//   } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+//     elem.webkitRequestFullscreen();
+//   } else if (elem.msRequestFullscreen) { /* IE/Edge */
+//     elem = window.top.document.body; //To break out of frame in IE
+//     elem.msRequestFullscreen();
+//   }
+// }
+//
+// // console
+
+
+function checkfull() {
+	return (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || null);
+}
+
+function mainfunction(){
+if (checkfull() == null){
+   document.getElementById("main-section").style.display = "none";
+	       document.getElementById("go-home").style.display = "grid";
+}
+if (checkfull() == true){
+	document.getElementById("main-section").style.display = "grid";
+				document.getElementById("go-home").style.display = "none";
+}
+}
+
+
+
+var elem = document.documentElement;
+
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+		document.getElementById("main-section").style.display = "grid";
+					document.getElementById("go-home").style.display = "none";
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+		document.getElementById("main-section").style.display = "grid";
+					document.getElementById("go-home").style.display = "none";
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+    elem.webkitRequestFullscreen();
+		document.getElementById("main-section").style.display = "grid";
+					document.getElementById("go-home").style.display = "none";
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem = window.top.document.body; //To break out of frame in IE
+    elem.msRequestFullscreen();
+		document.getElementById("main-section").style.display = "grid";
+					document.getElementById("go-home").style.display = "none";
+  }
+}
+
+
+if (document.addEventListener)
+{
+ document.addEventListener('fullscreenchange', exitHandler, false);
+ document.addEventListener('mozfullscreenchange', exitHandler, false);
+ document.addEventListener('MSFullscreenChange', exitHandler, false);
+ document.addEventListener('webkitfullscreenchange', exitHandler, false);
+}
+
+function exitHandler()
+{
+ if (document.webkitIsFullScreen || document.mozFullScreen || document.msFullscreenElement || document.fullscreenchange === false)
+ {
+	 document.getElementById("main-section").style.display = "none";
+	       document.getElementById("go-home").style.display = "grid";
+ }
+}
 $(document).ready(function () {
     $(window).on('scroll resize load', function () {
+
+
+
         mainh = ($('.main-home').height() - ($('.rules').height()) - 35);
         winh = $(this).height() - mainh;
 
@@ -60,44 +138,4 @@ $(document).ready(function () {
             }
         });
     });
-    var el = document.documentElement,
-        rfs = el.requestFullscreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullscreen;
-    rfs.call(el);
 });
-
-
-let orn = getOrientation();
-let out = document.getElementsByClassName('main-section');
-out.textContent = orn;
-
-function getOrientation() {
-    let _orn = screen.msOrientation ||
-        (screen.orientation || screen.mozOrientation).type;
-
-    switch(_orn){
-        case 'portrait-primary':
-        case 'portrait-secondary':
-
-            break;
-        case 'landscape-primary':
-            console.log('This is the laptop/desktop version')
-            break;
-        case 'landscape-secondary':
-            break;
-        case undefined:
-            //not supported
-            break;
-        default:
-        //something unknown
-    }
-    return _orn;
-}
-
-
-window.addEventListener('orientationchange', (ev)=>{
-    orn = getOrientation();
-    out.textContent = orn;
-    console.dir(ev)
-})
-
-
