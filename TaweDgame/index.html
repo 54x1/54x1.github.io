@@ -12,10 +12,14 @@
 
 
 </head>
-<body onload="mainfunction();">
-  <div class="gofullscreen" onload="openFullscreen();">
+<body>
+<div id="container">
+    <p id="orientation-status"></p>
+    <button id="lock-landscape-button">Lock to Landscape Mode</button>
+    <button id="unlock-button">Unlock</button>
+</div>
+  <div class="gofullscreen">
     <div class="go-home" id="go-home">
-
         <div class="go-header">
             <div class="go-logoT">
                 <img class="imglogoT" src="../TaweDgame/img/logoT.svg"/>
@@ -26,9 +30,8 @@
             <div class="go-logoOR">
                 <img class="imglogoOR" src="../TaweDgame/img/logoOR.svg"/>
             </div>
-                <button class="btn" onclick="openFullscreen();">Go Fullscreen to play</button>
+                <button class="btn" onclick="toggleFullScreen();">Go Fullscreen to play</button>
         </div>
-
   </div>
 <div class="main-section" id="main-section">
     <div class="mobile-header">
@@ -62,5 +65,6 @@
         </div>
     </div>
 </div>
+  </div>
 </body>
 </html>

@@ -1,84 +1,26 @@
-// var elem = document.documentElement;
-// openFullscreen()
-// function openFullscreen() {
-//   if (elem.requestFullscreen) {
-//     elem.requestFullscreen();
-//   } else if (elem.mozRequestFullScreen) { /* Firefox */
-//     elem.mozRequestFullScreen();
-//   } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-//     elem.webkitRequestFullscreen();
-//   } else if (elem.msRequestFullscreen) { /* IE/Edge */
-//     elem = window.top.document.body; //To break out of frame in IE
-//     elem.msRequestFullscreen();
-//   }
-// }
-//
-// // console
-
-
-function checkfull() {
-	return (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || null);
-}
-
-function mainfunction(){
-if (checkfull() == null){
-   document.getElementById("main-section").style.display = "none";
-	       document.getElementById("go-home").style.display = "grid";
-}
-if (checkfull() == true){
-	document.getElementById("main-section").style.display = "grid";
-				document.getElementById("go-home").style.display = "none";
-}
-}
-
-
-
-var elem = document.documentElement;
-
-function openFullscreen() {
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-		document.getElementById("main-section").style.display = "grid";
-					document.getElementById("go-home").style.display = "none";
-  } else if (elem.mozRequestFullScreen) { /* Firefox */
-    elem.mozRequestFullScreen();
-		document.getElementById("main-section").style.display = "grid";
-					document.getElementById("go-home").style.display = "none";
-  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-    elem.webkitRequestFullscreen();
-		document.getElementById("main-section").style.display = "grid";
-					document.getElementById("go-home").style.display = "none";
-  } else if (elem.msRequestFullscreen) { /* IE/Edge */
-    elem = window.top.document.body; //To break out of frame in IE
-    elem.msRequestFullscreen();
-		document.getElementById("main-section").style.display = "grid";
-					document.getElementById("go-home").style.display = "none";
-  }
-}
-
-
-if (document.addEventListener)
-{
- document.addEventListener('fullscreenchange', exitHandler, false);
- document.addEventListener('mozfullscreenchange', exitHandler, false);
- document.addEventListener('MSFullscreenChange', exitHandler, false);
- document.addEventListener('webkitfullscreenchange', exitHandler, false);
-}
-
-function exitHandler()
-{
- if (document.webkitIsFullScreen || document.mozFullScreen || document.msFullscreenElement || document.fullscreenchange === false)
- {
-	 document.getElementById("main-section").style.display = "none";
-	       document.getElementById("go-home").style.display = "grid";
- }
-}
 $(document).ready(function () {
     $(window).on('scroll resize load', function () {
+        if ($(window).width() <= 768) {
+            if (screen.height < screen.width) {
+            }
+        }
 
+        $(window).on('orientationchange', function(event) {
+            console.log(orientation);
+        });
 
+        if($(window).height() == screen.height) {
+            $('.main-section').css({"display": "grid"});
+            $(".go-home").css({"display": "none"});
+            console.log('1');
+        }
+        else{
+            $('.main-section').css({"display": "none"});
+            $(".go-home").css({"display": "grid"});
+            console.log('500');
+        }
 
-        mainh = ($('.main-home').height() - ($('.rules').height()) - 35);
+        mainh = ($('.main-home').height() - ($('.go-home').height() - $('.rules').height()));
         winh = $(this).height() - mainh;
 
 
@@ -144,7 +86,7 @@ $(document).ready(function () {
                     $('.logoOR').css({"transform": "scale(0)"});
                     $('.main-rules').css({"transform": "translate(0,0)"});
                 } else {
-                    $('.logoOR').css({"transform": "scale(" + (hscroll / 80) + ")"});
+                    $('.logoOR').css({"transform": "scale(" + (hscroll / 100) + ")"});
                     $('.main-rules').css({"transform": "translateY(-" + (hscroll + 10) + "px)"});
                 }
             }
@@ -160,4 +102,76 @@ $(document).ready(function () {
             }
         });
     });
+});
+
+
+
+function toggleFullScreen() {
+    var doc = window.document;
+    var docEl = doc.documentElement;
+
+    var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+    var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+    if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+        requestFullScreen.call(docEl);
+    } else {
+        cancelFullScreen.call(doc);
+    }
+}
+
+// screen.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
+//
+// if (screen.lockOrientationUniversal("landscape-primary")) {
+//
+// } else {
+//     // Orientation lock failed
+// }
+
+var _LOCK_BUTTON = document.querySelector("#lock-landscape-button"),
+    _UNLOCK_BUTTON = document.querySelector("#unlock-button"),
+    _STATUS = document.querySelector("#orientation-status");
+
+_STATUS.innerHTML = screen.orientation.type + ' mode';
+
+// upon lock to landscape-primary mode
+document.querySelector("#lock-landscape-button").addEventListener('click', function() {
+    if(document.documentElement.requestFullscreen)
+        document.querySelector("#container").requestFullscreen();
+    else if(document.documentElement.webkitRequestFullScreen)
+        document.querySelector("#container").webkitRequestFullScreen();
+
+    screen.orientation.lock("landscape-primary")
+        .then(function() {
+            _LOCK_BUTTON.style.display = 'none';
+            _UNLOCK_BUTTON.style.display = 'block';
+        })
+        .catch(function(error) {
+            alert(error);
+        });
+});
+
+// upon unlock
+document.querySelector("#unlock-button").addEventListener('click', function() {
+    screen.orientation.unlock();
+
+    _LOCK_BUTTON.style.display = 'block';
+    _UNLOCK_BUTTON.style.display = 'none';
+});
+
+// when screen orientation changes
+screen.orientation.addEventListener("change", function() {
+    _STATUS.innerHTML = screen.orientation.type + ' mode';
+});
+
+// on exiting full-screen lock is automatically released
+document.addEventListener("fullscreenchange", function() {
+    _LOCK_BUTTON.style.display = 'block';
+    _UNLOCK_BUTTON.style.display = 'none';
+});
+
+// for Chrome & Safari
+document.addEventListener("webkitfullscreenchange", function() {
+    _LOCK_BUTTON.style.display = 'block';
+    _UNLOCK_BUTTON.style.display = 'none';
 });

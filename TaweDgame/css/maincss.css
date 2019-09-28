@@ -101,6 +101,8 @@ body {
         z-index: 1;
         height: 100%;
         width: 100%;
+        position: relative;
+        left: 50px;
         grid-row: 1;
         grid-column: 1;
     }
@@ -110,6 +112,8 @@ body {
         height: 100%;
         width: 78.4%;
         grid-row: 1;
+        left: 50px;
+        position: relative;
         grid-column: 1;
     }
 
@@ -121,7 +125,7 @@ body {
         grid-column: 1;
         transform: scale(0);
         z-index: 2;
-        right: 45px;
+        right: 25px;
         position: relative;
     }
 
