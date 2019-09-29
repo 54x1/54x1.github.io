@@ -69,7 +69,7 @@ $(document).ready(function () {
                 }
             }
         }
-        
+
             if ($(this).width() <= 1366) {
             var hscroll = $(this).scrollTop();
             if ($(window).width() > 1200) {
@@ -128,50 +128,32 @@ function toggleFullScreen() {
 //     // Orientation lock failed
 // }
 
-var _LOCK_BUTTON = document.querySelector("#lock-landscape-button"),
-    _UNLOCK_BUTTON = document.querySelector("#unlock-button"),
-    _STATUS = document.querySelector("#orientation-status");
+function fullScreen() {
+  // Kind of painful, but this is how it works for now
+  if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen();
+  } else if (document.documentElement.mozRequestFullScreen) {
+    document.documentElement.mozRequestFullScreen();
+  } else if (document.documentElement.webkitRequestFullscreen) {
+    document.documentElement.webkitRequestFullscreen();
+  } else if (document.documentElement.msRequestFullscreen) {
+    document.documentElement.msRequestFullscreen();
+  }
+}
 
-_STATUS.innerHTML = screen.orientation.type + ' mode';
+function smolScreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  } else if (document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else if (document.msExitFullscreen) {
+    document.msExitFullscreen();
+  }
+}
 
-// upon lock to landscape-primary mode
-document.querySelector("#lock-landscape-button").addEventListener('click', function() {
-    if(document.documentElement.requestFullscreen)
-        document.querySelector("#container").requestFullscreen();
-    else if(document.documentElement.webkitRequestFullScreen)
-        document.querySelector("#container").webkitRequestFullScreen();
-
-    screen.orientation.lock("landscape-primary")
-        .then(function() {
-            _LOCK_BUTTON.style.display = 'none';
-            _UNLOCK_BUTTON.style.display = 'block';
-        })
-        .catch(function(error) {
-            alert(error);
-        });
-});
-
-// upon unlock
-document.querySelector("#unlock-button").addEventListener('click', function() {
-    screen.orientation.unlock();
-
-    _LOCK_BUTTON.style.display = 'block';
-    _UNLOCK_BUTTON.style.display = 'none';
-});
-
-// when screen orientation changes
-screen.orientation.addEventListener("change", function() {
-    _STATUS.innerHTML = screen.orientation.type + ' mode';
-});
-
-// on exiting full-screen lock is automatically released
-document.addEventListener("fullscreenchange", function() {
-    _LOCK_BUTTON.style.display = 'block';
-    _UNLOCK_BUTTON.style.display = 'none';
-});
-
-// for Chrome & Safari
-document.addEventListener("webkitfullscreenchange", function() {
-    _LOCK_BUTTON.style.display = 'block';
-    _UNLOCK_BUTTON.style.display = 'none';
-});
+function lock(orientation) {
+  fullScreen();
+  screen.orientation.lock(orientation);
+}
