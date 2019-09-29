@@ -107,17 +107,14 @@ $(document).ready(function () {
 
 
 function toggleFullScreen() {
-    var doc = window.document;
-    var docEl = doc.documentElement;
+	var el = document.documentElement,
+			rfs = el.requestFullscreen
+					|| el.webkitRequestFullScreen
+					|| el.mozRequestFullScreen
+					|| el.msRequestFullscreen
+	;
 
-    var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
-    var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
-
-    if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
-        requestFullScreen.call(docEl);
-    } else {
-        cancelFullScreen.call(doc);
-    }
+	rfs.call(el);
 }
 
 // screen.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
@@ -127,33 +124,3 @@ function toggleFullScreen() {
 // } else {
 //     // Orientation lock failed
 // }
-
-function fullScreen() {
-  // Kind of painful, but this is how it works for now
-  if (document.documentElement.requestFullscreen) {
-    document.documentElement.requestFullscreen();
-  } else if (document.documentElement.mozRequestFullScreen) {
-    document.documentElement.mozRequestFullScreen();
-  } else if (document.documentElement.webkitRequestFullscreen) {
-    document.documentElement.webkitRequestFullscreen();
-  } else if (document.documentElement.msRequestFullscreen) {
-    document.documentElement.msRequestFullscreen();
-  }
-}
-
-function smolScreen() {
-  if (document.exitFullscreen) {
-    document.exitFullscreen();
-  } else if (document.webkitExitFullscreen) {
-    document.webkitExitFullscreen();
-  } else if (document.mozCancelFullScreen) {
-    document.mozCancelFullScreen();
-  } else if (document.msExitFullscreen) {
-    document.msExitFullscreen();
-  }
-}
-
-function lock(orientation) {
-  fullScreen();
-  screen.orientation.lock(orientation);
-}
