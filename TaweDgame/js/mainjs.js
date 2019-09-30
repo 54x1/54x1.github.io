@@ -25,14 +25,12 @@ $(document).ready(function () {
   //       }
   //     }
 
-
+        mainh = ($('.main-home').height() + $('.go-home').height() - $('.main-rules').height() - $('.section-rules').height() - $('.rules').height() + $('.rules-heading').height());
+        winh = $(this).height() - mainh;
+        $('.main-section').css({"grid-template-rows": "" + (winh/1100) + "fr 1fr"});
 
 
   $(window).on('scroll resize load', function () {
-    mainh = ($('.main-home').height() + $('.go-home').height() - $('.main-rules').height() - $('.section-rules').height() - $('.rules').height() + $('.rules-heading').height());
-    winh = $(this).height() - mainh;
-    $('.main-section').css({"grid-template-rows": "" + (winh/1100) + "fr 1fr"});
-
         var hscroll = $(this).scrollTop();
         console.log("first: " + hscroll / 300);
         if ($(this).width() <= 1024) {

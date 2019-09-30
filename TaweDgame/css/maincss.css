@@ -224,6 +224,23 @@ h2 {
 @media screen and (min-width: 1024px){
 
 }
+
+@media screen and (min-width: 1366px){
+
+}
+
+@media screen and (min-width: 1440px){
+  
+}
+
+@media screen and (max-width: 1024px){
+
+}
+
+@media screen and (max-width: 992px){
+
+}
+
 @media screen and (max-width: 768px) {
     body {
         color: #c836c8;
