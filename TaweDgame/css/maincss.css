@@ -128,7 +128,7 @@ body {
     margin: 0 auto;
     display: grid;
     height: fit-content;
-    grid-template-rows: 0.3fr 1fr;
+    grid-template-rows: 0.28fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
   }
 
