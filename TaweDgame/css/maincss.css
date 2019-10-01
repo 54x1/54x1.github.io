@@ -82,16 +82,10 @@ body {
     grid-row: 2;
     margin: 0 auto;
     height: fit-content;
-    grid-template-columns: 1;
-    width: 50%;
+    grid-template-columns: 1fr;
+    width: 30%;
   }
 
-  /*.logoT, .logoD, .logo {*/
-  /*  height: 100%;*/
-  /*  width: 100%;*/
-  /*  margin: 0 auto;*/
-  /*  position: relative;*/
-  /*}*/
   .logoT {
     margin: 25px auto;
     z-index: 1;
@@ -147,9 +141,7 @@ h2 {
 }
 
 @media screen and (min-width: 768px) {
-  .main-header {
-    width: 30%;
-  }
+
 }
 
 @media screen and (min-width: 1024px) {}
@@ -174,23 +166,17 @@ h2 {
   .mobile-header {
     display: grid;
     width: 95%;
-    margin: 0 auto;
+    margin: 30px auto 25px auto;
   }
-
+  .main-header{
+    width: 60%;
+  }
   h1 {
     font-size: 7em;
-  }
-
-  .main-section {
-    min-height: 400px !important;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .main-header {
-    width: 80%;
-  }
-
   h1 {
     font-size: 5em;
   }
