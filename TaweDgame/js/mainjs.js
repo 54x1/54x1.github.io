@@ -51,6 +51,56 @@ $(document).ready(function() {
   $(window).on('scroll resize load', function() {
     var hscroll = $(this).scrollTop();
 
+    if ($(this).width() <= 2560) {
+      console.log("2560");
+      if ($(window).width() > 1980) {
+        $('.logoT').css({
+          "transform": "translate(-" + hscroll / 0.5 + "px,-" + hscroll / 0.8 + "px)"
+        });
+        $('.logoD').css({
+          "transform": "translate(" + hscroll / 0.5 + "px, -" + hscroll / 0.8 + "px)"
+        });
+      }
+      if ($(window).width() < 1980) {
+        $('.logoT, .logoD').css({
+          "transform": "translate(0,0)"
+        });
+        $('.logoOR').css({
+          "transform": "scale(0)"
+        });
+        $('.main-rules').css({
+          "transform": "translateY(0)"
+        });
+        $('.arrows-1').css({
+          "transform": "translate(0px, 0)"
+        });
+      }
+      if ($(window).width() > 1980) {
+        if ((hscroll / 1.5) < 1) {
+          $('.logoOR').css({
+            "transform": "scale(0)"
+          });
+          $('.main-rules').css({
+            "transform": "translate(0,0)"
+          });
+          $('.arrows-1').css({
+            "transform": "translate(0px, 0)"
+          });
+        } else {
+          $('.logoOR').css({
+            "transform": "scale(" + (hscroll / 175) + ")"
+          });
+          $('.main-rules, .arrows-1').css({
+            "transform": "translateY(-" + (hscroll + 10) + "px)"
+          });
+          $('.arrows-1').css({
+            "transform": "translate(0px,-" + ((hscroll +10)) + "px)"
+          });
+        }
+      }
+    }
+
+
     if ($(this).width() <= 1980) {
       console.log("1980");
       if ($(window).width() > 1600) {
