@@ -642,7 +642,7 @@ section.home-image>div>img {
 /* media query for ipad */
 @media only screen and (max-width: 768px) {
   @media only screen and (max-height: 1024px) {
-    .grid-row-2, .grid-row-4, .grid-row-5, .para-img-1, .para-img-2, .para-img-3, .para-img-4 {
+    .grid-row-2, .grid-row-4, .grid-row-5, .para-img-1, .para-img-2, .para-img-3, .para-img-4, .read-more-2-para-img {
       /*
         fixed the images that didnt display properly on real ipads and tabs*/
       background-size: auto !important;
