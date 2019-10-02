@@ -203,7 +203,7 @@ p::first-letter {
   margin: 14px auto 24px auto;
 }
 
-.more:target~.read-more, .more-2:target~.read-more-2, .more-3:target~.read-more-3 {
+.more:target~.read-more, #more-2:target~.read-more-2, .more-3:target~.read-more-3 {
   max-height: fit-content;
   /* fade in effect css */
   opacity: 1;
