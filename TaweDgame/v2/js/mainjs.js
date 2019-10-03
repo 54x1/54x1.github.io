@@ -68,7 +68,7 @@ $(document).ready(function () {
                 $('.logoOR').css({
                     "transform": "scale(0)"
                 });
-                $('.main-rules').css({
+                $('.main-rules, .mobile-header').css({
                     "transform": "translateY(0)"
                 });
                 $('.arrows-1').css({
@@ -80,7 +80,7 @@ $(document).ready(function () {
                     $('.logoOR').css({
                         "transform": "scale(0)"
                     });
-                    $('.main-rules').css({
+                    $('.main-rules, .mobile-header').css({
                         "transform": "translate(0,0)"
                     });
                     $('.arrows-1').css({
@@ -90,7 +90,7 @@ $(document).ready(function () {
                     $('.logoOR').css({
                         "transform": "scale(" + (hscroll / 180) + ")"
                     });
-                    $('.main-rules, .arrows-1').css({
+                    $('.main-rules, .arrows-1, .mobile-header').css({
                         "transform": "translateY(-" + (hscroll + 10) + "px)"
                     });
                     $('.arrows-1').css({
@@ -118,7 +118,7 @@ $(document).ready(function () {
                 $('.logoOR').css({
                     "transform": "scale(0)"
                 });
-                $('.main-rules').css({
+                $('.main-rules, .mobile-header').css({
                     "transform": "translateY(0)"
                 });
                 $('.arrows-1').css({
@@ -130,7 +130,7 @@ $(document).ready(function () {
                     $('.logoOR').css({
                         "transform": "scale(0)"
                     });
-                    $('.main-rules').css({
+                    $('.main-rules, .mobile-header').css({
                         "transform": "translate(0,0)"
                     });
                     $('.arrows-1').css({
@@ -140,7 +140,7 @@ $(document).ready(function () {
                     $('.logoOR').css({
                         "transform": "scale(" + (hscroll / 140) + ")"
                     });
-                    $('.main-rules, .arrows-1').css({
+                    $('.main-rules, .arrows-1, .mobile-header').css({
                         "transform": "translateY(-" + (hscroll + 10) + "px)"
                     });
                     $('.arrows-1').css({
@@ -168,7 +168,7 @@ $(document).ready(function () {
                 $('.logoOR').css({
                     "transform": "scale(0)"
                 });
-                $('.main-rules').css({
+                $('.main-rules, .mobile-header').css({
                     "transform": "translateY(0)"
                 });
                 $('.arrows-1').css({
@@ -180,7 +180,7 @@ $(document).ready(function () {
                     $('.logoOR').css({
                         "transform": "scale(0)"
                     });
-                    $('.main-rules').css({
+                    $('.main-rules, .mobile-header').css({
                         "transform": "translate(0,0)"
                     });
                     $('.arrows-1').css({
@@ -190,7 +190,7 @@ $(document).ready(function () {
                     $('.logoOR').css({
                         "transform": "scale(" + (hscroll / 125) + ")"
                     });
-                    $('.main-rules, .arrows-1').css({
+                    $('.main-rules, .arrows-1, .mobile-header').css({
                         "transform": "translateY(-" + (hscroll + 10) + "px)"
                     });
                     $('.arrows-1').css({
@@ -217,7 +217,7 @@ $(document).ready(function () {
                 $('.logoOR').css({
                     "transform": "scale(0)"
                 });
-                $('.main-rules').css({
+                $('.main-rules, .mobile-header').css({
                     "transform": "translateY(0)"
                 });
                 $('.arrows-1').css({
@@ -229,7 +229,7 @@ $(document).ready(function () {
                     $('.logoOR').css({
                         "transform": "scale(0)"
                     });
-                    $('.main-rules').css({
+                    $('.main-rules, .mobile-header').css({
                         "transform": "translate(0,0)"
                     });
                     $('.arrows-1').css({
@@ -239,7 +239,7 @@ $(document).ready(function () {
                     $('.logoOR').css({
                         "transform": "scale(" + (hscroll / 105) + ")"
                     });
-                    $('.main-rules, .arrows-1').css({
+                    $('.main-rules, .arrows-1, .mobile-header').css({
                         "transform": "translateY(-" + (hscroll + 10) + "px)"
                     });
                     $('.arrows-1').css({
@@ -266,7 +266,7 @@ $(document).ready(function () {
                 $('.logoOR').css({
                     "transform": "scale(0)"
                 });
-                $('.main-rules').css({
+                $('.main-rules, .mobile-header').css({
                     "transform": "translateY(0)"
                 });
                 $('.arrows-1').css({
@@ -278,7 +278,7 @@ $(document).ready(function () {
                     $('.logoOR').css({
                         "transform": "scale(0)"
                     });
-                    $('.main-rules').css({
+                    $('.main-rules, .mobile-header').css({
                         "transform": "translate(0,0)"
                     });
                     $('.arrows-1').css({
@@ -288,7 +288,7 @@ $(document).ready(function () {
                     $('.logoOR').css({
                         "transform": "scale(" + (hscroll / 100) + ")"
                     });
-                    $('.main-rules, .arrows-1').css({
+                    $('.main-rules, .arrows-1, .mobile-header').css({
                         "transform": "translateY(-" + (hscroll + 10) + "px)"
                     });
                     $('.arrows-1').css({
@@ -316,7 +316,7 @@ $(document).ready(function () {
                 $('.logoOR').css({
                     "transform": "scale(0)"
                 });
-                $('.main-rules').css({
+                $('.main-rules, .mobile-header').css({
                     "transform": "translateY(0)"
                 });
                 $('.arrows-1').css({
@@ -328,7 +328,7 @@ $(document).ready(function () {
                     $('.logoOR').css({
                         "transform": "scale(0)"
                     });
-                    $('.main-rules').css({
+                    $('.main-rules, .mobile-header').css({
                         "transform": "translate(0,0)"
                     });
                     $('.arrows-1').css({
@@ -338,7 +338,7 @@ $(document).ready(function () {
                     $('.logoOR').css({
                         "transform": "scale(" + (hscroll / 90) + ")"
                     });
-                    $('.main-rules, .arrows-1').css({
+                    $('.main-rules, .arrows-1, .mobile-header').css({
                         "transform": "translateY(-" + (hscroll + 10) + "px)"
                     });
                     $('.arrows-1').css({
@@ -365,7 +365,7 @@ $(document).ready(function () {
                 $('.logoOR').css({
                     "transform": "scale(0)"
                 });
-                $('.main-rules').css({
+                $('.main-rules, .mobile-header').css({
                     "transform": "translateY(0)"
                 });
                 $('.arrows-1').css({
@@ -377,7 +377,7 @@ $(document).ready(function () {
                     $('.logoOR').css({
                         "transform": "scale(0)"
                     });
-                    $('.main-rules').css({
+                    $('.main-rules, .mobile-header').css({
                         "transform": "translate(0,0)"
                     });
                     $('.arrows-1').css({
@@ -387,11 +387,11 @@ $(document).ready(function () {
                     $('.logoOR').css({
                         "transform": "scale(" + (hscroll / 80) + ")"
                     });
-                    $('.main-rules').css({
+                    $('.main-rules, .mobile-header').css({
                         "transform": "translateY(-" + (hscroll + 10) + "px)"
                     });
                     $('.arrows-1').css({
-                        "transform": "translate(0px,-" + ((hscroll + 10)) + "px)"
+                        "transform": "translate(0px,-" + ((hscroll + 15)) + "px)"
 
                     });
                 }
@@ -415,7 +415,7 @@ $(document).ready(function () {
                 $('.logoOR').css({
                     "transform": "scale(0)"
                 });
-                $('.main-rules').css({
+                $('.main-rules, .mobile-header').css({
                     "transform": "translateY(0)"
                 });
                 $('.arrows-1').css({
@@ -428,7 +428,7 @@ $(document).ready(function () {
                     $('.logoOR').css({
                         "transform": "scale(0)"
                     });
-                    $('.main-rules').css({
+                    $('.main-rules, .mobile-header').css({
                         "transform": "translate(0,0)"
                     });
                     $('.arrows-1').css({
@@ -438,11 +438,11 @@ $(document).ready(function () {
                     $('.logoOR').css({
                         "transform": "scale(" + (hscroll / 72) + ")"
                     });
-                    $('.main-rules').css({
+                    $('.main-rules, .mobile-header').css({
                         "transform": "translateY(-" + (hscroll + 10) + "px)"
                     });
                     $('.arrows-1').css({
-                        "transform": "translate(0px,-" + ((hscroll + 10)) + "px)"
+                        "transform": "translate(0px,-" + ((hscroll + 15)) + "px)"
 
                     });
                 }
@@ -451,6 +451,29 @@ $(document).ready(function () {
 
 
         $(window).scroll(function () {
+            var BotOfWin1 = $(window).scrollTop() - $(window).height();
+            var BotOfObj1 = $('.gofullscreen').offset().top - $('.gofullscreen').outerHeight();
+            if (BotOfWin1 > BotOfObj1) {
+                $('.gofullscreen').css({
+                    "overflow-x": "visible"
+                });
+                var pos = 0;
+                $(window).bind('mousewheel DOMMouseScroll', function (event) {
+                    if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+                        if (pos > 1) {
+                            pos = pos - 50;
+                        }
+                    } else {
+                        pos = pos + 50;
+                    }
+                    $('.gofullscreen').scrollLeft(pos)
+                });
+            }
+            else{
+                $('.gofullscreen').css({
+                    "overflow-x": "hidden"
+                });
+            }
             $('.rules>p').each(function (i) {
                 var BotOfObj = $(this).offset().top + $(this).outerHeight();
                 var BotOfWin = $(window).scrollTop() + $(window).height();
