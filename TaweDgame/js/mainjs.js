@@ -1,56 +1,9 @@
 $(document).ready(function () {
-    //
-    // $(window).bind('orientationchange', function(event){
-    //   console.log(orientation);
-    //   if (orientation == 90){
-    //     rotate(window.orientation, -90);
-    //   }
-    // });
-    //
-    //   $(window).on('scroll resize load', function () {
-    //       if ($(window).width() <= 768) {
-    //           if (screen.height < screen.width) {
-    //           }
-    //       }
-    //       if ($(window).width() < 120) {
-    //       if($(window).height() == screen.height) {
-    //           $('.main-section').css({"display": "grid"});
-    //           $(".go-home").css({"display": "none"});
-    //           console.log('1');
-    //       }
-    //       else{
-    //           $('.main-section').css({"display": "none"});
-    //           $(".go-home").css({"display": "grid"});
-    //           console.log('500');
-    //       }
-    //     }
-    // var main = $('.main-section').height();
-    //   var mhome = $('.main-home').height();
-    // var mheader = $('.main-header').height();
-    // var mrules = $('.main-rules').height();
-    // var srules = $('.section-rules').height();
-    // var rheading = $('.rules-heading').height();
-    //   var rules = $('.rules').height();
-    //     var rulesp = $('.rules>p').height();
-    // var winh = $(window).width() - (main - mhome) - (mrules + srules + rheading +  rules + rulesp);
-
-
-    // console.log('.main-section: ' + main);
-    //   console.log('.main-home: ' + mhome);
-    // console.log('.main-header: ' + mheader);
-    // console.log('.main-rules: ' + mrules);
-    //   console.log('.section-rules: ' + srules);
-    // console.log('.rules-heading: ' + rheading);
-    // console.log('.rules: ' + rules);
-    //   console.log('doch: ' + $(document).height());
-    //     console.log('windowh: ' + $(window).width());
-    //
-    // $('.main-section').css({"grid-template-rows": "" + (winh) + "px 1fr"});
-    //
 
     $(window).on('scroll resize load', function () {
         var hscroll = $(this).scrollTop();
-
+        var TopOfWin1 = $(window).scrollTop();
+        var TopOfObj2 = $('.main-rules').position().top;
         if ($(this).width() <= 2560) {
             console.log("2560");
             if ($(window).width() > 1980) {
@@ -68,7 +21,7 @@ $(document).ready(function () {
                 $('.logoOR').css({
                     "transform": "scale(0)"
                 });
-                $('.main-rules, .mobile-header').css({
+                $('.main-rules, .mobile-header, .main-home').css({
                     "transform": "translateY(0)"
                 });
                 $('.arrows-1').css({
@@ -76,25 +29,30 @@ $(document).ready(function () {
                 });
             }
             if ($(window).width() > 1980) {
-                if ((hscroll / 1.5) < 1) {
+
+                if (TopOfWin1 > TopOfObj2) {
+                    $('.main-header').css({
+                        "display": "none"
+                    });
                     $('.logoOR').css({
                         "transform": "scale(0)"
                     });
-                    $('.main-rules, .mobile-header').css({
-                        "transform": "translate(0,0)"
-                    });
-                    $('.arrows-1').css({
-                        "transform": "translate(0px, 0)"
+                    $('.logoT, .logoD').css({
+                        "transform": "translate(0px,-" + ((hscroll / 0.35)) + "px)"
                     });
                 } else {
-                    $('.logoOR').css({
-                        "transform": "scale(" + (hscroll / 180) + ")"
+                    $('.main-header').css({
+                        "display": "grid"
                     });
-                    $('.main-rules, .arrows-1, .mobile-header').css({
-                        "transform": "translateY(-" + (hscroll + 10) + "px)"
+                    $('.logoOR').css({
+                        "transform": "scale(" + (hscroll / 140) + ")"
+                    });
+                    $('.main-rules, .mobile-header, .main-home').css({
+                        "transform": "translateY(-" + (hscroll / 0.85) + "px)"
                     });
                     $('.arrows-1').css({
-                        "transform": "translate(0px,-" + ((hscroll + 10)) + "px)"
+                        "transform": "translate(0px,-" + ((hscroll / 0.75)) + "px)"
+
                     });
                 }
             }
@@ -112,13 +70,14 @@ $(document).ready(function () {
                 });
             }
             if ($(window).width() < 1600) {
+
                 $('.logoT, .logoD').css({
                     "transform": "translate(0,0)"
                 });
                 $('.logoOR').css({
                     "transform": "scale(0)"
                 });
-                $('.main-rules, .mobile-header').css({
+                $('.main-rules, .mobile-header, .main-home').css({
                     "transform": "translateY(0)"
                 });
                 $('.arrows-1').css({
@@ -126,25 +85,39 @@ $(document).ready(function () {
                 });
             }
             if ($(window).width() > 1600) {
-                if ((hscroll / 1.5) < 1) {
+                if (TopOfWin1 > (TopOfObj2 + 50)) {
+                    $('.main-header').css({
+                        "display": "none"
+                    });
                     $('.logoOR').css({
                         "transform": "scale(0)"
                     });
-                    $('.main-rules, .mobile-header').css({
-                        "transform": "translate(0,0)"
+                    $('.logoT, .logoD').css({
+                        "transform": "translate(0px,-" + ((hscroll / 0.35)) + "px)"
                     });
-                    $('.arrows-1').css({
-                        "transform": "translate(0px, 0)"
+
+
+                    $('.gofullscreen').css({
+                        "overflow-x": "visible"
                     });
+
                 } else {
+                    $('.main-header').css({
+                        "display": "grid"
+                    });
+
+                    $('.gofullscreen').css({
+                        "overflow-x": "hidden"
+                    });
+
                     $('.logoOR').css({
                         "transform": "scale(" + (hscroll / 140) + ")"
                     });
-                    $('.main-rules, .arrows-1, .mobile-header').css({
-                        "transform": "translateY(-" + (hscroll + 10) + "px)"
+                    $('.main-rules, .mobile-header, .main-home').css({
+                        "transform": "translateY(-" + (hscroll / 0.85) + "px)"
                     });
                     $('.arrows-1').css({
-                        "transform": "translate(0px,-" + ((hscroll + 10)) + "px)"
+                        "transform": "translate(0px,-" + ((hscroll / 0.75)) + "px)"
                     });
                 }
             }
@@ -168,7 +141,7 @@ $(document).ready(function () {
                 $('.logoOR').css({
                     "transform": "scale(0)"
                 });
-                $('.main-rules, .mobile-header').css({
+                $('.main-rules, .mobile-header, .main-home').css({
                     "transform": "translateY(0)"
                 });
                 $('.arrows-1').css({
@@ -176,25 +149,24 @@ $(document).ready(function () {
                 });
             }
             if ($(window).width() > 1440) {
-                if ((hscroll / 1.5) < 1) {
+
+                if (TopOfWin1 > TopOfObj2) {
                     $('.logoOR').css({
                         "transform": "scale(0)"
                     });
-                    $('.main-rules, .mobile-header').css({
-                        "transform": "translate(0,0)"
-                    });
-                    $('.arrows-1').css({
-                        "transform": "translate(0px, 0)"
+                    $('.logoT, .logoD').css({
+                        "transform": "translate(0px,-" + ((hscroll / 0.35)) + "px)"
                     });
                 } else {
                     $('.logoOR').css({
                         "transform": "scale(" + (hscroll / 125) + ")"
                     });
-                    $('.main-rules, .arrows-1, .mobile-header').css({
-                        "transform": "translateY(-" + (hscroll + 10) + "px)"
+                    $('.main-rules, .mobile-header, .main-home').css({
+                        "transform": "translateY(-" + (hscroll / 0.85) + "px)"
                     });
                     $('.arrows-1').css({
-                        "transform": "translate(0px,-" + ((hscroll + 10)) + "px)"
+                        "transform": "translate(0px,-" + ((hscroll / 0.35)) + "px)"
+
                     });
                 }
             }
@@ -217,7 +189,7 @@ $(document).ready(function () {
                 $('.logoOR').css({
                     "transform": "scale(0)"
                 });
-                $('.main-rules, .mobile-header').css({
+                $('.main-rules, .mobile-header, .main-home').css({
                     "transform": "translateY(0)"
                 });
                 $('.arrows-1').css({
@@ -225,25 +197,22 @@ $(document).ready(function () {
                 });
             }
             if ($(window).width() > 1366) {
-                if ((hscroll / 1.5) < 1) {
+                if (TopOfWin1 > TopOfObj2) {
                     $('.logoOR').css({
                         "transform": "scale(0)"
                     });
-                    $('.main-rules, .mobile-header').css({
-                        "transform": "translate(0,0)"
-                    });
-                    $('.arrows-1').css({
-                        "transform": "translate(0px, 0)"
+                    $('.logoT, .logoD').css({
+                        "transform": "translate(0px,-" + ((hscroll / 0.35)) + "px)"
                     });
                 } else {
                     $('.logoOR').css({
                         "transform": "scale(" + (hscroll / 105) + ")"
                     });
-                    $('.main-rules, .arrows-1, .mobile-header').css({
-                        "transform": "translateY(-" + (hscroll + 10) + "px)"
+                    $('.main-rules, .mobile-header, .main-home').css({
+                        "transform": "translateY(-" + (hscroll / 0.85) + "px)"
                     });
                     $('.arrows-1').css({
-                        "transform": "translate(0px,-" + ((hscroll + 10)) + "px)"
+                        "transform": "translate(0px,-" + ((hscroll / 0.35)) + "px)"
                     });
                 }
             }
@@ -266,7 +235,7 @@ $(document).ready(function () {
                 $('.logoOR').css({
                     "transform": "scale(0)"
                 });
-                $('.main-rules, .mobile-header').css({
+                $('.main-rules, .mobile-header, .main-home').css({
                     "transform": "translateY(0)"
                 });
                 $('.arrows-1').css({
@@ -274,25 +243,24 @@ $(document).ready(function () {
                 });
             }
             if ($(window).width() > 1200) {
-                if ((hscroll / 1.5) < 1) {
+
+                if (TopOfWin1 > TopOfObj2) {
                     $('.logoOR').css({
                         "transform": "scale(0)"
                     });
-                    $('.main-rules, .mobile-header').css({
-                        "transform": "translate(0,0)"
-                    });
-                    $('.arrows-1').css({
-                        "transform": "translate(0px, 0)"
+                    $('.logoT, .logoD').css({
+                        "transform": "translate(0px,-" + ((hscroll / 0.35)) + "px)"
                     });
                 } else {
                     $('.logoOR').css({
                         "transform": "scale(" + (hscroll / 100) + ")"
                     });
-                    $('.main-rules, .arrows-1, .mobile-header').css({
-                        "transform": "translateY(-" + (hscroll + 10) + "px)"
+                    $('.main-rules, .mobile-header, .main-home').css({
+                        "transform": "translateY(-" + (hscroll / 0.85) + "px)"
                     });
                     $('.arrows-1').css({
-                        "transform": "translate(0px,-" + ((hscroll + 10)) + "px)"
+                        "transform": "translate(0px,-" + ((hscroll / 0.35)) + "px)"
+
                     });
                 }
             }
@@ -316,7 +284,7 @@ $(document).ready(function () {
                 $('.logoOR').css({
                     "transform": "scale(0)"
                 });
-                $('.main-rules, .mobile-header').css({
+                $('.main-rules, .mobile-header, .main-home').css({
                     "transform": "translateY(0)"
                 });
                 $('.arrows-1').css({
@@ -324,25 +292,25 @@ $(document).ready(function () {
                 });
             }
             if ($(window).width() > 1024) {
-                if ((hscroll / 1.5) < 1) {
+
+                if (TopOfWin1 > TopOfObj2) {
                     $('.logoOR').css({
                         "transform": "scale(0)"
                     });
-                    $('.main-rules, .mobile-header').css({
-                        "transform": "translate(0,0)"
-                    });
-                    $('.arrows-1').css({
-                        "transform": "translate(0px, 0)"
+                    $('.logoT, .logoD').css({
+                        "transform": "translate(0px,-" + ((hscroll / 0.35)) + "px)"
                     });
                 } else {
+
                     $('.logoOR').css({
                         "transform": "scale(" + (hscroll / 90) + ")"
                     });
-                    $('.main-rules, .arrows-1, .mobile-header').css({
-                        "transform": "translateY(-" + (hscroll + 10) + "px)"
+                    $('.main-rules, .mobile-header, .main-home').css({
+                        "transform": "translateY(-" + (hscroll / 0.85) + "px)"
                     });
                     $('.arrows-1').css({
-                        "transform": "translate(0px,-" + ((hscroll + 10)) + "px)"
+                        "transform": "translate(0px,-" + ((hscroll / 0.35)) + "px)"
+
                     });
                 }
             }
@@ -365,7 +333,7 @@ $(document).ready(function () {
                 $('.logoOR').css({
                     "transform": "scale(0)"
                 });
-                $('.main-rules, .mobile-header').css({
+                $('.main-rules, .mobile-header, .main-home').css({
                     "transform": "translateY(0)"
                 });
                 $('.arrows-1').css({
@@ -373,25 +341,23 @@ $(document).ready(function () {
                 });
             }
             if ($(window).width() > 992) {
-                if ((hscroll / 1.5) < 1) {
+                if (TopOfWin1 > TopOfObj2) {
                     $('.logoOR').css({
                         "transform": "scale(0)"
                     });
-                    $('.main-rules, .mobile-header').css({
-                        "transform": "translate(0,0)"
-                    });
-                    $('.arrows-1').css({
-                        "transform": "translate(0px, 0)"
+                    $('.logoT, .logoD').css({
+                        "transform": "translate(0px,-" + ((hscroll / 0.35)) + "px)"
                     });
                 } else {
+
                     $('.logoOR').css({
                         "transform": "scale(" + (hscroll / 80) + ")"
                     });
-                    $('.main-rules, .mobile-header').css({
-                        "transform": "translateY(-" + (hscroll + 10) + "px)"
+                    $('.main-rules, .mobile-header, .main-home').css({
+                        "transform": "translateY(-" + (hscroll / 0.85) + "px)"
                     });
                     $('.arrows-1').css({
-                        "transform": "translate(0px,-" + ((hscroll + 15)) + "px)"
+                        "transform": "translate(0px,-" + ((hscroll / 0.35)) + "px)"
 
                     });
                 }
@@ -415,7 +381,7 @@ $(document).ready(function () {
                 $('.logoOR').css({
                     "transform": "scale(0)"
                 });
-                $('.main-rules, .mobile-header').css({
+                $('.main-rules, .mobile-header, .main-home').css({
                     "transform": "translateY(0)"
                 });
                 $('.arrows-1').css({
@@ -428,69 +394,45 @@ $(document).ready(function () {
                     $('.logoOR').css({
                         "transform": "scale(0)"
                     });
-                    $('.main-rules, .mobile-header').css({
+                    $('.main-rules, .mobile-header, .main-home').css({
                         "transform": "translate(0,0)"
                     });
                     $('.arrows-1').css({
                         "transform": "translate(0px, 0)"
                     });
                 } else {
-                    $('.logoOR').css({
-                        "transform": "scale(" + (hscroll / 72) + ")"
-                    });
-                    $('.main-rules, .mobile-header').css({
-                        "transform": "translateY(-" + (hscroll + 10) + "px)"
-                    });
-                    $('.arrows-1').css({
-                        "transform": "translate(0px,-" + ((hscroll + 15)) + "px)"
+                    if (TopOfWin1 > TopOfObj2) {
+                        $('.logoOR').css({
+                            "transform": "scale(0)"
+                        });
+                        $('.logoT, .logoD').css({
+                            "transform": "translate(0px,-" + ((hscroll / 0.35)) + "px)"
+                        });
+                    } else {
 
-                    });
+                        $('.logoOR').css({
+                            "transform": "scale(" + (hscroll / 72) + ")"
+                        });
+                        $('.main-rules, .mobile-header, .main-home').css({
+                            "transform": "translateY(-" + (hscroll / 0.85) + "px)"
+                        });
+                        $('.arrows-1').css({
+                            "transform": "translate(0px,-" + ((hscroll / 0.35)) + "px)"
+
+                        });
+                    }
                 }
             }
         }
 
-
-        $(window).scroll(function () {
-            var BotOfWin1 = $(window).scrollTop() - $(window).height();
-            var BotOfObj1 = $('.gofullscreen').offset().top - $('.gofullscreen').outerHeight();
-            if (BotOfWin1 > BotOfObj1) {
-                $('.gofullscreen').css({
-                    "overflow-x": "visible"
-                });
-                var pos = 0;
-                $(window).bind('mousewheel DOMMouseScroll', function (event) {
-                    if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
-                        if (pos > 1) {
-                            pos = pos - 50;
-                        }
-                    } else {
-                        pos = pos + 50;
-                    }
-                    $('.gofullscreen').scrollLeft(pos)
-                });
+        $('.rules>p').each(function (i) {
+            var BotOfObj = $(this).offset().top + $(this).outerHeight();
+            var BotOfWin = $(window).scrollTop() + $(window).height();
+            if (BotOfWin > BotOfObj) {
+                $(this).animate({
+                    'opacity': '1'
+                }, 800);
             }
-            else{
-                $('.gofullscreen').css({
-                    "overflow-x": "hidden"
-                });
-            }
-            $('.rules>p').each(function (i) {
-                var BotOfObj = $(this).offset().top + $(this).outerHeight();
-                var BotOfWin = $(window).scrollTop() + $(window).height();
-                if (BotOfWin > BotOfObj) {
-                    $(this).animate({
-                        'opacity': '1'
-                    }, 800);
-                }
-            });
         });
     });
 });
-
-// screen.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
-//
-// if (screen.lockOrientationUniversal("landscape-primary")) {
-//
-// } else {
-//     // Orientation lock failed
-// }
