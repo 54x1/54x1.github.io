@@ -135,22 +135,22 @@ h2 {
     width: 170px;
     height: fit-content;
     position: relative;
-    top: 25vh;
+    top: 10vh;
+    left: -10vh;
     grid-row: 1;
     grid-column: 1/4;
   }
-.gofullscreen{
-  display: grid;
-  grid-template-rows: 0fr 0fr 0fr;
-  grid-template-columns: 0fr 0fr;
-  min-height: 1500px;
-}
+  .gofullscreen{
+    display: grid;
+    grid-template-rows: 0fr 0fr 0fr;
+    grid-template-columns: 0fr 0fr;
+    min-height: 1500px;
+  }
   .main-home{
     grid-row: 2;
     grid-column: 1/4;
-    margin-left: 99.2vw;
+    margin-left: 99.8vw;
     display: grid;
-    min-height: 600px;
 
   }
 
@@ -174,14 +174,14 @@ h2 {
     width: 30%;
     z-index: 0;
   }
-.main-rules{
-  display: grid;
-  grid-row: 4;
-  grid-column: 1/4;
-  text-align: center;
-  text-transform: uppercase;
-  /*min-height: 1000px;*/
-}
+  .main-rules{
+    display: grid;
+    grid-row: 4;
+    grid-column: 1/4;
+    text-align: center;
+    text-transform: uppercase;
+    /*min-height: 1000px;*/
+  }
   .game-section{
     display: grid;
     height: 100%;
@@ -242,7 +242,7 @@ h2 {
     /*top: 30%;*/
   }
   .main-section {
-    grid-template-rows: 0.9fr 0.18fr auto;
+    grid-template-rows: 1.4fr 0.18fr auto;
   }
   .mobile-header{
     display: none;
@@ -250,18 +250,33 @@ h2 {
 }
 
 @media screen and (min-width: 1024px) {
-
-
+  .main-section {
+    grid-template-rows: 1.3fr 0.18fr auto;
+  }
 }
 
-@media screen and (min-width: 1366px) {}
+/*@media screen and (min-width: 1366px) {}*/
 
-@media screen and (min-width: 1440px) {}
+@media screen and (min-width: 1440px) {
+  .main-section {
+    grid-template-rows: 1.2fr 0.18fr auto;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .main-section {
+    grid-template-rows: 1fr 0.18fr auto;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .main-section {
+    grid-template-rows: 0.9fr 0.18fr auto;
+  }
+}
+
 
 @media screen and (max-width: 1024px) {
-  .main-section{
-    grid-template-rows: 1.6fr 0.18fr auto;
-  }
 }
 
 @media screen and (max-width: 992px) {
@@ -271,9 +286,6 @@ h2 {
   body {
     color: #c836c8;
   }
-  .main-section {
-      grid-template-rows: 1.6fr 0.2fr 0fr;
-    }
   .mobile-header {
     display: grid;
     width: 95%;
