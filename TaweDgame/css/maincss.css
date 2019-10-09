@@ -143,6 +143,7 @@ h2 {
   display: grid;
   grid-template-rows: 0fr 0fr 0fr;
   grid-template-columns: 0fr 0fr;
+  min-height: 1500px;
 }
   .main-home{
     grid-row: 2;
@@ -250,6 +251,7 @@ h2 {
 
 @media screen and (min-width: 1024px) {
 
+
 }
 
 @media screen and (min-width: 1366px) {}
@@ -257,7 +259,9 @@ h2 {
 @media screen and (min-width: 1440px) {}
 
 @media screen and (max-width: 1024px) {
-
+  .main-section{
+    grid-template-rows: 1.6fr 0.18fr auto;
+  }
 }
 
 @media screen and (max-width: 992px) {
