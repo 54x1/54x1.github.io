@@ -143,6 +143,7 @@ html, body{
   margin-right: 0px;
   margin-left: 0px;
   z-index: 1;
+  overflow: auto hidden;
 }
 
 .nav-container{
