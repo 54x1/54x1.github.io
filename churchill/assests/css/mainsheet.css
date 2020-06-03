@@ -802,7 +802,9 @@ section.home-image>div>img {
 
 /* media query for ipad pro */
 @media only screen and (min-width: 1024px) {
-
+section.home-image {
+      height: 100vh !important;
+    }
   /* grid format css */
   .robin-content {
     grid-template-columns: 20px 1fr 20px;
@@ -944,9 +946,6 @@ section.home-image>div>img {
     grid-row-start: 8;
     grid-row-end: 8;
   }
-section.home-image {
-      height: 100vh !important;
-    }
   .read-more-2-para-img {
     background-image: url("../images/churchill-house-3.jpg");
   }
