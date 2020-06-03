@@ -944,7 +944,9 @@ section.home-image>div>img {
     grid-row-start: 8;
     grid-row-end: 8;
   }
-
+section.home-image {
+      height: 100vh !important;
+    }
   .read-more-2-para-img {
     background-image: url("../images/churchill-house-3.jpg");
   }
