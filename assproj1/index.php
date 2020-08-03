@@ -5,7 +5,6 @@
 <meta charset="utf-8">
 </head>
 <body>
-  hello world
-<!-- <?php echo"" ?> -->
+<?php echo"hello world" ?>
 </body>
 </html>
