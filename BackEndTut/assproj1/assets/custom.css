@@ -38,22 +38,17 @@ padding:0;}
 .table>thead>tr>th:nth-child(2){
   border-left: 2px solid #ddd;
   border-right: 2px solid #ddd;
-
   width: 600px;
-    min-width: 0.5fr;
 }
 .table>thead>tr>th:nth-child(3){
     border-right: 2px solid #ddd;
-
     width: 400px;
-    min-width: 0.5fr;
 }
 
 .table>thead>tr>th {
-    padding: 12px 24px;
+    padding: 12px 12px;
 text-align: center;
 width: 680px;
-min-width: 2fr;
 }
 
 .table>tbody>tr>td{
