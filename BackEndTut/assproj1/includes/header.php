@@ -30,7 +30,7 @@
     <li class="<?php echo $act2 ?>"><a href="search.php">Search AniDEX</a></li>
     <!-- <li class="<?php //echo $act3 ?>"><a href="#">Edit My List</a></li> -->
     <li class="<?php echo $act4 ?>"><a href="add.php">Add to My List</a></li>
-    <?php}?>
+    <?php } ?>
   </ul>
       <ul class="nav navbar-nav navbar-right">
         <?php if(isset($_SESSION['id'])){
