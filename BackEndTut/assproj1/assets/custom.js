@@ -18,7 +18,7 @@ function mySearch(){
   $("#search_query").on("keyup", function() {
     var value = $(this).val().toLowerCase();
     var aa = $(".search_table tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+  $(this).toggle($(this).find("td:first").text().toLowerCase().indexOf(value) > -1)
     });
 
 if($('.search_table tr:visible').length != 0) {
