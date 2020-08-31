@@ -143,8 +143,10 @@ ON a.animename like :search and userid=:id left join anibase as b on a.animename
 
 
 
+
 ?>
- <table class="table">
+
+<table class="table">
     <thead>
       <tr>
         <th>Anime</th>
@@ -153,9 +155,7 @@ ON a.animename like :search and userid=:id left join anibase as b on a.animename
       </tr>
     </thead>
     <tbody class="search_table">
-      <?php   foreach ($result as $row){
-//
-                 ?>
+      <?php  foreach ($result as $row){ ?>
 
 
 
@@ -163,6 +163,8 @@ ON a.animename like :search and userid=:id left join anibase as b on a.animename
 
     <td>
       <div class="row">
+
+
       <div class="col-sm-6 center-block col-md-6 col-lg-6 col-sm-push-3">
              <?php
 
@@ -173,13 +175,14 @@ ON a.animename like :search and userid=:id left join anibase as b on a.animename
                <div class="col-sm-6 col-sm-offset-6 col-md-offset-7  col-lg-offset-8  col-md-4 col-lg-2 col-sm-pull-3">
 
                   <?php
-                  if( $row["image"] !== NULL && $row["image"] !== "" ){
+
+                  if($row["imageup"] != NULL || $row["imageup"] != "" || $row["imageup"] != "0"){
                     echo "<img class='img-fluid img-thumbnail thumbnail' src='" . $row["image"] . "' alt='" . $row['animename'] . "'>";
-                			}
-                			else
-                			{
-                				echo "<p class='small'>No image available.</p>";
-                			}
+                  }else if( $row["image"] != NULL || $row["image"] != "" || $row["image"] != "0"){
+                          echo "<img id='myImg' class='img-fluid img-thumbnail thumbnail' src='" . $row["imageup"] . "' alt='" . $row['animename'] . "'>";
+                            }else {
+                              echo "<p class='small'>No image available.</p>";
+                            }
 
         ?>
         </div>

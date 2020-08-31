@@ -22,17 +22,20 @@ if (isset($_POST['submit'])) {
     // include the config file that we created before
 require_once "./admin/config.php";
 
+
+
+
+
+
+
 // this is called a try/catch statement
 try {
     // FIRST: Connect to the database
     $connection = new PDO($dsn, $username, $password, $options);
 $animename = $_POST['animename'];
-if (!empty($_POST['imgurl'])){
-  $imgurl = $_POST['imgurl'];
-}
-else{
-  $imgurl = "";
-}
+
+
+
   if(!empty($_FILES["imagelocation"]["name"])){
     //// https://www.w3schools.com/php/php_file_upload.asp
     $target_dir = "uploads/";
@@ -81,19 +84,16 @@ else{
       echo "Sorry, your file was not uploaded.";
       //exit();
       // if everything is ok, try to upload file
-    } else {
+    } else if (empty($upload_err)) {
       if ( move_uploaded_file($_FILES["imagelocation"]["tmp_name"], $target_file) ) {
   				echo "<p class="."container-fluid".">The file ". basename( $_FILES["imagelocation"]["name"] ). " has been uploaded.  </p>";
       } else {
         echo "Sorry, there was an error uploading your file.";
-        echo $upload_err;
       }
     }
   }
-  else{
 
-  }
-
+    $imgurl = $_POST['imgurl'];
     // THIRD: Turn the array into a SQL statement
     $sql3 = "INSERT INTO anibase (userid, episodes, animename, image, imageup) VALUES (:userid, :episodes, :animename, :image, :imageup)";
 
@@ -102,20 +102,20 @@ else{
     $statement3->bindValue(':userid', $_SESSION['id']);
   $statement3->bindValue(":animename", $animename);
   $statement3->bindValue(':episodes', $_POST['episodes']);
-  if (!empty($imgurl)){
+  if(!empty($target_file)){
+    $target_file = basename( $_FILES["imagelocation"]["name"] );
+    $imgurl = "0";
+
+  }
+  if(!empty($imgurl)){
+    $imgurl = $_POST['imgurl'];
+    $target_file = "0";
+;
+  }
   $statement3->bindValue(':image', $imgurl);
-}
-else{
-  $imgurl = "";
-    $statement3->bindValue(':image', $imgurl);
-}
-if (!empty($target_file)){
+      unset($imgurl);
   $statement3->bindValue(':imageup', $target_file);
-}
-else{
-    $target_file = "";
-      $statement3->bindValue(':imageup', $target_file);
-}
+      unset($target_file);
 
     $statement3->execute();
 
@@ -138,7 +138,7 @@ else{
 ?>
 
 <div class="container-fluid">
-  <?php if (isset($_POST['submit']) && $statement3) {?>
+  <?php if (isset($_POST['submit']) && $statement3 && empty($upload_err)) {?>
   <p>Anime Successfully Added.</p>
 <?php }?>
     <h2>Add to Anime Database</h2>
@@ -161,7 +161,7 @@ else{
 <div class="form-group">
   <label>Select image to upload:</label>
   <div class="form-group">
-  <input type="file" disabled name="imagelocation upload" id="imagelocation">
+  <input type="file" disabled name="imagelocation" id="imagelocation">
   </div>
 
 

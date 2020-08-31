@@ -61,6 +61,7 @@ try {
             $statement3->bindValue(':userid', $userid);
           // execute the statement
           $statement3->execute();
+          //this fetchAll gives a false error
           $result3 = $statement3->fetchAll();
         } catch(PDOException $error) {
               // if there is an error, tell us what it is
@@ -89,7 +90,7 @@ echo $sql1 . "<br>" . $error->getMessage();
    if (isset($_POST['yes']) && $statement3) {?>
 <p>Anime Successfully Deleted.</p>
 <p>Results Refresh in <span class="timer">3</span></p>
-
+<script> setTimeout(function() { window.location = "search.php"; }, 3000);</script>
 <?php
 header( "location: index.php");
 }

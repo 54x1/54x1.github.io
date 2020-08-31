@@ -45,6 +45,7 @@ function imgFunc(){
   $("input:file").removeAttr('disabled');
      $(".imgurl").attr("disabled", 'disabled');
              $(".imgurl-btn").removeAttr('disabled');
+             $('.imgurl').val('');
 });
 
 
@@ -54,8 +55,17 @@ $(".imgurl-btn").click(function(){
   $("input:file").attr("disabled", 'disabled');
      $(".imgurl").removeAttr('disabled');
         $(".upload-btn").removeAttr('disabled');
+        $('input:file').val('');
 });
 
+
+var count = 0;
+if (count == 0){
+$('img').on("error", function () {
+    this.src = ("./uploads/not-found.png");
+    count += 1;
+});
+}
 }
 imgFunc();
  });
