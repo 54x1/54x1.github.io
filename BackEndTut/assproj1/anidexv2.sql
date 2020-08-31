@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 28, 2020 at 03:46 PM
+-- Generation Time: Aug 31, 2020 at 04:01 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -31,23 +31,27 @@ CREATE TABLE `anibase` (
   `animeid` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
   `animename` varchar(255) NOT NULL,
-  `episodes` int(11) NOT NULL
+  `episodes` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `imageup` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `anibase`
 --
 
-INSERT INTO `anibase` (`animeid`, `userid`, `animename`, `episodes`) VALUES
-(7, 3, 'bleach', 3),
-(10, 2, 'bleach', 2),
-(16, 1, 'one piece', 1),
-(18, 1, 'ouran high school host club', 1),
-(32, 1, 'bleach', 1),
-(34, 1, 'naruto', 1),
-(40, 2, 'FMA', 2),
-(41, 1, 'FMA', 0),
-(46, 3, 'FMA', 0);
+INSERT INTO `anibase` (`animeid`, `userid`, `animename`, `episodes`, `image`, `imageup`) VALUES
+(62, 1, 'bleach', 1, 'uploads/bleach.png', ''),
+(63, 1, 'ouran high school host club', 1, 'uploads/download.jpg', ''),
+(64, 1, 'nana', 1, 'uploads/nana.jpg', ''),
+(65, 1, 'FMA', 1, 'uploads/images.jpg', ''),
+(66, 1, 'naruto', 1, 'uploads/naruto.jpg', ''),
+(67, 1, 'one piece', 1, 'uploads/one.jpeg', ''),
+(68, 1, 'K', 1, 'https://879ed873-madman-com-au.akamaized.net/media/Series/17312/17312-763276.jpg', ''),
+(69, 1, 'Psycho-Pass', 1, 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS1tvp8B_kGlyW-OMWI0HFS0ZWJ0HUB3mDrzn3fkJTRODonYbnL', ''),
+(72, 3, 'bleach', 0, 'uploads/bleach.png', ''),
+(73, 3, 'ouran high school host club', 0, 'uploads/download.jpg', ''),
+(78, 3, 'The God of High School', 1, 'https://cdn.myanimelist.net/images/anime/1722/107269.jpg', '');
 
 -- --------------------------------------------------------
 
@@ -94,13 +98,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `anibase`
 --
 ALTER TABLE `anibase`
-  MODIFY `animeid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `animeid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

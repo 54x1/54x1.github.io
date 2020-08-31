@@ -40,108 +40,106 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
             // FIRST: Connect to the database
             $connection = new PDO($dsn, $username, $password, $options);
             $userid = $_SESSION['id'];
-            //$search = $_POST['search'];
             // SECOND: Create the SQL
             //working ish
 //             $sql = "SELECT * FROM anibase WHERE anibase.animename like :search and userid= :id
 // union SELECT * from anibase where anibase.animename like :search group by animename order by animename";
 
-$sql = "  SELECT Distinct a.animeid, a.userid,a.animename, a.episodes
+$sql = "SELECT Distinct a.animeid, a.userid,a.animename, a.episodes, a.image, a.imageup
 FROM anibase as a
 LEFT JOIN users
-ON a.animename like :search and userid=:id left join anibase as b on a.animename like :search  group by animename";
+ON a.animename like :search and userid=:id left join anibase as b on a.animename like :search group by animename";
             // THIRD: Prepare the SQL
             $statement = $connection->prepare($sql);
             $statement->bindValue(':id', $userid);
             $statement->bindValue(':search', "%%");
             $statement->execute();
-            // var_dump($statement);
             // FOURTH: Put it into a $result object that we can access in the page
             $result = $statement->fetchAll();
 
-              //<-check if anime is in database start->
-          try{
-                  $userid = $_SESSION['id'];
-                //  $search = $_POST['search'];
-                  // SECOND: Create the SQL
-                  $sql5 = "SELECT * FROM anibase WHERE anibase.animename like :search and userid = :id order by animename";
-                  // THIRD: Prepare the SQL
-                  $statement5 = $connection->prepare($sql5);
-                  $statement5->bindValue(':id', $userid);
-                  $statement5->bindValue(':search', "%%");
-                  $statement5->execute();
-                  // var_dump($statement);
-                  // FOURTH: Put it into a $result object that we can access in the page
-                  $result5 = $statement5->fetchAll();
-}
-catch(PDOException $error) {
-    // if there is an error, tell us what it is
-    echo $sql5 . "<br>" . $error->getMessage();
-}
 
-//<-my array function getting stuff start ->
-     $a = array();
-      $b= array();
-      $epiarr = array();
-     foreach ($result5 as $row5) {
+            //<- add/removeing start ->
+            if (isset($_GET['addid']) && !empty($_GET['addid'])) {
+                try {
+                  //<-select anime row from other user start ->
+                    $connection = new PDO($dsn, $username, $password, $options);
+                    $id = $_GET['addid'];
+                    // echo $id;
+                    $sql3 = "SELECT * FROM anibase where animeid = :id";
+                    $statement3 = $connection->prepare($sql3);
+                    $statement3->bindValue(':id', $id);
+                    $statement3->execute();
+                    $result3 = $statement3->fetchAll();
+          //<-select anime row from other user end ->
+                    if ($statement3->rowCount() > 0) {
+                            foreach ($result3 as $row3) {
+                              //<-add anime name from other user start ->
+                                $animename = $row3['animename'];
+                                $image = $row3['image'];
+                                $imageup = $row3['imageup'];
+                                $episodes = "0";
+                                $userid = $_SESSION['id'];
+                                $sql4 = "INSERT INTO anibase (userid, animename, episodes, image) VALUES (:userid, :animename, :episodes, :image)";
+                                $statement4 = $connection->prepare($sql4);
+                                $statement4->bindValue(":userid", $userid);
+                                $statement4->bindValue(":animename", $animename);
+                                $statement4->bindValue(":episodes", $episodes);
+                                $statement4->bindValue(":image", $image);
+                                $statement4->bindValue(":imageup", $imageup);
+                                $statement4->execute();
+                                echo "$animename Successfully Added to List.</p>";
+                                ?>
+                                <p>Results Refresh in <span class="timer">3</span></p>
+                                <script> setTimeout(function() { window.location = "search.php"; }, 3000);</script>
+                                <?php
+                                    //<-add anime name from other user end ->
+                            }
+                    }
+                }
+                catch(PDOException $error) {
+                    echo $sql4 . "<br>" . $error->getMessage();
+                }
+            } else {
+                // echo "Unknow ID";
+            }
+            if (isset($_GET['removeid']) && !empty($_GET['removeid'])) {
+              $connection = new PDO($dsn, $username, $password, $options);
+                  $id = $_GET["removeid"];
+              $sql7 = "SELECT * FROM anibase where animeid = :id";
+              $statement7 = $connection->prepare($sql7);
+              $statement7->bindValue(':id', $id);
+              $statement7->execute();
+              $result7 = $statement7->fetchAll();
+                try {
+                    // define database connection
+                    $connection = new PDO($dsn, $username, $password, $options);
+                    // set id variable
+                    foreach ($result7 as $row7) {
+                      $animename = $row7['animename'];
+                    }
 
-                $arrSearch = array('name' => $row5['animename']);
-           array_push($b, $arrSearch);
-     }
-       foreach ($result as $row) {
 
-                  $arrSearch2 = array('name' => $row['animename']);
-                 foreach($arrSearch2 as $key => $value) {
-                array_push($a, $value);
-     }
-     if ($userid == $row['userid']){
-        array_push($epiarr, array('userid' => $row['userid'], 'name' => $row['animename'], 'episodes' => $row['episodes']));
-// break;
-     }
-
-   }
-   // echo print_r($epiarr). "</br>";
-$c = array();
-$f = array();
-$g = array();
-foreach($b as $key => $value) {
-array_push($c, $value['name']);
-}
-
-foreach(array_values($a) as $key => $value) {
-array_push($f, $value)."</br> </br></br>";
-}
-
-foreach(array_values($c) as $key => $value) {
-array_push($g, $value)."</br> </br></br>";
-}
-
-$h = array_merge($f, $g);
-
-$arri = array_unique($h);
-
-// print_r($epiarr);
-
-    //<-my array function getting stuff end ->
-try{
-        $userid = $_SESSION['id'];
-        // $search = $_POST['search'];
-        // SECOND: Create the SQL
-        $sql6 = "SELECT episodes, userid, animename FROM anibase WHERE anibase.animename like :search and userid = :id order by animename";
-        // THIRD: Prepare the SQL
-        $statement6 = $connection->prepare($sql6);
-        $statement6->bindValue(':id', $userid);
-        $statement6->bindValue(':search', "%%");
-        $statement6->execute();
-        // var_dump($statement);
-        // FOURTH: Put it into a $result object that we can access in the page
-        $result6 = $statement6->fetchAll();
-}
-catch(PDOException $error) {
-// if there is an error, tell us what it is
-echo $sql6 . "<br>" . $error->getMessage();
-}
-
+                    // Create the SQL
+                    $sql2 = "DELETE FROM anibase WHERE animeid = :id";
+                    // Prepare the SQL
+                    $statement2 = $connection->prepare($sql2);
+                    // bind the id to the PDO
+                    $statement2->bindValue(':id', $id);
+                    // execute the statement
+                    $statement2->execute();
+                    // $result2 = $statement2->fetchAll();
+                    echo "$animename Successfully Removed from List.</p>";
+                    ?>
+                    <p>Results Refresh in <span class="timer">3</span></p>
+                    <script> setTimeout(function() { window.location = "search.php"; }, 3000);</script>
+                    <?php
+                }
+                catch(PDOException $error) {
+                    // if there is an error, tell us what it is
+                    echo $sql2 . "<br>" . $error->getMessage();
+                }
+            }
+            //<- add/removeing start ->
 
 
 
@@ -164,10 +162,28 @@ echo $sql6 . "<br>" . $error->getMessage();
      <tr>
 
     <td>
-      <?php
+      <div class="row">
+      <div class="col-sm-6 center-block col-md-6 col-lg-6 col-sm-push-3">
+             <?php
 
-        echo $row['animename'];
+               echo "<b>". $row['animename'] . "</b>";
+               ?>
+             </div>
+                 </div>
+               <div class="col-sm-6 col-sm-offset-6 col-md-offset-7  col-lg-offset-8  col-md-4 col-lg-2 col-sm-pull-3">
+
+                  <?php
+                  if( $row["image"] !== NULL && $row["image"] !== "" ){
+                    echo "<img class='img-fluid img-thumbnail thumbnail' src='" . $row["image"] . "' alt='" . $row['animename'] . "'>";
+                			}
+                			else
+                			{
+                				echo "<p class='small'>No image available.</p>";
+                			}
+
         ?>
+        </div>
+        </div>
     </td>
    <td>
 
@@ -243,90 +259,8 @@ echo $sql6 . "<br>" . $error->getMessage();
   </html>
   <?php
    //} //<- submit search end ->
-    //<- add/removeing start ->
-    if (isset($_GET['addid']) && !empty($_GET['addid'])) {
-        try {
-          //<-select anime row from other user start ->
-            $connection = new PDO($dsn, $username, $password, $options);
-            $id = $_GET['addid'];
-            // echo $id;
-            $sql3 = "SELECT * FROM anibase where animeid = :id";
-            $statement3 = $connection->prepare($sql3);
-            $statement3->bindValue(':id', $id);
-            $statement3->execute();
-            $result3 = $statement3->fetchAll();
-  //<-select anime row from other user end ->
-            if ($statement3->rowCount() > 0) {
-                    foreach ($result3 as $row3) {
-                      //<-add anime name from other user start ->
-                        $animename = $row3['animename'];
-                        $episodes = "0";
-                        $userid = $_SESSION['id'];
-                        $sql4 = "INSERT INTO anibase (userid, animename, episodes) VALUES (:userid, :animename, :episodes)";
-                        $statement4 = $connection->prepare($sql4);
-                        $statement4->bindValue(":userid", $userid);
-                        $statement4->bindValue(":animename", $animename);
-                        $statement4->bindValue(":episodes", $episodes);
-                        $statement4->execute();
-                        echo "$animename Successfully Added to List.</p>";
-                        ?>
-                        <p>Results Refresh in <span class="timer">3</span></p>
-                        <script> setTimeout(function() { window.location = "search.php"; }, 3000);</script>
-                        <?php
-                            //<-add anime name from other user end ->
-                    }
-            }
-        }
-        catch(PDOException $error) {
-            echo $sql4 . "<br>" . $error->getMessage();
-        }
-    } else {
-        // echo "Unknow ID";
-
-    }
-    if (isset($_GET['removeid']) && !empty($_GET['removeid'])) {
-      $connection = new PDO($dsn, $username, $password, $options);
-          $id = $_GET["removeid"];
-      $sql7 = "SELECT * FROM anibase where animeid = :id";
-      $statement7 = $connection->prepare($sql7);
-      $statement7->bindValue(':id', $id);
-      $statement7->execute();
-      $result7 = $statement7->fetchAll();
-        try {
-            // define database connection
-            $connection = new PDO($dsn, $username, $password, $options);
-            // set id variable
-            foreach ($result7 as $row7) {
-              $animename = $row7['animename'];
-            }
 
 
-            // Create the SQL
-            $sql2 = "DELETE FROM anibase WHERE animeid = :id";
-            // Prepare the SQL
-            $statement2 = $connection->prepare($sql2);
-            // bind the id to the PDO
-            $statement2->bindValue(':id', $id);
-            // execute the statement
-            $statement2->execute();
-            // $result2 = $statement2->fetchAll();
-            echo "$animename Successfully Removed from List.</p>";
-            ?>
-            <p>Results Refresh in <span class="timer">3</span></p>
-            <script> setTimeout(function() { window.location = "search.php"; }, 3000);</script>
-            <?php
-        }
-        catch(PDOException $error) {
-            // if there is an error, tell us what it is
-            echo $sql2 . "<br>" . $error->getMessage();
-        }
-?>
-       <!-- <div class="container-fluid">
-          <h2>Are You Sure you want to delete</h2>
-        </div> -->
-        <?php
-    }
-    //<- add/removeing start ->
 
 }
 //<- login if end ->

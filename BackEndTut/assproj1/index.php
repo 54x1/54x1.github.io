@@ -99,7 +99,28 @@ if (!empty($result)){
 
       <tr>
 
-        <td><?php echo $row['animename'];?></td>
+        <td>  <div class="row">
+          <div class="col-sm-6 center-block col-md-6 col-lg-6 col-sm-push-3">
+                 <?php
+
+                   echo "<b>". $row['animename'] . "</b>";
+                   ?>
+                     </div>
+                   <div class="col-sm-6 col-sm-offset-6 col-md-offset-7 col-lg-offset-7  col-md-4 col-lg-4 col-sm-pull-3">
+
+                      <?php
+                      if(!empty($row['image'])){
+                        echo "<img class='img-fluid img-thumbnail thumbnail' src='" . $row["image"] . "' alt='" . $row['animename'] . "'>";
+                      }else if( $row["imageup"] !== NULL && $row["imageup"] !== "" ){
+                              echo "<img class='img-fluid img-thumbnail thumbnail' src='" . $row["imageup"] . "' alt='" . $row['animename'] . "'>";
+                          			}else {
+                          				echo "<p class='small'>No image available.</p>";
+                          			}
+
+
+            ?>
+            </div>
+            </div></td>
         <td><?php echo $row['episodes'];?></td>
         <td>
           <a href="edit.php?id=<?php echo $row['animeid'];?>" class="btn btn-default btn-sm">
