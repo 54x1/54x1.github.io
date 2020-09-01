@@ -58,11 +58,15 @@ $animename = $_POST['animename'];
     }
 
     // Check if file already exists
+    // $count = 0;
     if (file_exists($target_file)) {
         //echo "Sorry, a file with that name already exists.";
       $upload_err = "Sorry, a file with that name already exists.";
-      $uploadOk = 1;
+      $uploadOk = 0;
+      // $count++;
+      // $target_file = $target_dir . $count. basename($_FILES["imagelocation"]["name"]);
     }
+
 
     // Check file size (limit in bytes)
     if ($_FILES["imagelocation"]["size"] > 500000) {
@@ -81,7 +85,8 @@ $animename = $_POST['animename'];
 
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
-      echo "Sorry, your file was not uploaded.";
+      echo "Sorry, your file was not uploaded.</br>";
+        echo $upload_err;
       //exit();
       // if everything is ok, try to upload file
     } else if (empty($upload_err)) {
@@ -89,11 +94,12 @@ $animename = $_POST['animename'];
   				echo "<p class="."container-fluid".">The file ". basename( $_FILES["imagelocation"]["name"] ). " has been uploaded.  </p>";
       } else {
         echo "Sorry, there was an error uploading your file.";
+
       }
     }
   }
-
-    $imgurl = $_POST['imgurl'];
+if (empty($upload_err)){
+    $imgurl = isset($_POST['imgurl']);
     // THIRD: Turn the array into a SQL statement
     $sql3 = "INSERT INTO anibase (userid, episodes, animename, image, imageup) VALUES (:userid, :episodes, :animename, :image, :imageup)";
 
@@ -103,14 +109,13 @@ $animename = $_POST['animename'];
   $statement3->bindValue(":animename", $animename);
   $statement3->bindValue(':episodes', $_POST['episodes']);
   if(!empty($target_file)){
-    $target_file = basename( $_FILES["imagelocation"]["name"] );
+    $target_file = $target_dir . basename( $_FILES["imagelocation"]["name"] );
     $imgurl = "0";
 
   }
   if(!empty($imgurl)){
     $imgurl = $_POST['imgurl'];
     $target_file = "0";
-;
   }
   $statement3->bindValue(':image', $imgurl);
       unset($imgurl);
@@ -124,7 +129,7 @@ $animename = $_POST['animename'];
     // if there is an error, tell us what it is
 echo $sql3 . "<br>" . $error->getMessage();
 }
-
+}
 
 }
 
@@ -161,7 +166,7 @@ else{
 <div class="form-group">
   <label>Select image to upload:</label>
   <div class="form-group">
-  <input type="file" disabled name="imagelocation" id="imagelocation">
+  <input type="file" disabled  name="imagelocation" id="imagelocation">
   </div>
 
 
@@ -169,7 +174,7 @@ else{
 <div class="form-group imgurl">
   <label>Enter image URL:</label>
   <div class="form-group">
-  <input type="text" name="imgurl" disabled class="form-control imgurl" id="imgurl">
+  <input type="text" name="imgurl"  disabled class="form-control imgurl" id="imgurl">
   </div>
 </div>
   <!-- <label for="synopsis">synopsis</label>
