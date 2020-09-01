@@ -75,11 +75,20 @@ ON a.animename like :search and userid=:id left join anibase as b on a.animename
                             foreach ($result3 as $row3) {
                               //<-add anime name from other user start ->
                                 $animename = $row3['animename'];
-                                $image = $row3['image'];
+                                if(!empty($row3['imageup'])){
                                 $imageup = $row3['imageup'];
+                                  $image = "0";
+
+                                }
+                                if(!empty($row3['image'])){
+                                  $image = $row3['image'];
+                                  $imageup = "0";
+                                }
+
+
                                 $episodes = "0";
                                 $userid = $_SESSION['id'];
-                                $sql4 = "INSERT INTO anibase (userid, animename, episodes, image) VALUES (:userid, :animename, :episodes, :image)";
+                                $sql4 = "INSERT INTO anibase (userid, animename, episodes, image, imageup) VALUES (:userid, :animename, :episodes, :image, :imageup)";
                                 $statement4 = $connection->prepare($sql4);
                                 $statement4->bindValue(":userid", $userid);
                                 $statement4->bindValue(":animename", $animename);
@@ -89,8 +98,8 @@ ON a.animename like :search and userid=:id left join anibase as b on a.animename
                                 $statement4->execute();
                                 echo "$animename Successfully Added to List.</p>";
                                 ?>
-                                <p>Results Refresh in <span class="timer">3</span></p>
-                                <script> setTimeout(function() { window.location = "search.php"; }, 3000);</script>
+                                <p>Results Refresh in <span class="timer">1</span></p>
+                                <script> setTimeout(function() { window.location = "search.php"; }, 1000);</script>
                                 <?php
                                     //<-add anime name from other user end ->
                             }
@@ -128,10 +137,14 @@ ON a.animename like :search and userid=:id left join anibase as b on a.animename
                     // execute the statement
                     $statement2->execute();
                     // $result2 = $statement2->fetchAll();
+                    //error control of invalid variable
+                    if (empty($animename)){
+                      $animename = "";
+                    }
                     echo "$animename Successfully Removed from List.</p>";
                     ?>
-                    <p>Results Refresh in <span class="timer">3</span></p>
-                    <script> setTimeout(function() { window.location = "search.php"; }, 3000);</script>
+                    <p>Results Refresh in <span class="timer">1</span></p>
+                    <script> setTimeout(function() { window.location = "search.php"; }, 1000);</script>
                     <?php
                 }
                 catch(PDOException $error) {
