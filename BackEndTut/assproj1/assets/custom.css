@@ -70,3 +70,7 @@ background-color: #fff;
 border-color: #ccc;
     border: 1px solid;
   }
+
+  .upload-btn, .imgurl-btn{
+  margin: 12px 0;
+  }
