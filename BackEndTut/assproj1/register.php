@@ -1,6 +1,8 @@
 <?php
 // Include config file
 require_once "./admin/config.php";
+$title = "Sign Up";
+include "./includes/header.php";
 
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
@@ -78,8 +80,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Redirect to login page
-                header("location: login.php");
                 echo "Sign Up Successful";
+                ?>
+                    <p>Redirecting to Login page...</p>
+                    <script> setTimeout(function() { window.location = "login.php"; }, 1000);</script>
+                    <?php
+
             } else{
                 echo "Something went wrong. Please try again later.";
             }
@@ -94,8 +100,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 
 
-$title = "Sign Up";
-include "./includes/header.php"
 ?>
     <div class="wrapper">
         <h2>Sign Up</h2>

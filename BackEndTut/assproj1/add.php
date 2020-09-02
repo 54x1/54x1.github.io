@@ -124,12 +124,12 @@ if (empty($upload_err)){
 
     $statement3->execute();
 
-
+}
 } catch(PDOException $error) {
     // if there is an error, tell us what it is
 echo $sql3 . "<br>" . $error->getMessage();
 }
-}
+
 
 }
 
