@@ -98,8 +98,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Close connection
     unset($pdo_connection);
 }
-
-
 ?>
     <div class="wrapper">
         <h2>Sign Up</h2>

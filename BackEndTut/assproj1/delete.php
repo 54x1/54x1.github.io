@@ -65,7 +65,7 @@ try {
           $result3 = $statement3->fetchAll();
         } catch(PDOException $error) {
               // if there is an error, tell us what it is
-          echo $sql3 . "<br>" . $error->getMessage();
+          // echo $sql3 . "<br>" . $error->getMessage();
         }
   }
 
@@ -81,18 +81,16 @@ header("Location: delete.php?id=".$row['animeid']."");
     // if there is an error, tell us what it is
 echo $sql1 . "<br>" . $error->getMessage();
 }
+if (isset($_POST['yes']) && $statement3) {?>
+<h3 class='container-fluid bg-success'><p>Anime Successfully Deleted. </br>Results Refreshing...</p></h3>
+<script> setTimeout(function() { window.location = "search.php"; }, 1250);</script>
 
-          ?>
           <div class="container-fluid">
 <h2>My Anime Index</h2>
 <h3>Deleted <?php foreach($result as $row) { echo $row['animename'];}?>?</h3>
 <?php
-   if (isset($_POST['yes']) && $statement3) {?>
-<p>Anime Successfully Deleted.</p>
-<p>Results Refresh in <span class="timer">3</span></p>
-<script> setTimeout(function() { window.location = "search.php"; }, 3000);</script>
-<?php
-header( "location: index.php");
+
+// header( "location: index.php");
 }
         ?>
 

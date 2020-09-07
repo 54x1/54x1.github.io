@@ -5,7 +5,7 @@ $(document).ready(function () {
   $('.btn-disabled').attr('disabled','disabled');
   }
 function mycount(){
- var count = 3;
+ var count = 2;
   var timer = setInterval(function(){
    count--;
    $(".timer").text(count);

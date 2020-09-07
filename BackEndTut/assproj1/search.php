@@ -10,28 +10,13 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     $title = "Search AniDEX";
     $act2 = "active";
     $act1 = $act3 = $act4 = "";
-      global $arri;
+                                      global $added, $ref;
     include "./includes/header.php";
     // include the config file that we created before
     require_once "./admin/config.php";
 
 
 
-?>
-<script>
-</script>
-<div class="container-fluid">
-
-    <h2>AniDEX Anime Database</h2>
-
-    <div class="search_query"  method="post">
-        <input type="text" id="search_query" placeholder="Search for an Anime.." name="search">
-        <button type="submit" name="submit">
-          <i class="fa fa-search">
-          </i>
-        </button>
-      </div>
-<?php
     //search database
     //<- submit if search start ->
     // if (isset($_POST['submit'])) {
@@ -96,9 +81,14 @@ ON a.animename like :search and userid=:id left join anibase as b on a.animename
                                 $statement4->bindValue(":image", $image);
                                 $statement4->bindValue(":imageup", $imageup);
                                 $statement4->execute();
-                                echo "$animename Successfully Added to List.</p>";
+
+                                $added = "<div class='container-fluid bg-success'><h3>$animename Successfully Added to List.</p></div>";
+                                $ref = "<div class='container-fluid bg-success'><p>Results Refresh...</p></div>";
+
+                                echo $added;
+                                echo $ref;
                                 ?>
-                                <p>Results Refresh in <span class="timer">1</span></p>
+
                                 <script> setTimeout(function() { window.location = "search.php"; }, 1000);</script>
                                 <?php
                                     //<-add anime name from other user end ->
@@ -141,12 +131,13 @@ ON a.animename like :search and userid=:id left join anibase as b on a.animename
                     if (empty($animename)){
                       $animename = "";
                     }
-                    echo "$animename Successfully Removed from List.</p>";
+                    echo "<div class='container-fluid bg-success'><h3>$animename Successfully Removed from List.</p></div>";
+                    echo "<div class='container-fluid bg-success'><p>Results Refreshing...</p></div>";
                     ?>
-                    <p>Results Refresh in <span class="timer">1</span></p>
+
                     <script> setTimeout(function() { window.location = "search.php"; }, 1000);</script>
                     <?php
-                }
+                    }
                 catch(PDOException $error) {
                     // if there is an error, tell us what it is
                     echo $sql2 . "<br>" . $error->getMessage();
@@ -156,9 +147,18 @@ ON a.animename like :search and userid=:id left join anibase as b on a.animename
 
 
 
-
 ?>
+<div class="container-fluid">
 
+    <h2>AniDEX Anime Database</h2>
+
+    <div class="search_query"  method="post">
+        <input type="text" id="search_query" placeholder="Search for an Anime.." name="search">
+        <button type="submit" name="submit">
+          <i class="fa fa-search">
+          </i>
+        </button>
+      </div>
 <table class="table">
     <thead>
       <tr>

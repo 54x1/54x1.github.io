@@ -85,15 +85,15 @@ $animename = $_POST['animename'];
 
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
-      echo "Sorry, your file was not uploaded.</br>";
-        echo $upload_err;
+      echo "<h3 class='container-fluid bg-danger'> Sorry, your file was not uploaded.</br> $upload_err</h3>";
       //exit();
+
       // if everything is ok, try to upload file
     } else if (empty($upload_err)) {
       if ( move_uploaded_file($_FILES["imagelocation"]["tmp_name"], $target_file) ) {
-  				echo "<p class="."container-fluid".">The file ". basename( $_FILES["imagelocation"]["name"] ). " has been uploaded.  </p>";
+  				echo "<h3 class='container-fluid bg-success'>The file ". basename( $_FILES["imagelocation"]["name"] ). " has been uploaded.</p></h3>";
       } else {
-        echo "Sorry, there was an error uploading your file.";
+        echo "<h3 class='container-fluid bg-danger'>Sorry, there was an error uploading your file.</p></h3>";
 
       }
     }
@@ -141,11 +141,11 @@ else{
 }
 
 ?>
-
-<div class="container-fluid">
-  <?php if (isset($_POST['submit']) && $statement3 && empty($upload_err)) {?>
-  <p>Anime Successfully Added.</p>
+<?php if (isset($_POST['submit']) && isset($statement3) && empty($upload_err)) {?>
+<h3><p class="container-fluid bg-success" >Anime Successfully Added.</p></h3>
 <?php }?>
+<div class="container-fluid">
+
     <h2>Add to Anime Database</h2>
 
     <form method="post" class="col-xs-6 col-md-3" enctype="multipart/form-data">
@@ -156,7 +156,7 @@ else{
 </div>
       <div class="form-group">
   <label for="episodes">Episodes Watched</label>
-  <input required type="number" name="episodes" id="episodes" class="form-control">
+  <input required type="number" min="0" name="episodes" id="episodes" class="form-control">
 
 </div>
 <div class="form-group upload">
@@ -172,7 +172,7 @@ else{
 
 </div>
 <div class="form-group imgurl">
-  <label>Enter image URL:</label>
+  <label>Enter image URL file type (e.g .jpg, .png):</label>
   <div class="form-group">
   <input type="text" name="imgurl"  disabled class="form-control imgurl" id="imgurl">
   </div>
@@ -181,7 +181,10 @@ else{
   <input required type="text" name="synopsis" id="synopsis"> -->
 
   <input class="btn btn-primary" type="submit" name="submit" value="Submit">
+  <?php if (isset($_POST['submit']) && isset($statement3) && empty($upload_err)) {?>
+  <a href="index.php" class="btn btn-default btn-sm">Go to Anime List</a>
 
+<?php } ?>
   </form>
 
 

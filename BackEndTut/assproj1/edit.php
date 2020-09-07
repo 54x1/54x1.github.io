@@ -60,21 +60,21 @@ try {
     // if there is an error, tell us what it is
 echo $sql . "<br>" . $error->getMessage();
 }
-          ?>
-          <div class="container-fluid">
-<?php
-
 foreach($result as $row) {
-  if ($_SESSION['id'] == $row['userid']){?>
+  if ($_SESSION['id'] == $row['userid']){
+          ?>
+          <?php if (isset($_POST['submit']) && $statement) {?>
+          <h3><p class='container-fluid bg-success'>Anime Successfully Updated.</br>Results Refreshing...</p></h3>
+          <script> setTimeout(function() { window.location = "edit.php?id=<?php echo $row['animeid']?>"; }, 1250);</script>
+
+          <?php
+
+          }?>
+          <div class="container-fluid">
+
+
 <h2>Edit AniDEX</h2>
-<?php if (isset($_POST['submit']) && $statement) {?>
-<p>Anime Successfully Updated.</p>
-<p>Results Refresh in <span class="timer">3</span></p>
-<script> setTimeout(function() { window.location = "edit.php?id=<?php echo $row['animeid']?>"; }, 3000);</script>
 
-<?php
-
-}?>
 
 
 <form action="edit.php?id=<?php echo $row['animeid'];?>" class="episodes" method="post">
@@ -91,10 +91,12 @@ foreach($result as $row) {
       <tr>
         <td name="animename" value="<?php echo $row['animename'];?>"><?php echo $row['animename'];?></td>
         <td>
-          <input required type="number" id="episodes" name="episodes" value="<?php echo $row['episodes'];?>">
+          <input required type="number" min="0" id="episodes" name="episodes" value="<?php echo $row['episodes'];?>">
           <input type="submit" name="submit" value="SAVE" class="btn-update btn btn-default btn-sm">
         </td>
-        <td>Delete</td>
+        <td>          <a href="delete.php?id=<?php echo $row['animeid'];?>" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-remove"></span>
+                </a></td>
       </tr>
     </tbody>
   </table>
