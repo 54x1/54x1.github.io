@@ -6,13 +6,15 @@
   </div>
 </div>
 </section>
-<div class="container-fluid content content-translate">
+<div class="container-fluid content">
 <div class="container search-page">
   <div class="searchresults content">
     <h2>Search Results for '<?php echo get_search_query(); ?>'</h2x>
   </div>
 
   <?php get_template_part('includes/section', 'searchresults');?>
+  <div class="row content-translate">
+
   <?php if( get_previous_posts_link() ) {?>
     <div class="post-link p">
       <div class="btn btn-light">
@@ -28,8 +30,10 @@
     </div>
       <?php } ?>
 
+    </div>
 </div>
-</div>
+
 
 
 <?php get_footer();?>
+</div>

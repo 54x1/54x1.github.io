@@ -1,5 +1,5 @@
 <?php get_header();?>
-<!-- this is archive -->
+<!-- this is custom archive -->
 <section class="hero-banner">
 <?php if ( has_post_thumbnail()) : ?>
 <div class="home-hero-img" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
@@ -18,20 +18,18 @@
 </div>
 <?php endif; ?>
 </section>
-<div class="container-fluid content-translate">
+<div class="content-translate container mt-n2 pb-5">
+  <h2>Locations</h2>
+<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1efHjr0qERlqNBKfRQvJ0fR1230UnB69r" width="100%" height="480"></iframe>
+</div>
+<div class="container-fluid content content-translate">
 <div class="container">
 
+
   <?php get_template_part('includes/section', 'pagecategory');?>
-<?php if( get_previous_posts_link() ) {?>
-  <div class="post-link p btn btn-light">
-  <?php previous_posts_link('< Previous Page');?>
-  </div>
-<?php } ?>
-<?php if(get_next_posts_link()) {?>
+  <?php previous_posts_link();?>
+  <?php next_posts_link();?>
 
-      <div class="post-link btn btn-light"><?php next_posts_link('Next Page >');?></div>
-
-  <?php } ?>
 </div>
 </div>
 

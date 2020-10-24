@@ -49,26 +49,36 @@
   </div>
 
 <div class="col-md-12 backdrop grid-2">
-  <div class="shape-content"  style="background-image: url('<?php echo get_template_directory_uri() ?>/images/home2.jpg')">
+  <div class="shape-content"  style="background-image: url('<?php echo get_template_directory_uri() ?>/images/img1.jpg')">
 </div>
   </div>
 
-    <div class="col-md-12 backdrop grid-3">
-      <div class="shape-content"  style="background-image: url('<?php echo get_template_directory_uri() ?>/images/home3.jpg')">
+
+  <div class="col-md-12 backdrop grid-3">
+    <div class="shape-content"  style="background-image: url('<?php echo get_template_directory_uri() ?>/images/home3.jpg')">
+  </div>
+    </div>
+
+
+    <div class="col-md-12 backdrop grid-4">
+      <div class="shape-content"  style="background-image: url('<?php echo get_template_directory_uri() ?>/images/img2.jpg')">
   </div>
       </div>
 
-      <div class="col-md-12 backdrop grid-4">
+      <div class="col-md-12 backdrop grid-5">
         <div class="shape-content"  style="background-image: url('<?php echo get_template_directory_uri() ?>/images/home4.jpg')">
     </div>
         </div>
 
-        <div class="col-md-12 backdrop grid-5">
+        <div class="col-md-12 backdrop grid-6">
           <div class="shape-content"  style="background-image: url('<?php echo get_template_directory_uri() ?>/images/home5.jpg')">
       </div>
           </div>
+          <div class="col-md-12 backdrop grid-7">
+            <div class="shape-content"  style="background-image: url('<?php echo get_template_directory_uri() ?>/images/home6.jpg')">
+        </div>
+            </div>
       </div>
-
 </div>
 </div>
 

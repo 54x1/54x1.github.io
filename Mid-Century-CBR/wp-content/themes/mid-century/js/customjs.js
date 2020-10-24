@@ -6,6 +6,7 @@ var my = $(".hero .home-hero-img, .hero-banner .home-hero-img");
 var  myHome = $('.home-hero>.home-hero-img');
 var myHero = $('.home-hero > .home-hero-img, .hero-banner>.home-hero-img');
 var home = $('.home-hero-img');
+var img = $('.img-cate');
 var bottom = nav.position().top - nav.height();
 var bot2 = myHome.height();
 if (bottom >= bot2){
@@ -14,19 +15,25 @@ var replace =	bottom + bot2 - nav.outerHeight() - bottom;
 else{
 	replace = bottom;
 }
+//fixed after end
+
+$('.backdrop').css({});
 //start nav bug need to fix when mobile refreshes page
 // if ($(window).width() < 768){
 // 	nav.addClass('after-hero');
 //
 // 	$('#nav-icon3 span').css({"background-color":"#193052"});
 // }
+		$(".wpcf7-submit").addClass("btn");
+	$(".wpcf7-submit").addClass("btn-light");
+
 
 $('.content').each(function(){
-	$(this).find(".home-hero-img").css({"-webkit-filter": "grayscale(100%)", "-moz-filter": "grayscale(100%)", "filter": "grayscale(100%)"});
+	$(this).find(".img-cate").css({"-webkit-filter": "grayscale(100%)", "-moz-filter": "grayscale(100%)", "filter": "grayscale(100%)"});
 	$(this).hover(function() {
-		 $(this).find(".home-hero-img").css({"-webkit-filter": "grayscale(0%)", "-moz-filter": "grayscale(0%)", "filter": "grayscale(0%)"});
+		 $(this).find(".img-cate").css({"-webkit-filter": "grayscale(0%)", "-moz-filter": "grayscale(0%)", "filter": "grayscale(0%)"});
 	}, function(){
-		$(this).find(".home-hero-img").css({"-webkit-filter": "grayscale(100%)", "-moz-filter": "grayscale(100%)", "filter": "grayscale(100%)"});
+		$(this).find(".img-cate").css({"-webkit-filter": "grayscale(100%)", "-moz-filter": "grayscale(100%)", "filter": "grayscale(100%)"});
 
 	  });
 })
@@ -108,24 +115,30 @@ my.hover(function() {
 	$(this).css({"-webkit-filter": "grayscale(100%)", "-moz-filter": "grayscale(100%)", "filter": "grayscale(100%)"});
 	  });
 
-		myHero.hover(function() {
- 			 	$(this).css({"-webkit-filter": "grayscale(100%)", "-moz-filter": "grayscale(100%)", "filter": "grayscale(100%)"});
+		img.hover(function() {
+ 			 	$(this).css({"-webkit-filter": "grayscale(0%)", "-moz-filter": "grayscale(0%)", "filter": "grayscale(0%)"});
  	}, function(){
-	$(this).css({"-webkit-filter": "grayscale(0%)", "-moz-filter": "grayscale(0%)", "filter": "grayscale(0%)"});
+	$(this).css({"-webkit-filter": "grayscale(100%)", "-moz-filter": "grayscale(100%)", "filter": "grayscale(100%)"});
 
  	  });
 
 
+
+
   $(window).on('scroll resize load', function () {
-		//image scroll effect if below 1024px
-		if ($(window).width() > 99990){
-			$('.grid-1>.shape-content').css({ "transform": "translate(-" +($(window).scrollTop() / 0.8 - 800) + "px, -" + ($(window).scrollTop() / 150) + "px)" });
-				$('.grid-2>.shape-content').css({ "transform": "translate(-" +($(window).scrollTop() / 150) + "px, -" + ($(window).scrollTop() / 0.522 - 1800) + "px)" });
-								$('.grid-3>.shape-content').css({ "transform": "translate(" +($(window).scrollTop() / 0.502 - 3200) + "px, -" + ($(window).scrollTop() / 1.5 - 800) + "px)" });
+		//
+		if (($(window).scrollTop()- $(window).height()) > ($(".grid-7").scrollTop() + $(".grid-7").height())){
+			$('.backdrop, .shape-content').css({ "transform": "translate(0,"+ ($(this).scrollTop() / 10.5) + "px)"});
+
 		}
 		else{
-			$('.shape-content').css({ "transform": "translate(0, 0)"});
+			$('.backdrop, .shape-content').css({ "transform": "translate(0px, 91px"});
+				// $('.shape-content::before').css({"transform": "translate(0px, 120px"});
+				// $('.backdrop:nth-child(2)').css({ "transform": "translate(0px, 180px"});
 		}
+		// else{
+		// 	console.log("herre");
+		// 		}
 		// if ($(window).width() < 1024){
 		// 	$('.shape-content').css({ "transform": "translate(-" +($(window).scrollTop() / 1.5 - 400) + "px, -" + ($(window).scrollTop() / 1.5 - 400) + "px)" });
 		// }
@@ -157,7 +170,7 @@ my.hover(function() {
 								 $('.shape-content').css({"position": "relative", "background-position" : "center"});
 								 //fix searchicon on apple devices
 									 $(".search-section>.searchicon").css({"position":"relative"});
-									  $('.home-hero .home-hero-img, .home-hero-img').css({"top":"-36px"});
+									  // $('.home-hero .home-hero-img, .home-hero-img').css({"top":"-36px"});
 			} else {
 		                $("home-hero>.home-hero-img, .hero-banner>.home-hero-img").css({"background-attachment" : "fixed"});
 		        }

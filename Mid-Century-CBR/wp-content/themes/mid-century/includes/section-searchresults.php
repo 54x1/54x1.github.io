@@ -2,11 +2,11 @@
   <!-- pagecategory -->
   <!-- found a way to add background img on to div 14/09/2020 -->
   <div class="content">
-    <div class="row">
+    <div class="row content-translate">
     <div class="col-sm-4">
 
   <?php if ( has_post_thumbnail()) : ?>
-  <div class="home-hero-img img-cate" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
+  <div class="home-hero-img content-img img-cate" style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
   </div>
   <?php endif; ?>
   <?php if (empty(has_post_thumbnail())): ?>
