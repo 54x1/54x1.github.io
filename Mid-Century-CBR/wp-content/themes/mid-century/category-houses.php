@@ -27,8 +27,16 @@
 
 
   <?php get_template_part('includes/section', 'pagecategory');?>
-  <?php previous_posts_link();?>
-  <?php next_posts_link();?>
+  <?php if( get_previous_posts_link() ) {?>
+    <div class="post-link p btn btn-light">
+    <?php previous_posts_link('< Previous Page');?>
+    </div>
+  <?php } ?>
+  <?php if(get_next_posts_link()) {?>
+
+        <div class="post-link btn btn-light"><?php next_posts_link('Next Page >');?></div>
+
+    <?php } ?>
 
 </div>
 </div>

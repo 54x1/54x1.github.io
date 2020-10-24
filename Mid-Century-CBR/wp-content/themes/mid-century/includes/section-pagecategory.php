@@ -7,7 +7,8 @@
   </div>
   <?php endif; ?>
   <?php if (empty(has_post_thumbnail())): ?>
-  <div class="home-hero-img content-none">
+  <div class="img-none">
+      <img class="img-none" src="<?php echo get_template_directory_uri() ?>/images/none.png" />
   </div>
       <!-- <h1>No Image Avaliable</h1> -->
   <?php endif; ?>

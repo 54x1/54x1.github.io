@@ -647,9 +647,10 @@ textarea#comment, input#author, input#email, input#url{
   width: 100%;
 }
 
-
-
-
+.img-none{
+  height: 250px;;
+  width: 100%;
+}
 
 
 
