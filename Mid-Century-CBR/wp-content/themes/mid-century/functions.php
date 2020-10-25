@@ -20,7 +20,7 @@ function load_stylesheets(){
   wp_register_style('stylesheet', get_template_directory_uri().'/style.css', array(), 1.0, 'all');
   wp_enqueue_style('stylesheet');
 
-  wp_register_style('main', get_template_directory_uri().'/css/main.css', array(), 4.3, 'all');
+  wp_register_style('main', get_template_directory_uri().'/css/main.css', array(), 4.4, 'all');
   wp_enqueue_style('main');
 }
 add_action('wp_enqueue_scripts', 'load_stylesheets');

@@ -29,7 +29,7 @@
 
 
   <div class="container front">
-    <div class="row grid-layout" id="start">
+    <div class="row grid-layout">
     <div class="col-md-12 grid order-12">
   <?php show_post('slides'); ?>
   <h1><?php the_title();?></h1>
@@ -43,7 +43,7 @@
       <?php show_post('about-us'); ?>
 </div>
 
-<div class="col-md-12 backdrop grid-1" id="start">
+<div class="col-md-12 backdrop grid-1">
   <div class="shape-content"  style="background-image: url('<?php echo get_template_directory_uri() ?>/images/home1.jpg')">
 </div>
   </div>
