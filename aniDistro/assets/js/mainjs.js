@@ -26,7 +26,7 @@ $(document).ready(function(){
   }
   // load genres
   function getAnimeGenres(){
-    var getAnimeGenresUrl = "https://api.jikan.moe/v4/genres/anime/";
+    var getAnimeGenresUrl = "https://api.jikan.moe/v4/genres/anime";
     $.getJSON(getAnimeGenresUrl, function(getAnimeGenresData) {
       console.log(getAnimeGenresData);
           funcGenres(getAnimeGenresData);
@@ -77,7 +77,7 @@ function searchGenres(genreVal, page){
   var searchGenreUrl = "https://api.jikan.moe/v4/anime?genres="+genreVal+"&page="+page+"&limit=24";
   $.getJSON(searchGenreUrl, function(searchGenreData) {
 console.log(searchGenreData);
-var getAnimeGenresUrl = "https://api.jikan.moe/v4/genres/anime/";
+var getAnimeGenresUrl = "https://api.jikan.moe/v4/genres/anime";
 $.getJSON(getAnimeGenresUrl, function(getAnimeGenresData) {
   console.log("getAnimeGenresData");
 console.log(getAnimeGenresData);
