@@ -27,6 +27,12 @@ font-family: 'Roboto';
 text-align: justify;
 }
 
+.modal-synopsis{
+  top: -62px;
+  position: relative;
+}
+
+
 .modal-content .close-x{
   position: relative;
   top: -132px;
