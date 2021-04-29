@@ -161,7 +161,7 @@ for (var o = 0; o < $(searchProviderAUIdData.data.licensors).length; o++){
 searchAnimeLicensors.push(searchProviderAUIdData.data.licensors[o].name);
 }
 // search where to stream database with english name
-var searchProviderAU = 'http://streamdata.malupdaterosx.moe/search/au?q=%'+searchAnimeName+'%';
+var searchProviderAU = 'https://streamdata.malupdaterosx.moe/search/au?q=%'+searchAnimeName+'%';
 $.getJSON(searchProviderAU, function(searchProviderAUData) {
   console.log("searchProviderAUData2");
   console.log(searchProviderAUData);
