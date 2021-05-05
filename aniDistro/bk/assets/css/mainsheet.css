@@ -13,36 +13,29 @@ h1, h2, h3, h4, h5, h6{
   letter-spacing: 2px;
 }
 
-.info h5, .modal-related h5, .info-primary h5{
+.info h5{
   margin-bottom: 0;
 }
 
-.content-anime .center-align{
-    text-transform: capitalize;
-}
-
-.info, .info-primary{
+.info{
   clear: both;
 }
-
-
 .modal-synopsis p{
   letter-spacing: 1.5px;
 line-height: 2.5rem;
 font-family: 'Roboto';
 text-align: justify;
-margin: 0;
 }
 
-.modal-trailer{
-  margin-bottom: 2rem;
+.modal-synopsis{
+  top: -61px;
+  position: relative;
 }
-
 
 
 .modal-content .close-x{
   position: relative;
-    top: -9.5vh;
+  top: -132px;
   right: 19.5px;
   float: right;
   width: 70px!important;
@@ -76,57 +69,22 @@ margin: 0;
 .next{
       width: 100px;
 }
-.modal .center-align{
-  position: relative;
-top: -62px;
-}
 
-.animeImgWrapper, .animeImgWrapper-season{
+.animeImgWrapper{
     padding: 12px!important;
-      height: 600px;
-      position: relative;
+      cursor: pointer;
 }
 
 .modal-animeImg, .modal-synopsis, .modal-aired, .modal-licensors, .modal-producers, .modal-watch, .modal-genres, .modal-score, .modal-scoredBy, .modal-episodes{
-  margin-bottom: 14px;
+  margin-bottom: 2rem;
   padding: 0px 12px 24px;
 }
 
-
-
-
-.title{
-  font-size: 2.4rem;
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  font-weight: bold;
-  width: 80%;
-  color: white;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 2;
+.modal-trailer{
+  padding: 0!important;
 }
 
 
-@media only screen and (min-width: 1200px) {
-  .modal-synopsis, .modal-animeImg{
-    position: relative;
-  top: -62px;
-  }
-
-  .modal-animeImg{
-      top: 6px;
-  }
-  .modal-trailer{
-margin: -60px 0 2rem 0;
-  }
-  .modal-producers, .modal-licensors{
-    margin-bottom: 14.5px;
-  }
-}
 
 @media only screen and (min-width: 992px) {
 
@@ -136,25 +94,12 @@ height: 100%;
 }
 
 .animeImgWrapper{
-      max-height: 13.5%!important;
-}
-.animeImgWrapper-season{
-  height: 3%;
-  height: 2.4%;
-          height: 16%;
-    height: 12.5%;
-
+  height: 11%;
 }
 
 }
 
 @media only screen and (max-width: 600px) {
-  .animeImgWrapper {
-      height: 4.5%!important;
-  }
-  .animeImgWrapper-season {
-      height: 4%!important;
-  }
 .genres-mobile{
   display: block;
 }
@@ -170,20 +115,9 @@ height: 100%;
   display: none;
 }
 }
-@media only screen and (max-width: 992px) {
-  .animeImgWrapper{
-    height: 9%;
-  }
-}
 @media only screen and (max-width: 1200px) {
   .animeImgWrapper{
     height: 9%;
-  }
-  .animeImgWrapper-season{
-    height: 9%;
-  }
-  .modal-animeImg{
-        top: -61px;
   }
   .animeImg{
   height: 100%;
@@ -192,17 +126,10 @@ height: 100%;
 
 
 }
-@media only screen and (max-width: 1360px) {
+@media only screen and (max-width: 600px) {
   .animeImgWrapper {
-    height: 600px;
-    max-height: 10.5%!important;
-}
-}
-@media only screen and (max-width: 1440px) {
-  .animeImgWrapper {
-    height: 550px;
-    max-height: 10.5%!important;
-}
+      height: 5%!important;
+  }
 }
 
 
@@ -239,7 +166,7 @@ height: 100%;
 }
 
 .modal-animeImg{
-  margin: -62px 0 2rem 0;
+  margin-bottom: 2rem;
   padding-right: 2rem!important;
 }
 
@@ -280,7 +207,6 @@ select:focus, select:hover{
 .modal-content .button, .modal-content button{
     margin: 6px 0;
   width: 100%;
-  padding: 0px;
 }
 .button:hover, .button:focus{
   background-color: #A31621;

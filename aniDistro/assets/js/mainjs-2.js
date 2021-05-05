@@ -62,23 +62,13 @@ $('.genres-mobile').click(function(){
     searchGenres(genreVal2);
 
 });
-
-
 $(document).on('click', '.genres .button', function() {
 
   $(this).each(function (){
-      var genreVal = $(this).val();
-if (genreVal == 12 | genreVal == 33 | genreVal == 34 ){
-$(".content-anime").html("<h2 class='center-align'>Items Not Found</h2>");
-}else{
-
-  var genreVal = $(this).val();
-    // alert(genreVal);
-  searchGenres(genreVal);
-}
+var genreVal = $(this).val();
 // $('#'+genreVal+'').css({"background-color": "#fff", "color" : "#a38d65", "border-color" : "#a38d65"});
 // alert(genreVal);
-
+searchGenres(genreVal);
 
 });
 
@@ -95,13 +85,11 @@ function searchGenres(genreVal, page){
   // https://api.jikan.moe/v4/anime?genres=1&page=2
   var searchGenreUrl = "https://api.jikan.moe/v4/anime?genres="+genreVal+"&page="+page+"&limit=24";
   $.getJSON(searchGenreUrl, function(searchGenreData) {
-    console.log("searchGenreData");
 console.log(searchGenreData);
 var getAnimeGenresUrl = "https://api.jikan.moe/v4/genres/anime";
 $.getJSON(getAnimeGenresUrl, function(getAnimeGenresData) {
   console.log("getAnimeGenresData");
 console.log(getAnimeGenresData);
-
   var contentAnime = $(".content-anime");
     // for (var i = 0; i < $(getAnimeGenresData.data).length; i++){
   $(contentAnime).html("<h2 class='center-align'>"+getAnimeGenresData.data[--genreVal].name+"</h2>");
@@ -109,52 +97,32 @@ console.log(getAnimeGenresData);
 
   for (var i = 0; i < $(searchGenreData.data).length; i++){
     // console.log(searchGenreData.data[i].mal_id);
-  $(contentAnime).append('<div class="col s12 m4 l4 xl3 animeImgWrapper"><div class="title">'+searchGenreData.data[i].title+'</div><img class="animeImg" src='+searchGenreData.data[i].images.jpg.large_image_url+' value="'+searchGenreData.data[i].mal_id+'"alt="'+searchGenreData.data[i].title+'"></div>');
+  $(contentAnime).append('<div class="col s12 m4 l4 xl3 animeImgWrapper"><img class="animeImg" src='+searchGenreData.data[i].images.jpg.large_image_url+' value="'+searchGenreData.data[i].mal_id+'"alt="'+searchGenreData.data[i].title+'"></div>');
 
   }
-
+  console.log(searchGenreData);
   });
   });
 }
 
 
 $(document).on('click', '.animeImgWrapper-season', function() {
-
+  $(".content-anime").empty();
 });
 
 
 // https://stackoverflow.com/questions/9827095/is-it-possible-to-use-jquery-on-and-hover
 $(document).on({
     mouseenter: function () {
-$(this).parent().find('.title').css({"opacity":"1"});
         // alert("hoevr");
-    $(this).css({"box-shadow":"0 1px 3px #000", "cursor":"pointer", "filter":"blur(0.75px) brightness(0.65)"});
-
+    $(this).css({"box-shadow":"6px 6px 20px #000", "cursor":"pointer"});
     },
     mouseleave: function () {
-      $(this).parent().children('.title').css({"opacity":"0"});
-    $(this).css({"box-shadow":"none", "cursor":"pointer", "filter":"none"});
-
+    $(this).css({"box-shadow":"none", "cursor":"pointer"});
     }
-}, ".animeImg");
-$(document).on({
-    mouseenter: function () {
-$(this).parent().find('.animeImg').css({"box-shadow":"0 1px 3px #000", "cursor":"pointer", "filter":"blur(0.75px) brightness(0.65)"});
-$(this).css({"opacity":"1"});
-    },
-    mouseleave: function () {
-    $(this).parent().find('.animeImg').css({"box-shadow":"none", "cursor":"pointer", "filter":"none"});
-$(this).css({"opacity":"0"});
-    }
-}, ".title");
-
-
-
-
-
+}, ".animeImg"); //pass the element as an argument to .on
 
 $(document).on('click', '.animeImg', function() {
-    // $(".content-anime").empty();
 $(this).each(function (){
 $('.overlay-modal').addClass("modal-overlay");
   $(".modal, .modal-content").fadeIn();
@@ -184,39 +152,37 @@ if(searchProviderAUIdData.data.season != null){
 }else{
   var searchAnimeAiredSeasonCom = ', ';
   var searchAnimeAiredMonth =  searchProviderAUIdData.data.aired.prop.from.month;
-  console.log(searchAnimeAiredMonth);
+  alert(searchAnimeAiredMonth);
 // var searchAnimeAiredMonth = 'true';
 console.log(fall.includes(searchAnimeAiredMonth));
 switch (true) {
   case (winter.includes(searchAnimeAiredMonth)):
-console.log('winter');
+alert('winter');
   var searchAnimeAiredSeason = 'winter';
   break;
   case (spring.includes(searchAnimeAiredMonth)):
-  console.log('spring');
+  alert('spring');
   var searchAnimeAiredSeason = 'spring';
     break;
     case (summer.includes(searchAnimeAiredMonth)):
-    console.log('summer');
+    alert('summer');
     var searchAnimeAiredSeason = 'summer';
       break;
       case (fall.includes(searchAnimeAiredMonth)):
-      console.log('fall');
+      alert('fall');
 var searchAnimeAiredSeason = 'fall';
         break;
   default:
-		console.log('winter');
+		alert('winter');
       var searchAnimeAiredSeason = 'Fall';
 
 }
 }
 var searchAnimeAiredYear = searchProviderAUIdData.data.aired.prop.from.year;
 var searchAnimeType = searchProviderAUIdData.data.type;
-
-
-
-// searchSeasonFunc2(searchAnimeAiredYear, searchAnimeAiredSeason);
 // searchSeasonFunc(searchAnimeAiredYear, searchAnimeAiredSeason);
+
+searchSeasonFunc(searchAnimeAiredYear, searchAnimeAiredSeason);
 if (searchProviderAUIdData.data.trailer.embed_url != null){
   var searchAnimeTrailer = searchProviderAUIdData.data.trailer.embed_url;
 }else{
@@ -241,11 +207,17 @@ for (var o = 0; o < $(searchProviderAUIdData.data.licensors).length; o++){
 searchAnimeLicensors.push(searchProviderAUIdData.data.licensors[o].name);
 }
 // search where to stream database with english name
-// searchSeasonFunc(searchAnimeAiredYear, searchAnimeAiredSeason);
+var searchProviderAU = 'https://streamdata.malupdaterosx.moe/search/au?q=%'+searchAnimeName+'%';
+$.getJSON(searchProviderAU, function(searchProviderAUData) {
+  console.log("searchProviderAUData2");
+  console.log(searchProviderAUData);
+    console.log( "success open model of related anime1" );
+}).fail(function() {
+    console.log( "no streaming results found1" );
+  });
 
 var searchProviderAUId2 = 'https://streamdata.malupdaterosx.moe/lookup/au/'+searchAnimeId+'';
 $.getJSON(searchProviderAUId2, function(searchProviderAUId2Data) {
-
 aniContent(searchAnimeName, searchProviderAUId2Data, searchAnimeImg, searchAnimeSynopsis, searchAnimeEpisodes, searchAnimeScore, searchAnimeScoredBy, searchAnimeAiredSeason, searchAnimeAiredYear, searchAnimeType, searchAnimeTrailer, searchAnimeProducers, searchAnimeLicensors, searchAnimeAiredSeasonCom, searchAnimeGenres, searchAnimeGenresId);
 
 }).fail(function(searchProviderAUId2Data) {
@@ -253,60 +225,42 @@ aniContent(searchAnimeName, searchProviderAUId2Data, searchAnimeImg, searchAnime
   });
 });
 });
+
+$(document).on('click', '.premiered', function() {
+// contentAnimeData(searchSeasonData, searchAnimeAiredSeason ,searchAnimeAiredYear);
+  $('.modal').hide();
+  $('.modal .container .row .modal-content').empty().hide();
+  $('.modal-overlay').removeClass('modal-overlay');
+  // alert(searchAnimeAiredYear);
+
+});
+function searchSeasonFunc(searchAnimeAiredYear, searchAnimeAiredSeason){
+var searchSeason = 'https://api.jikan.moe/v4/seasons/'+searchAnimeAiredYear+'/'+searchAnimeAiredSeason+'?limit=24&page=1';
+$.getJSON(searchSeason, function(searchSeasonData) {
+  console.log("searchSeasonData");
+        console.log(searchSeasonData);
+  // console.log(searchSeasonData.anime[1].image_url);
+      // alert('season here');
+contentAnimeData(searchSeasonData, searchAnimeAiredSeason, searchAnimeAiredYear);
+});
+}
+
+function contentAnimeData(searchSeasonData, searchAnimeAiredSeason, searchAnimeAiredYear){
+  var contentAnime = $(".content-anime");
+  // $(contentAnime).empty();
+    $(contentAnime).html("<h2 class='center-align'>"+searchAnimeAiredSeason+", "+searchAnimeAiredYear+"</h2>");
+  for (var i = 0; i < $(searchSeasonData.data).length; i++){
+    // console.log(searchGenreData.data[i].mal_id);
+  $(contentAnime).append('<div class="col s12 m4 l4 xl3 animeImgWrapper-season"><img class="animeImg" src='+searchSeasonData.data[i].images.jpg.large_image_url+' value="'+searchSeasonData.data[i].mal_id+'"alt="'+searchSeasonData.data[i].title+'"></div>');
+
+  }
+}
 });
 
 
 
+
 function aniContent(searchAnimeName, searchProviderAUId2Data, searchAnimeImg, searchAnimeSynopsis, searchAnimeEpisodes, searchAnimeScore, searchAnimeScoredBy, searchAnimeAiredSeason, searchAnimeAiredYear, searchAnimeType, searchAnimeTrailer, searchAnimeProducers, searchAnimeLicensors, searchAnimeAiredSeasonCom, searchAnimeGenres, searchAnimeGenresId){
-      // $('.content-anime').empty();
-
-      function getYear(searchAnimeAiredYear, searchAnimeAiredSeason){
-        var searchAnimeAiredYear;
-          var searchAnimeAiredSeason;
-        return searchAnimeAiredYear;
-        return searchAnimeAiredSeason;
-        //         alert(searchAnimeAiredSeason);
-        // alert(searchAnimeAiredYear);
-searchSeasonFunc(searchAnimeAiredYear, searchAnimeAiredSeason);
-      }
-        getYear(searchAnimeAiredYear, searchAnimeAiredSeason);
-           // alert(searchAnimeAiredYear);
-           //            alert(searchAnimeAiredSeason);
-        searchSeasonFunc(searchAnimeAiredYear, searchAnimeAiredSeason);
-              function searchSeasonFunc(searchAnimeAiredSeason, searchAnimeAiredYear){
-      $(document).on('click', '.premiered', function() {
-$(".content-anime").empty();
-      // contentAnimeData(searchSeasonData, searchAnimeAiredSeason ,searchAnimeAiredYear);
-        $('.modal').hide();
-        $('.modal .container .row .modal-content').empty().hide();
-        $('.modal-overlay').removeClass('modal-overlay');
-
-                   console.log("searchAnimeAiredSeasonbe4");
-                              console.log(searchAnimeAiredSeason);
-                               console.log("searchAnimeAiredYearbe4");
-              console.log(searchAnimeAiredYear);
-        var searchSeason = 'https://api.jikan.moe/v4/seasons/'+searchAnimeAiredSeason+'/'+searchAnimeAiredYear+'?limit=24&page=1';
-        $.getJSON(searchSeason, function(searchSeasonData) {
-          console.log("searchSeasonData");
-                console.log(searchSeasonData);
-                console.log(searchAnimeAiredSeason);
-                   console.log(searchAnimeAiredYear);
-                var contentAnime = $(".content-anime");
-                $(contentAnime).empty();
-                  $(contentAnime).html("<h2 class='center-align'>"+searchAnimeAiredYear+", "+searchAnimeAiredSeason+"</h2>");
-                for (var i = 0; i < $(searchSeasonData.data).length; i++){
-                $(contentAnime).append('<div class="col s12 m4 l4 xl3 animeImgWrapper-season"><div  class="title">'+searchAnimeName+'</div><img class="animeImg" src='+searchSeasonData.data[i].images.jpg.large_image_url+' value="'+searchSeasonData.data[i].mal_id+'"alt="'+searchSeasonData.data[i].title+'"></div>');
-
-                }
-                // contentAnimeData(searchSeasonData, searchAnimeAiredSeason, searchAnimeAiredYear);
-
-        });
-      // console.log(searchAnimeAiredYear);
-
-
-      });
-    }
-
     console.log("searchProviderAUId2Data3");
     console.log(searchAnimeName);
     var modalAnime = $(".modal .modal-content");
@@ -324,7 +278,7 @@ if(searchAnimeTrailer != 'none'){
 //         $(modalWatchContent).append('<div class="col s12 xl12 modal-trailer"><h5>Trailer</h5><button class="button">None</button></div>');
 // }
 
-          var modalAnimeContent = '<div class="info-primary"><div class="col s12 m6 xl2 modal-aired"><h5>Aired</h5><button class="button premiered">'+searchAnimeAiredSeason+searchAnimeAiredSeasonCom+searchAnimeAiredYear+'</button></div><div class="col s12 m6 xl2 modal-watch"><h5>Watch</h5></div><div class="col s12 m6 xl2 modal-Type"><h5>Type</h5><button class="button" value='+searchAnimeType+'>'+searchAnimeType+'</button></div><div class="col s12 m6 xl2 modal-episodes"><h5>Episodes</h5><button class="button" value='+searchAnimeEpisodes+'>'+searchAnimeEpisodes+'</button></div><div class="col s12 m6 xl2 modal-score"><h5>Score</h5><button class="button">'+searchAnimeScore+'</button></div><div class="col s12 m6 xl2 modal-scoredBy"><h5>Scored By</h5><button class="button">'+searchAnimeScoredBy+'</button></div><div class="info"><div class="col s12 m6 xl4 modal-genres"><h5>Genres</h5></div><div class="col s12 m6 xl4 modal-licensors"><h5>Licensors</h5></div><div class="col s12 m6 xl4 modal-producers"><h5>Producers</h5></div></div><div class="col s12 m6 xl8 modal-related"><h5>Related</h5></div></div>';
+          var modalAnimeContent = '<div class="info"><div class="col s12 m6 xl2 modal-aired"><h5>Aired</h5><button class="button premiered">'+searchAnimeAiredSeason+searchAnimeAiredSeasonCom+searchAnimeAiredYear+'</button></div><div class="col s12 m6 xl2 modal-watch"><h5>Watch</h5></div><div class="col s12 m6 xl2 modal-Type"><h5>Type</h5><button class="button" value='+searchAnimeType+'>'+searchAnimeType+'</button></div><div class="col s12 m6 xl2 modal-episodes"><h5>Episodes</h5><button class="button" value='+searchAnimeEpisodes+'>'+searchAnimeEpisodes+'</button></div><div class="col s12 m6 xl2 modal-score"><h5>Score</h5><button class="button">'+searchAnimeScore+'</button></div><div class="col s12 m6 xl2 modal-scoredBy"><h5>Scored By</h5><button class="button">'+searchAnimeScoredBy+'</button></div><div class="col s12 m6 xl2 modal-genres"><h5>Genres</h5></div><div class="col s12 m6 xl2 modal-licensors"><h5>Licensors</h5></div><div class="col s12 m6 xl4 modal-producers"><h5>Producers</h5></div></div>';
           $(modalAnime).append(modalAnimeContent);
 // if(){
 //
@@ -353,47 +307,12 @@ for (var a = 0; a < $(searchAnimeGenres).length; a++){
   $(modalGenresContent).append("<button class='button' value="+searchAnimeGenresId[a]+">"+searchAnimeGenres[a]+"</button>");
 }
 
-var searchProviderAU = 'https://streamdata.malupdaterosx.moe/search/au?q=%'+searchAnimeName+'%';
-$.getJSON(searchProviderAU, function(searchProviderAUData) {
-  console.log("searchProviderAUData2");
-  console.log(searchProviderAUData);
-    console.log( "success open model of related anime1" );
-    var modalRelated = $('.modal-related');
-    $(modalRelated).append(modalRelatedContent);
-    var modalRelatedContent = modalRelated;
-    console.log('$(searchProviderAUData.data).length');
-    console.log($(searchProviderAUData.data).length);
-        if ($(searchProviderAUData.data).length > 0){
-    for (var o = 0; o < $(searchProviderAUData.data).length; o++){
-      $(modalRelatedContent).append("<button class='button' id="+searchProviderAUData.data[o].mal_id+" value="+searchProviderAUData.data[o].mal_id+">"+searchProviderAUData.data[o].title+"</button>");
-    }
-    }
-    else{
-      console.log('$(searchProviderAUData.data).length2');
-      console.log($(searchProviderAUData.data).length);
-            $(modalRelatedContent).append("<button class='button'>Not Found</button>");
-    }
-}).fail(function(searchProviderAUData) {
-  var modalRelated = $('.modal-related');
-  $(modalRelated).append(modalRelatedContent);
-  var modalRelatedContent = modalRelated;
-      if ($(searchProviderAUData.data).length > 0){
-  for (var o = 0; o < $(searchProviderAUData.data).length; o++){
-    $(modalRelatedContent).append("<button class='button' id="+searchProviderAUData.data[o].mal_id+" value="+searchProviderAUData.data[o].mal_id+">"+searchProviderAUData.data[o].title+"</button>");
-  }
-  }
-  else{
-          $(modalRelatedContent).append("<button class='button'>Not Found</button>");
-  }
-  });
-
-
   var modalLicensors = $('.modal-licensors');
   $(modalLicensors).append(modalLicensorsContent);
   var modalLicensorsContent = modalLicensors;
       if ($(searchAnimeLicensors).length > 0){
   for (var o = 0; o < $(searchAnimeLicensors).length; o++){
-    $(modalLicensorsContent).append("<button class='button' value='"+searchAnimeLicensors[o]+"'><p>"+searchAnimeLicensors[o]+"</p></button>");
+    $(modalLicensorsContent).append("<button class='button' value="+searchAnimeLicensors[o]+">"+searchAnimeLicensors[o]+"</button>");
 }
 }
 else{
@@ -407,8 +326,9 @@ for (var p = 0; p < $(searchAnimeProducers).length; p++){
   $(modalProducersContent).append("<button class='button' value="+searchAnimeProducers[p]+">"+searchAnimeProducers[p]+"</button>");
 }
 }
+}
 else{
-          $(modalProducersContent).append("<button class='button'>Not Found</button>");
+          $(modalLicensorsContent).append("<button class='button'>Not Found</button>");
 }
 
 // console.log(modalLicensorsContent);
@@ -418,19 +338,11 @@ else{
 }
 
 
-function searchSeasonFunc(searchAnimeAiredYear, searchAnimeAiredSeason){
-  // $(document).on('click', '.premiered', function(searchAnimeAiredYear, searchAnimeAiredSeason) {
 
+// alert(year);
 
-      // });
-  // // contentAnimeData(searchSeasonData, searchAnimeAiredYear, searchAnimeAiredSeason);
-  // function contentAnimeData(searchSeasonData, searchAnimeAiredSeason, searchAnimeAiredYear){
-  //
-  // }
-}
-
-
-
+var contentAnime = $('.content-anime');
+// $(contentAnime).before('<button class="next">Next</button>');
 
 $('.next').click(function(){
   var page = 20;
@@ -439,16 +351,15 @@ searchGenres(page);
 });
 
 $(document).on('click', '.modal-genres .button', function(){
-    $('.content-anime').empty();
   var page = 1;
   var genreVal = $(this).attr("value");
     searchGenres(genreVal, page);
 
-  // document.getElementById("30").focus();
+  document.getElementById("30").focus();
 
   $('.modal').hide();
   $('.modal .container .row .modal-content').empty().hide();
-
+  $('.content-anime').empty();
   $('.modal-overlay').removeClass('modal-overlay');
 
 });
@@ -471,6 +382,7 @@ $(document).on('click', '.close-x', function(){
   $('.modal-overlay').removeClass('modal-overlay');
 });
 
-// nasty
+
+
 
 });
