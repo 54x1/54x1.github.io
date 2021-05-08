@@ -22,6 +22,7 @@ h1, h2, h3, h4, h5, h6{
 }
 .row.content-anime{
       height: fit-content;
+      height: -moz-fit-content;
 }
 .info, .info-primary{
   clear: both;
@@ -66,10 +67,12 @@ margin: 0;
 .header-anidistro{
   margin: 85px auto;
   width: fit-content;
+  width: -moz-fit-content;
 }
 .modal-header-anidistro{
   margin: 85px auto;
   width: fit-content;
+  width: -moz-fit-content;
 }
 
 .header-logo{
@@ -94,6 +97,7 @@ margin: 0;
   left: 0;
   top: 0;
       width: fit-content;
+      width: -moz-fit-content;
 }
 .modal .center-align{
   position: relative;
@@ -145,6 +149,7 @@ height: 100%;
   max-width: -webkit-fill-available;
   max-height: -webkit-fill-available;
   min-width: fit-content;
+  min-width: -moz-fit-content;
 }
 
 
