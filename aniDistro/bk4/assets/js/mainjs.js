@@ -1,16 +1,7 @@
 // mid way through my product aniem database got an update to v4 which made searching for everything way easier v3.4
 // bug with searching prev data
-// https://twitter.com/becausemoe
-// May 27th 2020 last updated
 $(document).ready(function() {
 
-  var aspectRatio1 = 3;
-  var aspectRatio2 = 2;
-
-  $(window).resize(function() {
-      // alert($('.animeImgWrapper').width());
-    $('.animeImgWrapper').height(($('.animeImgWrapper').width() * aspectRatio1)/aspectRatio2);
-  });
     //https://venturo.org/
     // week 10
     //AniDistro is a company partnered with all major anime streaming platform which allows the control of quality in downloads.
@@ -75,7 +66,6 @@ $(document).ready(function() {
 
     $(document).on('click', '.genres .button', function() {
         $(".loading").show();
-
         $(this).each(function() {
             var genreVal = $(this).val();
             if (genreVal == 12 | genreVal == 33 | genreVal == 34) {
@@ -84,8 +74,7 @@ $(document).ready(function() {
 
                 var genreVal = $(this).val();
                 // alert(genreVal);
-                var page = 1;
-                searchGenres(genreVal, page);
+                searchGenres(genreVal);
             }
             // $('#'+genreVal+'').css({"background-color": "#fff", "color" : "#a38d65", "border-color" : "#a38d65"});
             // alert(genreVal);
@@ -98,14 +87,14 @@ $(document).ready(function() {
 
 
 
-    function searchGenres(genreVal, page, prevPage) {
+    function searchGenres(genreVal, page) {
 
 
-        // var page = 1;
+        var page = 1;
         // alert(page);
         // https://api.jikan.moe/v4/anime?genres=1&page=2
         // var searchGenreUrl = "https://api.jikan.moe/v4/anime?genres=" + genreVal + "&page=" + page + "&limit=31";
-        var searchGenreUrl = "https://api.jikan.moe/v4/anime?genres=" + genreVal + "&page="+page+"";
+        var searchGenreUrl = "https://api.jikan.moe/v4/anime?genres=" + genreVal + "&limit=31";
         //
         $.getJSON(searchGenreUrl, function(searchGenreData) {
             console.log("searchGenreData");
@@ -115,16 +104,11 @@ $(document).ready(function() {
             $.getJSON(getAnimeGenresUrl, function(getAnimeGenresData) {
                 console.log("getAnimeGenresData");
                 console.log(getAnimeGenresData);
-var minusGenreVal = --genreVal;
-var addGenreVal = ++genreVal;
+
                 var contentAnime = $(".content-anime");
-                $(contentAnime).html("<h2 class='center-align'>" + getAnimeGenresData.data[minusGenreVal].name + "</h2>");
-                if (searchGenreData.pagination.has_next_page == true){
-                $(contentAnime).append("<button value="+addGenreVal+" page="+page+" class='next button'>Next</button>");
-              }
-              if (page>1){
-                  $(contentAnime).append("<button value="+addGenreVal+" page="+prevPage+" class='prev button'>Previous</button>");
-              }
+                // for (var i = 0; i < $(getAnimeGenresData.data).length; i++){
+                $(contentAnime).html("<h2 class='center-align'>" + getAnimeGenresData.data[--genreVal].name + "</h2>");
+                // }
 
                 for (var i = 0; i < $(searchGenreData.data).length; i++) {
                   if (searchGenreData.data[i].title_english != null) {
@@ -133,16 +117,18 @@ var addGenreVal = ++genreVal;
                       var searchAnimeName = searchGenreData.data[i].title;
                       // alert(searchAnimeName);
                   }
-
                     $(contentAnime).append('<div class="col s12 m6 l4 xl3 animeImgWrapper"><div value="' + searchGenreData.data[i].mal_id + '" class="title">' + searchAnimeName + '</div><img class="animeImg" src=' + searchGenreData.data[i].images.jpg.large_image_url + ' value="' + searchGenreData.data[i].mal_id + '" alt="' + searchAnimeName + '"></div>');
 
                 }
-                // fix height issue with aspect ratio
-// alert($('.content-anime>*').hasClass('animeImgWrapper'));
-$('.animeImgWrapper').height(($('.animeImgWrapper').width() * aspectRatio1)/aspectRatio2);
+
             });
         });
     }
+
+
+    $(document).on('click', '.animeImgWrapper-season', function() {
+
+    });
 
 
     // https://stackoverflow.com/questions/9827095/is-it-possible-to-use-jquery-on-and-hover
@@ -407,8 +393,8 @@ $('.animeImgWrapper').height(($('.animeImgWrapper').width() * aspectRatio1)/aspe
                             var searchAnimeName = searchSeasonData.data[i].title;
                             // alert(searchAnimeName);
                         }
-                        $(contentAnime).append('<div class="col s12 m6 l4 xl3 animeImgWrapper"><div value="' + searchSeasonData.data[i].mal_id + '" class="title">' + searchAnimeName + '</div><img class="animeImg" src=' + searchSeasonData.data[i].images.jpg.large_image_url + ' value="' + searchSeasonData.data[i].mal_id + '"alt="' + searchSeasonData.data[i].title + '"></div>');
-    $('.animeImgWrapper').height(($('.animeImgWrapper').width() * aspectRatio1)/aspectRatio2);
+                        $(contentAnime).append('<div class="col s12 m6 l4 xl3 animeImgWrapper-season"><div value="' + searchSeasonData.data[i].mal_id + '" class="title">' + searchAnimeName + '</div><img class="animeImg" src=' + searchSeasonData.data[i].images.jpg.large_image_url + ' value="' + searchSeasonData.data[i].mal_id + '"alt="' + searchSeasonData.data[i].title + '"></div>');
+
                     }
                     // contentAnimeData(searchSeasonData, searchAnimeAiredSeason, searchAnimeAiredYear);
 
@@ -441,7 +427,7 @@ $('.animeImgWrapper').height(($('.animeImgWrapper').width() * aspectRatio1)/aspe
                         } else {
                             var searchAnimeName = searchAanimeProducersData.data[i].title;
                         }
-                        $(contentAnime).append('<div class="col s12 m6 l4 xl3 animeImgWrapper"><div value="' + searchAanimeProducersData.data[i].mal_id + '" class="title">' + searchAnimeName + '</div><img class="animeImg" src=' + searchAanimeProducersData.data[i].images.jpg.large_image_url + ' value="' + searchAanimeProducersData.data[i].mal_id + '"alt="' + searchAanimeProducersData.data[i].title + '"></div>');
+                        $(contentAnime).append('<div class="col s12 m6 l4 xl3 animeImgWrapper-producers"><div value="' + searchAanimeProducersData.data[i].mal_id + '" class="title">' + searchAnimeName + '</div><img class="animeImg" src=' + searchAanimeProducersData.data[i].images.jpg.large_image_url + ' value="' + searchAanimeProducersData.data[i].mal_id + '"alt="' + searchAanimeProducersData.data[i].title + '"></div>');
 
                     }
                     // contentAnimeData(searchSeasonData, searchAnimeAiredSeason, searchAnimeAiredYear);
@@ -540,24 +526,11 @@ $('.animeImgWrapper').height(($('.animeImgWrapper').width() * aspectRatio1)/aspe
 
     }
 
-
-        $(document).on('click', '.next', function() {
-        var addPage = $(this).attr("page");
-        var genreVal = $(this).attr("value");
-        var page = ++addPage;
-        searchGenres(genreVal, page);
-
-
+    $('.next').click(function() {
+        var page = 20;
+        page++;
+        searchGenres(page);
     });
-    $(document).on('click', '.prev', function() {
-    var addPage = $('.next').attr("page");
-    var genreVal = $(this).attr("value");
-    var prevPage = --addPage;
-    searchGenres(genreVal, prevPage);
-
-
-});
-
 
     $(document).on('click', '.modal-genres .button', function() {
         $(".loading").show();

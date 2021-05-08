@@ -84,16 +84,7 @@ margin: 0;
 }
 
 .next{
-  position: absolute;
-  right: 0;
-  top: 0;
       width: 100px;
-}
-.prev{
-  position: absolute;
-  left: 0;
-  top: 0;
-      width: fit-content;
 }
 .modal .center-align{
   position: relative;
@@ -107,7 +98,7 @@ height: 100%;
 
 .animeImgWrapper, .animeImgWrapper-season, .animeImgWrapper-producers{
     padding: 12px!important;
-      height: 534px;
+      height: 600px;
       position: relative;
 }
 
@@ -179,12 +170,14 @@ height: 100%;
 
 @media only screen and (max-width: 992px) {
   .content-genres .button {
-    min-height: 6.5em;
+    min-height: 5em;
   }
 }
 
 @media only screen and (max-width: 768px) {
-
+  .content-genres .button {
+    min-height: 5em;
+  }
 }
 
 
@@ -216,13 +209,16 @@ height: 100%;
 @media only screen and (min-width: 993px) {
   .content-genres .button {
 
-    min-height: 6.5em;
+    min-height: 5em;
 }
 
 }
 
 @media only screen and (min-width: 1100px) {
+  .content-genres .button {
 
+    min-height: 7.5em;
+}
 }
 @media only screen and (min-width: 1200px) {
   .modal-synopsis, .modal-animeImg{
@@ -238,17 +234,22 @@ margin: -60px 0 2rem 0;
   }
   .modal-producers, .modal-licensors{
     margin-bottom: 14.5px;
+  }
+  .content-genres .button {
+
+    min-height: 8.5em;
 }
+
 }
 
 @media only screen and (min-width: 1201px) {
-  /* .row>[class*="animeImgWrapper"]{
-    max-height: 100%;
-    min-height: 100%;
-  }   */
+
 }
 @media only screen and (min-width: 1360px) {
+.content-genres .button {
 
+  min-height: 9em;
+}
 }
 
 @media only screen and (min-width: 1440px) {
@@ -260,8 +261,6 @@ margin: -60px 0 2rem 0;
 }
 
 @media only screen and (min-width: 1800px) {
-  /* https://www.w3schools.com/cssref/sel_attr_contain.asp */
-  /* CSS [attribute*=value] Selector */
 
 }
 /* theme edit */
@@ -346,4 +345,10 @@ select:focus, select:hover{
   background-color: #A31621;
   color: #fff;
   border-color: #A31621;
+}
+/* https://www.w3schools.com/cssref/sel_attr_contain.asp */
+/* CSS [attribute*=value] Selector */
+.row>[class*="animeImgWrapper"]{
+  max-height: 100%;
+  min-height: 100%;
 }
