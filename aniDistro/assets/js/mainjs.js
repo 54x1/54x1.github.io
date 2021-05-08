@@ -2,12 +2,15 @@
 // bug with searching prev data
 // https://twitter.com/becausemoe
 // May 27th 2020 last updated
+// next time
+// make the genre button high light
 $(document).ready(function() {
 
   var aspectRatio1 = 3;
   var aspectRatio2 = 2;
 
   $(window).resize(function() {
+    // fix height issue with aspect ratio
       // alert($('.animeImgWrapper').width());
     $('.animeImgWrapper').height(($('.animeImgWrapper').width() * aspectRatio1)/aspectRatio2);
   });
@@ -135,11 +138,10 @@ var addGenreVal = ++genreVal;
                   }
 
                     $(contentAnime).append('<div class="col s12 m6 l4 xl3 animeImgWrapper"><div value="' + searchGenreData.data[i].mal_id + '" class="title">' + searchAnimeName + '</div><img class="animeImg" src=' + searchGenreData.data[i].images.jpg.large_image_url + ' value="' + searchGenreData.data[i].mal_id + '" alt="' + searchAnimeName + '"></div>');
-
+                    $('.animeImgWrapper').height(($('.animeImgWrapper').width() * aspectRatio1)/aspectRatio2);
                 }
-                // fix height issue with aspect ratio
-// alert($('.content-anime>*').hasClass('animeImgWrapper'));
-$('.animeImgWrapper').height(($('.animeImgWrapper').width() * aspectRatio1)/aspectRatio2);
+
+
             });
         });
     }
@@ -310,19 +312,17 @@ $('.animeImgWrapper').height(($('.animeImgWrapper').width() * aspectRatio1)/aspe
                 // searchSeasonFunc(searchAnimeAiredYear, searchAnimeAiredSeason);
 
 
-
-
-
                         var searchProviderAUId2 = 'https://streamdata.malupdaterosx.moe/lookup/au/' + searchAnimeId + '';
                 $.getJSON(searchProviderAUId2, function(searchProviderAUId2Data) {
 
 
 
-                    $(document).on('click', '.premiered', function() {
+                    $(document).on('click', '.premiered, .next-year', function() {
 
                         $(".content-anime").empty();
                     });
                 }).always(function(searchProviderAUId2Data) {
+                  var page = 1;
                   var searchRelations = "https://api.jikan.moe/v4/anime/" + searchAnimeId + "/relations";
           $.getJSON(searchRelations, function(searchRelationsData) {
 
@@ -355,7 +355,23 @@ $('.animeImgWrapper').height(($('.animeImgWrapper').width() * aspectRatio1)/aspe
                 searchAnimeRelationsId.push(searchAnimeId);
               }
           });
+          // $(document).on('click', '.next-year', function() {
+            // alert('ger');
+
+
+//               var page = 1;
+//               var getAnimeAiredYear = searchAnimeAiredYear;
+//           var getAnimeAiredSeason = searchAnimeAiredSeason;
+//           aniContent(getAnimeAiredYear, getAnimeAiredSeason, page, searchAnimeName, searchAnimeRelations, searchAnimeRelationsId, searchRelationsDataEntry, searchProviderAUId2Data, searchAnimeImg, searchAnimeSynopsis, searchAnimeEpisodes, searchAnimeScore, searchAnimeScoredBy, searchAnimeAiredSeason, searchAnimeAiredYear, searchAnimeType, searchAnimeTrailer, searchAnimeStudios, searchAnimeStudiosId, searchAnimeProducers, searchAnimeProducersId, searchAnimeLicensors, searchAnimeLicensorsId, searchAnimeAiredSeasonCom, searchAnimeGenres, searchAnimeGenresId);
+//           $(document).on('click', '.next-year', function() {
+//                 var addPage = $(this).attr("page");
+//                 var genreVal = $(this).attr("value");
+//                         var getAnimeAiredYear = $(this).attr("year");
+//                     var getAnimeAiredSeason = $(this).attr("season");
+//                 var page = ++addPage;
                     aniContent(searchAnimeName, searchAnimeRelations, searchAnimeRelationsId, searchRelationsDataEntry, searchProviderAUId2Data, searchAnimeImg, searchAnimeSynopsis, searchAnimeEpisodes, searchAnimeScore, searchAnimeScoredBy, searchAnimeAiredSeason, searchAnimeAiredYear, searchAnimeType, searchAnimeTrailer, searchAnimeStudios, searchAnimeStudiosId, searchAnimeProducers, searchAnimeProducersId, searchAnimeLicensors, searchAnimeLicensorsId, searchAnimeAiredSeasonCom, searchAnimeGenres, searchAnimeGenresId);
+
+// });
 
                 });
 
@@ -391,15 +407,24 @@ $('.animeImgWrapper').height(($('.animeImgWrapper').width() * aspectRatio1)/aspe
                 console.log(searchAnimeAiredSeason);
                 console.log("searchAnimeAiredYearbe4");
                 console.log(searchAnimeAiredYear);
-                var searchSeason = 'https://api.jikan.moe/v4/seasons/' + searchAnimeAiredYear + '/' + searchAnimeAiredSeason + '?limit=24&page=1';
+                var searchSeason = 'https://api.jikan.moe/v4/seasons/' + searchAnimeAiredYear + '/' + searchAnimeAiredSeason + '?page='+page+'';
                 $.getJSON(searchSeason, function(searchSeasonData) {
                     console.log("searchSeasonData");
+                    console.log(searchSeason);
                     console.log(searchSeasonData);
                     console.log(searchAnimeAiredSeason);
                     console.log(searchAnimeAiredYear);
                     var contentAnime = $(".content-anime");
                     $(contentAnime).empty();
                     $(contentAnime).html("<h2 class='center-align'>" + searchAnimeAiredSeason + ", " + searchAnimeAiredYear + "</h2>");
+
+                  //
+                  //   if (searchSeasonData.pagination.has_next_page == true){
+                  //   $(contentAnime).append("<button year="+searchAnimeAiredYear+" season="+searchAnimeAiredSeason+" page="+page+" class='next-year button'>Next</button>");
+                  // }
+                  // if (page>1){
+                  //     $(contentAnime).append("<button year="+searchAnimeAiredYear+" season="+searchAnimeAiredSeason+" page="+prevPage+" class='prev-year button'>Previous</button>");
+                  // }
                     for (var i = 0; i < $(searchSeasonData.data).length; i++) {
                         if (searchSeasonData.data[i].title_english != null) {
                             var searchAnimeName = searchSeasonData.data[i].title_english;
@@ -408,7 +433,7 @@ $('.animeImgWrapper').height(($('.animeImgWrapper').width() * aspectRatio1)/aspe
                             // alert(searchAnimeName);
                         }
                         $(contentAnime).append('<div class="col s12 m6 l4 xl3 animeImgWrapper"><div value="' + searchSeasonData.data[i].mal_id + '" class="title">' + searchAnimeName + '</div><img class="animeImg" src=' + searchSeasonData.data[i].images.jpg.large_image_url + ' value="' + searchSeasonData.data[i].mal_id + '"alt="' + searchSeasonData.data[i].title + '"></div>');
-    $('.animeImgWrapper').height(($('.animeImgWrapper').width() * aspectRatio1)/aspectRatio2);
+                        $('.animeImgWrapper').height(($('.animeImgWrapper').width() * aspectRatio1)/aspectRatio2);
                     }
                     // contentAnimeData(searchSeasonData, searchAnimeAiredSeason, searchAnimeAiredYear);
 
@@ -421,39 +446,6 @@ $('.animeImgWrapper').height(($('.animeImgWrapper').width() * aspectRatio1)/aspe
             });
         });
 
-        $(document).on('click', '.modal-producers .button, .modal-licensors .button, .modal-studios .button', function() {
-            $(this).each(function() {
-                var animeProducersId = $(this).attr("value");
-                var animeProducersName = $(this).text();
-                $(".content-anime").empty();
-                var searchAanimeProducers = 'https://api.jikan.moe/v4/anime?producer=' + animeProducersId + '&limit=31';
-                $.getJSON(searchAanimeProducers, function(searchAanimeProducersData) {
-                    console.log("searchAanimeProducers");
-                    console.log(searchAanimeProducers);
-                    console.log(searchAanimeProducersData);
-
-                    var contentAnime = $(".content-anime");
-                    $(contentAnime).empty();
-                    $(contentAnime).html("<h2 class='center-align'>" + animeProducersName + "</h2>");
-                    for (var i = 0; i < $(searchAanimeProducersData.data).length; i++) {
-                        if (searchAanimeProducersData.data[i].title_english != null) {
-                            var searchAnimeName = searchAanimeProducersData.data[i].title_english;
-                        } else {
-                            var searchAnimeName = searchAanimeProducersData.data[i].title;
-                        }
-                        $(contentAnime).append('<div class="col s12 m6 l4 xl3 animeImgWrapper"><div value="' + searchAanimeProducersData.data[i].mal_id + '" class="title">' + searchAnimeName + '</div><img class="animeImg" src=' + searchAanimeProducersData.data[i].images.jpg.large_image_url + ' value="' + searchAanimeProducersData.data[i].mal_id + '"alt="' + searchAanimeProducersData.data[i].title + '"></div>');
-
-                    }
-                    // contentAnimeData(searchSeasonData, searchAnimeAiredSeason, searchAnimeAiredYear);
-
-
-                });
-                // console.log(searchAnimeAiredYear);
-                $('.modal').hide();
-                $('.modal .container .row .modal-content').empty().hide();
-                $('.modal-overlay').removeClass('modal-overlay');
-            });
-        });
 
         console.log("searchProviderAUId2Data3");
         console.log(searchAnimeName);
@@ -541,21 +533,85 @@ $('.animeImgWrapper').height(($('.animeImgWrapper').width() * aspectRatio1)/aspe
     }
 
 
+
+    $(document).on('click', '.modal-producers .button, .modal-licensors .button, .modal-studios .button', function() {
+      var page = 1;
+      var prevPage = 1;
+              var producerVal = $(this).attr("value");
+              var producerName = $(this).text();
+            getModalDataDisplay(producerName, producerVal, page, prevPage);
+    });
+
+
+    function getModalDataDisplay(producerName, producerVal, page, prevPage){
+    // $(this).each(function() {
+      var animeProducersId = producerVal;
+      var animeProducersName = producerName;
+      $(".content-anime").empty();
+      var searchAanimeProducers = 'https://api.jikan.moe/v4/anime?producer=' + animeProducersId + '&page='+page+'';
+      $.getJSON(searchAanimeProducers, function(searchAanimeProducersData) {
+          console.log("searchAanimeProducers");
+          console.log(searchAanimeProducers);
+          console.log(searchAanimeProducersData);
+
+          var contentAnime = $(".content-anime");
+          $(contentAnime).empty();
+          $(contentAnime).html("<h2 class='center-align'>" + animeProducersName + "</h2>");
+          if (searchAanimeProducersData.pagination.has_next_page == true){
+          $(contentAnime).append("<button name='"+animeProducersName+"' value="+animeProducersId+" page="+page+" class='next-producer button'>Next</button>");
+        }
+        if (page>1){
+            $(contentAnime).append("<button name='"+animeProducersName+"' value="+animeProducersId+" page="+prevPage+" class='prev-producer button'>Previous</button>");
+        }
+          for (var i = 0; i < $(searchAanimeProducersData.data).length; i++) {
+              if (searchAanimeProducersData.data[i].title_english != null) {
+                  var searchAnimeName = searchAanimeProducersData.data[i].title_english;
+              } else {
+                  var searchAnimeName = searchAanimeProducersData.data[i].title;
+              }
+              $(contentAnime).append('<div class="col s12 m6 l4 xl3 animeImgWrapper"><div value="' + searchAanimeProducersData.data[i].mal_id + '" class="title">' + searchAnimeName + '</div><img class="animeImg" src=' + searchAanimeProducersData.data[i].images.jpg.large_image_url + ' value="' + searchAanimeProducersData.data[i].mal_id + '"alt="' + searchAanimeProducersData.data[i].title + '"></div>');
+              $('.animeImgWrapper').height(($('.animeImgWrapper').width() * aspectRatio1)/aspectRatio2);
+          }
+          // contentAnimeData(searchSeasonData, searchAnimeAiredSeason, searchAnimeAiredYear);
+
+
+      });
+      // console.log(searchAnimeAiredYear);
+      $('.modal').hide();
+      $('.modal .container .row .modal-content').empty().hide();
+      $('.modal-overlay').removeClass('modal-overlay');
+    // });
+    }
+
+
         $(document).on('click', '.next', function() {
         var addPage = $(this).attr("page");
         var genreVal = $(this).attr("value");
         var page = ++addPage;
         searchGenres(genreVal, page);
-
-
     });
     $(document).on('click', '.prev', function() {
     var addPage = $('.next').attr("page");
-    var genreVal = $(this).attr("value");
+    var producerVal = $(this).attr("value");
     var prevPage = --addPage;
-    searchGenres(genreVal, prevPage);
+    searchGenres(producerVal, prevPage);
+});
 
+$(document).on('click', '.next-producer', function() {
 
+var addPage = $(this).attr("page");
+var producerVal = $(this).attr("value");
+    var producerName = $(this).attr("name");
+var page = ++addPage;
+getModalDataDisplay(producerName, producerVal, page);
+
+});
+$(document).on('click', '.prev-producer', function() {
+var addPage = $('.next-producer').attr("page");
+var producerVal = $(this).attr("value");
+var producerName = $(this).attr("name");
+var prevPage = --addPage;
+getModalDataDisplay(producerName, producerVal, prevPage);
 });
 
 

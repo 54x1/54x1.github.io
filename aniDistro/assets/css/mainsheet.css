@@ -85,14 +85,16 @@ margin: 0;
   display: none;
     /* color: #a38d65; */
 }
-
-.next{
+/* https://www.w3schools.com/cssref/sel_attr_contain.asp */
+/* CSS [attribute*=value] Selector */
+.content-anime>[class*="next"]
+{
   position: absolute;
   right: 0;
   top: 0;
       width: 100px;
 }
-.prev{
+.content-anime>[class*="prev"] {
   position: absolute;
   left: 0;
   top: 0;
@@ -150,10 +152,9 @@ height: 100%;
   max-height: -webkit-fill-available;
   min-width: fit-content;
   min-width: -moz-fit-content;
+  min-height: 4.5em;
+  padding: 0 40px;
 }
-
-
-
 
 
 
@@ -183,9 +184,7 @@ height: 100%;
 }
 
 @media only screen and (max-width: 992px) {
-  .content-genres .button {
-    min-height: 6.5em;
-  }
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -219,10 +218,7 @@ height: 100%;
 
 
 @media only screen and (min-width: 993px) {
-  .content-genres .button {
 
-    min-height: 6.5em;
-}
 
 }
 
@@ -265,8 +261,6 @@ margin: -60px 0 2rem 0;
 }
 
 @media only screen and (min-width: 1800px) {
-  /* https://www.w3schools.com/cssref/sel_attr_contain.asp */
-  /* CSS [attribute*=value] Selector */
 
 }
 /* theme edit */
@@ -320,6 +314,10 @@ option.button{
       color: #fff;
 }
 
+.button, button{
+  font-size: 1.5rem;
+}
+
 option.button:focus, .modal button:focus{
   color: #fff;
         background-color: #A31621;
@@ -343,7 +341,7 @@ select:focus, select:hover{
 .modal-content .button, .modal-content button{
     margin: 6px 0;
   width: 100%;
-  padding: 12px 6px;
+  padding: 6px 12px;
   height: max-content;
   white-space: normal;
 }
