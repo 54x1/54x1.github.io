@@ -328,7 +328,7 @@ $(document).ready(function() {
                 console.log(searchAnimeAiredSeason);
                 console.log("searchAnimeAiredYearbe4");
                 console.log(searchAnimeAiredYear);
-                var searchSeason = 'https://api.jikan.moe/v4/seasons/' + searchAnimeAiredYear + '/' + searchAnimeAiredSeason + '?page=' + page + '';
+                var searchSeason = 'https://api.jikan.moe/v4/seasons/' + searchAnimeAiredYear + '/' + searchAnimeAiredSeason + '';
                 $.getJSON(searchSeason, function(searchSeasonData) {
                     console.log("searchSeasonData");
                     console.log(searchSeason);
