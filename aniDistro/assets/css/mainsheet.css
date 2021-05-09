@@ -1,352 +1,372 @@
 /* https://coolors.co/a31621-bfdbf7-053c5e-a38d65-343A40 */
+
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Roboto:wght@400;500&display=swap');
-body{
-  margin: 0;
-  padding: 0;
-  color: #343A40;
-font-family: 'Abel', 'Roboto';
+body {
+	margin: 0;
+	padding: 0;
+	color: #343A40;
+	font-family: 'Abel', 'Roboto';
 }
 
-h1, h2, h3, h4, h5, h6{
-  color: #a38d65;
-  font-weight: 600;
-  letter-spacing: 2px;
+h1,h2,h3,h4,h5,h6 {
+	color: #a38d65;
+	font-weight: 600;
+	letter-spacing: 2px;
 }
 
-.info h5, .modal-related h5, .info-primary h5{
-  margin-bottom: 0;
+.info h5,
+.modal-related h5,
+.info-primary h5 {
+	margin-bottom: 0;
 }
 
-.content-anime .center-align{
-    text-transform: capitalize;
+.content-anime .center-align {
+	text-transform: capitalize;
 }
-.row.content-anime{
-      height: fit-content;
-      height: -moz-fit-content;
+
+.row.content-anime {
+	height: fit-content;
+	height: -moz-fit-content;
 }
-.info, .info-primary{
-  clear: both;
+
+.info,
+.info-primary {
+	clear: both;
+}
+
+.loading {
+	height: 500px;
+	width: auto;
+	background-image: url("../images/loading.gif");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+.modal-synopsis p {
+	letter-spacing: 1.5px;
+	line-height: 2.5rem;
+	font-family: 'Roboto';
+	text-align: justify;
+	margin: 0;
+}
+
+.modal-trailer {
+	margin-bottom: 2rem;
+}
+
+.modal-content .close-x {
+	position: relative;
+	top: -9.5vh;
+	right: 19.5px;
+	float: right;
+	width: 70px!important;
+	padding: 0;
+	margin: 8px auto!important;
+	font-size: 2.4rem;
+}
+
+.content-genres {
+	margin-bottom: 85px;
+}
+
+.header-anidistro {
+	margin: 85px auto;
+	width: fit-content;
+	width: -moz-fit-content;
+}
+
+.modal-header-anidistro {
+	margin: 85px auto;
+	width: fit-content;
+	width: -moz-fit-content;
+}
+
+.header-logo {
+	height: 110px;
+	width: auto;
+	cursor: pointer;
+}
+
+.genres-mobile {
+	width: 100%;
+	display: none;
+	/* color: #a38d65; */
 }
 
 
-.loading{
-  height: 500px;
-  width: auto;
- background-image: url("../images/loading.gif");
- background-repeat: no-repeat;
- background-size: contain;
-background-position: center;
-}
-.modal-synopsis p{
-  letter-spacing: 1.5px;
-line-height: 2.5rem;
-font-family: 'Roboto';
-text-align: justify;
-margin: 0;
-}
-
-.modal-trailer{
-  margin-bottom: 2rem;
-}
-
-
-
-.modal-content .close-x{
-  position: relative;
-    top: -9.5vh;
-  right: 19.5px;
-  float: right;
-  width: 70px!important;
-  padding: 0;
-  margin: 8px auto!important;
-  font-size: 2.4rem;
-}
- .content-genres{
-   margin-bottom: 85px;
- }
-.header-anidistro{
-  margin: 85px auto;
-  width: fit-content;
-  width: -moz-fit-content;
-}
-.modal-header-anidistro{
-  margin: 85px auto;
-  width: fit-content;
-  width: -moz-fit-content;
-}
-
-.header-logo{
-  height: 110px;
-  width: auto;
-  cursor: pointer;
-}
-.genres-mobile{
-  width: 100%;
-  display: none;
-    /* color: #a38d65; */
-}
 /* https://www.w3schools.com/cssref/sel_attr_contain.asp */
 /* CSS [attribute*=value] Selector */
-.content-anime>[class*="next"]
-{
-  position: absolute;
-  right: 0;
-  top: 0;
-      width: 100px;
+.content-anime>[class*="next"] {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100px;
 }
+
 .content-anime>[class*="prev"] {
-  position: absolute;
-  left: 0;
-  top: 0;
-      width: fit-content;
-      width: -moz-fit-content;
-}
-.modal .center-align{
-  position: relative;
-top: -62px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: fit-content;
+	width: -moz-fit-content;
 }
 
-.animeImg{
-height: 100%;
-  width: 100%;
+.modal .center-align {
+	position: relative;
+	top: -62px;
 }
 
-.animeImgWrapper, .animeImgWrapper-season, .animeImgWrapper-producers{
-    padding: 12px!important;
-      height: 534px;
-      position: relative;
+.animeImg {
+	height: 100%;
+	width: 100%;
 }
 
-.modal-animeImg, .modal-synopsis, .modal-aired, .modal-licensors, .modal-producers, .modal-watch, .modal-genres, .modal-related, .modal-score, .modal-scoredBy, .modal-episodes{
-  margin-bottom: 14px;
-  padding: 0px 12px 24px;
+.animeImgWrapper,
+.animeImgWrapper-season,
+.animeImgWrapper-producers {
+	padding: 12px!important;
+	height: 534px;
+	position: relative;
 }
 
-.not-found:hover, .not-found:focus, .modal-Type button:hover, .modal-episodes button:hover, .modal-score button:hover, .modal-scoredBy button:hover, .modal-Type button:focus, .modal-episodes button:focus, .modal-score button:focus, .modal-scoredBy button:focus{
-      background-color: transparent!important;
-      color: #bbb!important;
-      border-color: #bbb!important;
-      cursor: pointer;
-
+.modal-animeImg,
+.modal-synopsis,
+.modal-aired,
+.modal-licensors,
+.modal-producers,
+.modal-watch,
+.modal-genres,
+.modal-related,
+.modal-score,
+.modal-scoredBy,
+.modal-episodes {
+	margin-bottom: 14px;
+	padding: 0px 12px 24px;
 }
 
-
-.title{
-  font-size: 2.4rem;
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 55%;
-  cursor: pointer;
-  left: 50%;
-  font-weight: bold;
-  width: 80%;
-  color: white;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 2;
+.not-found:hover,
+.not-found:focus,
+.modal-Type button:hover,
+.modal-episodes button:hover,
+.modal-score button:hover,
+.modal-scoredBy button:hover,
+.modal-Type button:focus,
+.modal-episodes button:focus,
+.modal-score button:focus,
+.modal-scoredBy button:focus {
+	background-color: transparent!important;
+	color: #bbb!important;
+	border-color: #bbb!important;
+	cursor: pointer;
 }
 
-.content-genres .button{
-  max-width: -webkit-fill-available;
-  max-height: -webkit-fill-available;
-  min-width: fit-content;
-  min-width: -moz-fit-content;
-  min-height: 4.5em;
-  padding: 0 40px;
+.title {
+	font-size: 2.4rem;
+	transition: .5s ease;
+	opacity: 0;
+	position: absolute;
+	top: 55%;
+	cursor: pointer;
+	left: 50%;
+	font-weight: bold;
+	width: 80%;
+	color: white;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	z-index: 2;
 }
 
-
-
-
-
-
-
-
+.content-genres .button {
+	max-width: -webkit-fill-available;
+	max-height: -webkit-fill-available;
+	min-width: fit-content;
+	min-width: -moz-fit-content;
+	min-height: 4.5em;
+	padding: 0 40px;
+}
 
 @media only screen and (max-width: 1440px) {
-  /* .animeImgWrapper {
+	/* .animeImgWrapper {
     max-height: 10.5%;
 } */
 }
 
-
-
 @media only screen and (max-width: 1200px) {
-
-  .modal-animeImg{
-        top: -61px;
-  }
-  .animeImg{
-  height: 100%;
-    width: 100%;
-  }
+	.modal-animeImg {
+		top: -61px;
+	}
+	.animeImg {
+		height: 100%;
+		width: 100%;
+	}
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 992px) {}
 
-}
-
-@media only screen and (max-width: 768px) {
-
-}
-
+@media only screen and (max-width: 768px) {}
 
 @media only screen and (max-width: 600px) {
-.genres-mobile{
-  display: block;
+	.content-anime>[class*="next"] {
+		position: absolute;
+		right: 0;
+		top: -70px;
+		width: 100px;
+	}
+	.content-anime>[class*="prev"] {
+		position: absolute;
+		left: 0;
+		top: -70px;
+		width: fit-content;
+		width: -moz-fit-content;
+	}
+	.genres-mobile {
+		display: block;
+	}
+	.header-logo {
+		height: auto;
+		width: 100%;
+	}
+	.header-anidistro {
+		width: 90%;
+	}
+	.genres {
+		display: none;
+	}
 }
-.header-logo {
-    height: auto;
-    width: 100%;
-  }
 
-  .header-anidistro {
-      width: 90%;
-    }
-.genres{
-  display: none;
-}
-}
+@media only screen and (min-width: 992px) {}
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 993px) {}
 
+@media only screen and (min-width: 1100px) {}
 
-}
-
-
-
-
-@media only screen and (min-width: 993px) {
-
-
-}
-
-@media only screen and (min-width: 1100px) {
-
-}
 @media only screen and (min-width: 1200px) {
-  .modal-synopsis, .modal-animeImg{
-    position: relative;
-  top: -62px;
-  }
-
-  .modal-animeImg{
-      top: 6px;
-  }
-  .modal-trailer{
-margin: -60px 0 2rem 0;
-  }
-  .modal-producers, .modal-licensors{
-    margin-bottom: 14.5px;
-}
+	.modal-synopsis,
+	.modal-animeImg {
+		position: relative;
+		top: -62px;
+	}
+	.modal-animeImg {
+		top: 6px;
+	}
+	.modal-trailer {
+		margin: -60px 0 2rem 0;
+	}
+	.modal-producers,
+	.modal-licensors {
+		margin-bottom: 14.5px;
+	}
 }
 
 @media only screen and (min-width: 1201px) {
-  /* .row>[class*="animeImgWrapper"]{
+	/* .row>[class*="animeImgWrapper"]{
     max-height: 100%;
     min-height: 100%;
   }   */
 }
-@media only screen and (min-width: 1360px) {
 
-}
+@media only screen and (min-width: 1360px) {}
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1440px) {}
 
-}
+@media only screen and (min-width: 1600px) {}
 
-@media only screen and (min-width: 1600px) {
+@media only screen and (min-width: 1800px) {}
 
-}
 
-@media only screen and (min-width: 1800px) {
-
-}
 /* theme edit */
-.container{
-  max-width: 1440px;
-  display: grid;
+
+.container {
+	max-width: 1440px;
+	display: grid;
 }
 
-.modal{
-  top: 0;
-  max-width: 100vw;
-  /* padding: 40px; */
-  width: 100%;
-  max-height: 100vh;
-  height: 100%;
-}
-.modal .modal-content{
-  padding: 0;
+.modal {
+	top: 0;
+	max-width: 100vw;
+	/* padding: 40px; */
+	width: 100%;
+	max-height: 100vh;
+	height: 100%;
 }
 
-.modal-content .center-align{
-  padding-bottom: 2rem;
-}
-.modal-close{
-  margin: 0;
-  position: relative;
-    bottom: 0;
-    margin-bottom: 40px;
+.modal .modal-content {
+	padding: 0;
 }
 
-.modal-overlay{
-
+.modal-content .center-align {
+	padding-bottom: 2rem;
 }
 
-.modal-animeImg{
-  margin: -62px 0 2rem 0;
-  padding-right: 2rem!important;
+.modal-close {
+	margin: 0;
+	position: relative;
+	bottom: 0;
+	margin-bottom: 40px;
 }
 
+.modal-overlay {}
 
-.row .col{
-  padding: 0 1em;
+.modal-animeImg {
+	margin: -62px 0 2rem 0;
+	padding-right: 2rem!important;
 }
 
+.row .col {
+	padding: 0 1em;
+}
 
 select {
-    color: #a38d65;
+	color: #a38d65;
 }
 
-option.button{
-      color: #fff;
+option.button {
+	color: #fff;
 }
 
-.button, button{
-  font-size: 1.5rem;
+.button,
+button {
+	font-size: 1.5rem;
 }
 
-option.button:focus, .modal button:focus{
-  color: #fff;
-        background-color: #A31621;
-}
-select:focus, select:hover{
-      border: 1px solid #a38d65;
-      background-color: #A31621;
-    color: #fff;
-    border-color: #A31621;
-
+option.button:focus,
+.modal button:focus {
+	color: #fff;
+	background-color: #A31621;
 }
 
-
-.button, button, a, a:hover{
-  margin: 6px;
-    letter-spacing: 2px;
-  color: #a38d65;
-
-
+select:focus,
+select:hover {
+	border: 1px solid #a38d65;
+	background-color: #A31621;
+	color: #fff;
+	border-color: #A31621;
 }
-.modal-content .button, .modal-content button{
-    margin: 6px 0;
-  width: 100%;
-  padding: 6px 12px;
-  height: max-content;
-  white-space: normal;
+
+.button,
+button,
+a,
+a:hover {
+	margin: 6px;
+	letter-spacing: 2px;
+	color: #a38d65;
 }
-.button:hover, .button:focus, .modal-close:hover, .modal-close:focus {
-  background-color: #A31621;
-  color: #fff;
-  border-color: #A31621;
+
+.modal-content .button,
+.modal-content button {
+	margin: 6px 0;
+	width: 100%;
+	padding: 6px 12px;
+	height: max-content;
+	white-space: normal;
+}
+
+.button:hover,
+.button:focus,
+.modal-close:hover,
+.modal-close:focus {
+	background-color: #A31621;
+	color: #fff;
+	border-color: #A31621;
 }
