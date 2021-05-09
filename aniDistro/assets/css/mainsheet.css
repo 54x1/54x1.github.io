@@ -108,8 +108,8 @@ h1,h2,h3,h4,h5,h6 {
 	position: absolute;
 	left: 0;
 	top: 0;
-	width: fit-content;
-	width: -moz-fit-content;
+	width: 150px;
+	/* width: -moz-fits-content; */
 }
 
 .modal .center-align {
