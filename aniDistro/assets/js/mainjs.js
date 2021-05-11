@@ -502,7 +502,7 @@ $(document).ready(function() {
         if (next != null){
           var addPage = next;
         }else{
-          alert('here');
+          //alert('here');
             var addPage = 2;
         }
         var producerVal = $(this).attr("value");
