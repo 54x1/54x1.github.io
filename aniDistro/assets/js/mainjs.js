@@ -67,13 +67,12 @@ $(document).ready(function() {
                 $(".content-anime").html("<h2 class='center-align'>Items Not Found</h2>");
             } else {
                 var genreVal = $(this).val();
-                var page = 1;
                 searchGenres(genreVal, page);
             }
         }
     });
 
-    $('.genres-mobile').click(function() {
+    $('.genres-mobile option').click(function() {
         var page = 1;
         // nasty
         var genreVal = $(this).val();
@@ -81,7 +80,6 @@ $(document).ready(function() {
             $(".content-anime").html("<h2 class='center-align'>Items Not Found</h2>");
         } else {
             var genreVal = $(this).val();
-            var page = 1;
             searchGenres(genreVal, page);
         }
 
