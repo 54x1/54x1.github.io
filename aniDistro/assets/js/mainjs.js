@@ -63,8 +63,8 @@ $(document).ready(function() {
     // var genres = ['Action', 'Adventure', 'Cars', 'Comedy', 'Dementia', 'Demons', 'Mystery', 'Drama', 'Ecchi', 'Fantasy', 'Game', 'Hentai', 'Historical', 'Horror', 'Kids', 'Magic', 'Martial Arts', 'Mecha', 'Music', 'Parody', 'Samurai', 'Romance', 'School', 'Sci Fi', 'Shoujo', 'Shoujo Ai', 'Shounen', 'Shounen Ai', 'Space', 'Sports', 'Super Power', 'Vampire', 'Yaoi', 'Yuri', 'Harem', 'Slice Of Life', 'Supernatural', 'Military', 'Police', 'Psychological', 'Thriller', 'Seinen', 'Josei'];
 
 
-    $('.genres-mobile').each(function() {
-      $(this).on('change', function() {
+
+      $('.genres-mobile').on('change', function() {
           $(".loading").show();
           alert( $(this).find(":selected").val() );
           var genreVal = $(this).val();
@@ -77,7 +77,6 @@ $(document).ready(function() {
               searchGenres(genreVal, page);
           }
       });
-    });
 
     $('.genres-mobile').click(function() {
       $(this).on('change', function() {
