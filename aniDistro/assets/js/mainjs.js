@@ -59,9 +59,9 @@ $(document).ready(function() {
     // var genres = ['Action', 'Adventure', 'Cars', 'Comedy', 'Dementia', 'Demons', 'Mystery', 'Drama', 'Ecchi', 'Fantasy', 'Game', 'Hentai', 'Historical', 'Horror', 'Kids', 'Magic', 'Martial Arts', 'Mecha', 'Music', 'Parody', 'Samurai', 'Romance', 'School', 'Sci Fi', 'Shoujo', 'Shoujo Ai', 'Shounen', 'Shounen Ai', 'Space', 'Sports', 'Super Power', 'Vampire', 'Yaoi', 'Yuri', 'Harem', 'Slice Of Life', 'Supernatural', 'Military', 'Police', 'Psychological', 'Thriller', 'Seinen', 'Josei'];
 
 
-    $('.genres-mobile option').each(function() {
+    $('.genres-mobile').each(function() {
       $(".loading").show();
-      $('select').on('change', function() {
+      $(this).on('change', function() {
         if ($(this).is(':selected')) {
             var page = 1;
             var genreVal = $(this).val();
@@ -107,6 +107,10 @@ $(document).ready(function() {
     });
 
     function searchGenres(genreVal, page, prevPage) {
+      if ($(window).width() < 600){
+        var genreVal = 1;
+      var page =1;
+      }
         var searchGenreUrl = "https://api.jikan.moe/v4/anime?genres=" + genreVal + "&page=" + page + "";
         $.getJSON(searchGenreUrl, function(searchGenreData) {
             console.log("searchGenreData");
