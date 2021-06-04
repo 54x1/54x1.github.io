@@ -11,6 +11,7 @@ $(document).ready(function() {
     if ($(window).width() < 600){
     var genreVal = 1;
     var page = 1;
+    searchGenres(genreVal, page);
   }
     $(window).resize(function() {
         // fix height issue with aspect ratio
