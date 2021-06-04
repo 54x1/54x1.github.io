@@ -63,20 +63,38 @@ $(document).ready(function() {
     // var genres = ['Action', 'Adventure', 'Cars', 'Comedy', 'Dementia', 'Demons', 'Mystery', 'Drama', 'Ecchi', 'Fantasy', 'Game', 'Hentai', 'Historical', 'Horror', 'Kids', 'Magic', 'Martial Arts', 'Mecha', 'Music', 'Parody', 'Samurai', 'Romance', 'School', 'Sci Fi', 'Shoujo', 'Shoujo Ai', 'Shounen', 'Shounen Ai', 'Space', 'Sports', 'Super Power', 'Vampire', 'Yaoi', 'Yuri', 'Harem', 'Slice Of Life', 'Supernatural', 'Military', 'Police', 'Psychological', 'Thriller', 'Seinen', 'Josei'];
 
 
-    $('.genres-mobile option').each(function() {
-        $(".loading").show();
-        if ($(this).is(':selected')) {
-            var genreVal = $(this).val();
-            var page = 1;
-            searchGenres(genreVal, page);
-        }
+    $('.genres-mobile').each(function() {
+      $(this).on('change', function() {
+          $(".loading").show();
+          // alert( $(this).find(":selected").val() );
+          var genreVal = $(this).val();
+          var page = 1;
+          if (genreVal == 12 | genreVal == 33 | genreVal == 34) {
+              $(".content-anime").html("<h2 class='center-align'>Items Not Found</h2>");
+          } else {
+              var genreVal = $(this).val();
+              var page = 1;
+              searchGenres(genreVal, page);
+          }
+      });
     });
 
     $('.genres-mobile').click(function() {
-        $(".loading").show();
-        var genreVal = $(this).val();
-        var page = 1;
-        searchGenres(genreVal, page);
+      $(this).on('change', function() {
+          $(".loading").show();
+                              $(".content-anime").hide();
+          // alert( $(this).find(":selected").val() );
+          var genreVal = $(this).val();
+          var page = 1;
+          if (genreVal == 12 | genreVal == 33 | genreVal == 34) {
+              $(".content-anime").html("<h2 class='center-align'>Items Not Found</h2>");
+          } else {
+              var genreVal = $(this).val();
+              var page = 1;
+              searchGenres(genreVal, page);
+          }
+      });
+
 
     });
 
@@ -84,6 +102,7 @@ $(document).ready(function() {
     $(document).on('click', '.genres .button', function() {
         $(".loading").show();
         $(this).each(function() {
+
             // nasty
             var genreVal = $(this).val();
             if (genreVal == 12 | genreVal == 33 | genreVal == 34) {
@@ -110,7 +129,10 @@ $(document).ready(function() {
                 var minusGenreVal = --genreVal;
                 var addGenreVal = ++genreVal;
                 var contentAnime = $(".content-anime");
+
                 $(contentAnime).html("<h2 class='center-align'>" + getAnimeGenresData.data[minusGenreVal].name + "</h2>");
+
+                        $(contentAnime).append('<div class="loading"></div>');
                 if (searchGenreData.pagination.has_next_page == true) {
                     $(contentAnime).append("<button value=" + addGenreVal + " page=" + page + " class='next button'>Next</button>");
                 }
@@ -128,6 +150,8 @@ $(document).ready(function() {
 
                     $(contentAnime).append('<div class="col s12 m6 l4 xl3 animeImgWrapper"><div value="' + searchGenreData.data[i].mal_id + '" class="title">' + searchAnimeName + '</div><img class="animeImg" src=' + searchGenreData.data[i].images.jpg.large_image_url + ' value="' + searchGenreData.data[i].mal_id + '" alt="' + searchAnimeName + '"></div>');
                     $('.animeImgWrapper').height(($('.animeImgWrapper').width() * aspectRatio1) / aspectRatio2);
+                    $(".loading").fadeOut(250);
+                    $(contentAnime).fadeIn(250);
                 }
             });
         });
