@@ -62,8 +62,10 @@ $(document).ready(function() {
     $('.genres-mobile option').each(function() {
         if ($(this).is(':selected')) {
             var page = 1;
+
             $(".loading").show();
-            var genreVal = $(this).val().change();
+            var genreVal = 1;
+            genreVal = $(this).val().attr('selected', 'selected');
             if (genreVal == 12 | genreVal == 33 | genreVal == 34) {
                 $(".content-anime").html("<h2 class='center-align'>Items Not Found</h2>");
             } else {
@@ -77,11 +79,12 @@ $(document).ready(function() {
         var page = 1;
         $(".loading").show();
         // nasty
-        var genreVal = $(this).val();
+        var genreVal = 1;
+        genreVal = $(this).val().attr('selected', 'selected');;
         if (genreVal == 12 | genreVal == 33 | genreVal == 34) {
             $(".content-anime").html("<h2 class='center-align'>Items Not Found</h2>");
         } else {
-            var genreVal = $(this).val().change();
+            var genreVal = $(this).val();
             searchGenres(genreVal, page);
         }
 
