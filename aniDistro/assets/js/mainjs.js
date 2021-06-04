@@ -8,7 +8,10 @@ $(document).ready(function() {
 
     var aspectRatio1 = 3;
     var aspectRatio2 = 2;
-
+    if ($(window).width() < 600){
+    var genreVal = 1;
+    var page = 1;
+  }
     $(window).resize(function() {
         // fix height issue with aspect ratio
         // alert($('.animeImgWrapper').width());
@@ -89,6 +92,7 @@ $(document).ready(function() {
             }
         });
     });
+
 
     function searchGenres(genreVal, page, prevPage) {
         var searchGenreUrl = "https://api.jikan.moe/v4/anime?genres=" + genreVal + "&page=" + page + "";
