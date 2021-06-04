@@ -59,34 +59,18 @@ $(document).ready(function() {
     // var genres = ['Action', 'Adventure', 'Cars', 'Comedy', 'Dementia', 'Demons', 'Mystery', 'Drama', 'Ecchi', 'Fantasy', 'Game', 'Hentai', 'Historical', 'Horror', 'Kids', 'Magic', 'Martial Arts', 'Mecha', 'Music', 'Parody', 'Samurai', 'Romance', 'School', 'Sci Fi', 'Shoujo', 'Shoujo Ai', 'Shounen', 'Shounen Ai', 'Space', 'Sports', 'Super Power', 'Vampire', 'Yaoi', 'Yuri', 'Harem', 'Slice Of Life', 'Supernatural', 'Military', 'Police', 'Psychological', 'Thriller', 'Seinen', 'Josei'];
 
 
-    $('.genres-mobile').each(function() {
-      $(".loading").show();
-      $(this).on('change', function() {
+    $('.genres-mobile option').each(function() {
         if ($(this).is(':selected')) {
+            var genreVal = $(this).val();
             var page = 1;
-            var genreVal = $(this).val();
-            if (genreVal == 12 | genreVal == 33 | genreVal == 34) {
-                $(".content-anime").html("<h2 class='center-align'>Items Not Found</h2>");
-            } else {
-                var genreVal = $(this).val();
-                searchGenres(genreVal, page);
-            }
-        }
-    });
-});
-
-
-    $('.genres-mobile').click(function() {
-      $(".loading").show();
-        var page = 1;
-        // nasty
-        var genreVal = $(this).val();
-        if (genreVal == 12 | genreVal == 33 | genreVal == 34) {
-            $(".content-anime").html("<h2 class='center-align'>Items Not Found</h2>");
-        } else {
-            var genreVal = $(this).val();
             searchGenres(genreVal, page);
         }
+    });
+
+    $('.genres-mobile').click(function() {
+        var genreVal = $(this).val();
+        var page = 1;
+        searchGenres(genreVal, page);
 
     });
 
@@ -107,10 +91,6 @@ $(document).ready(function() {
     });
 
     function searchGenres(genreVal, page, prevPage) {
-      if ($(window).width() < 600){
-        var genreVal = 1;
-      var page =1;
-      }
         var searchGenreUrl = "https://api.jikan.moe/v4/anime?genres=" + genreVal + "&page=" + page + "";
         $.getJSON(searchGenreUrl, function(searchGenreData) {
             console.log("searchGenreData");
