@@ -66,7 +66,7 @@ $(document).ready(function() {
 
       $('.genres-mobile').on('change', function() {
           $(".loading").show();
-          alert( $(this).find(":selected").val() );
+          // alert( $(this).find(":selected").val() );
           var genreVal = $(this).val();
           var page = 1;
           if (genreVal == 12 | genreVal == 33 | genreVal == 34) {
