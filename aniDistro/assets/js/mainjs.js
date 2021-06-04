@@ -75,7 +75,7 @@ $(document).ready(function() {
     });
 
 
-    $(document).on('click', '.genres .button', function() {
+    $(document).on('click touchstart', '.genres .button', function() {
         $(".loading").show();
         $(this).each(function() {
             // nasty
