@@ -131,7 +131,7 @@ $(document).ready(function() {
 
                 $(contentAnime).html("<h2 class='center-align'>" + getAnimeGenresData.data[minusGenreVal].name + "</h2>");
 
-                        $(contentAnime).append('<div class="loading"></div>');
+                        // $(contentAnime).append("<h2 class='center-align'>" + getAnimeGenresData.data[minusGenreVal].name + "</h2>");
                 if (searchGenreData.pagination.has_next_page == true) {
                     $(contentAnime).append("<button value=" + addGenreVal + " page=" + page + " class='next button'>Next</button>");
                 }
@@ -150,6 +150,7 @@ $(document).ready(function() {
                     $(contentAnime).append('<div class="col s12 m6 l4 xl3 animeImgWrapper"><div value="' + searchGenreData.data[i].mal_id + '" class="title">' + searchAnimeName + '</div><img class="animeImg" src=' + searchGenreData.data[i].images.jpg.large_image_url + ' value="' + searchGenreData.data[i].mal_id + '" alt="' + searchAnimeName + '"></div>');
                     $('.animeImgWrapper').height(($('.animeImgWrapper').width() * aspectRatio1) / aspectRatio2);
                     $(".loading").fadeOut(250);
+                    
                     $(contentAnime).fadeIn(250);
                 }
             });
