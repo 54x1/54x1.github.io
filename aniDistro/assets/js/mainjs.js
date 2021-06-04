@@ -81,7 +81,6 @@ $(document).ready(function() {
     $('.genres-mobile').click(function() {
       $(this).on('change', function() {
           $(".loading").show();
-                              $(".content-anime").hide();
           // alert( $(this).find(":selected").val() );
           var genreVal = $(this).val();
           var page = 1;
@@ -150,7 +149,7 @@ $(document).ready(function() {
                     $(contentAnime).append('<div class="col s12 m6 l4 xl3 animeImgWrapper"><div value="' + searchGenreData.data[i].mal_id + '" class="title">' + searchAnimeName + '</div><img class="animeImg" src=' + searchGenreData.data[i].images.jpg.large_image_url + ' value="' + searchGenreData.data[i].mal_id + '" alt="' + searchAnimeName + '"></div>');
                     $('.animeImgWrapper').height(($('.animeImgWrapper').width() * aspectRatio1) / aspectRatio2);
                     $(".loading").fadeOut(250);
-                    
+
                     $(contentAnime).fadeIn(250);
                 }
             });
