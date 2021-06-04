@@ -64,6 +64,7 @@ $(document).ready(function() {
 
 
     $('.genres-mobile option').each(function() {
+        $(".loading").show();
         if ($(this).is(':selected')) {
             var genreVal = $(this).val();
             var page = 1;
@@ -72,6 +73,7 @@ $(document).ready(function() {
     });
 
     $('.genres-mobile').click(function() {
+        $(".loading").show();
         var genreVal = $(this).val();
         var page = 1;
         searchGenres(genreVal, page);
