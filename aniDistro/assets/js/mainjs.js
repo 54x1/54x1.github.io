@@ -76,7 +76,7 @@ $(document).ready(function() {
 });
 
 
-    $('.genres-mobile option').click(function() {
+    $('.genres-mobile').click(function() {
       $(".loading").show();
         var page = 1;
         // nasty
