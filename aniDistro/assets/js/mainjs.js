@@ -61,21 +61,34 @@ $(document).ready(function() {
 
     $('.genres-mobile option').each(function() {
         if ($(this).is(':selected')) {
-            var genreVal = $(this).val();
             var page = 1;
-            searchGenres(genreVal, page);
+            var genreVal = $(this).val();
+            if (genreVal == 12 | genreVal == 33 | genreVal == 34) {
+                $(".content-anime").html("<h2 class='center-align'>Items Not Found</h2>");
+            } else {
+                var genreVal = $(this).val();
+                var page = 1;
+                searchGenres(genreVal, page);
+            }
         }
     });
 
     $('.genres-mobile').click(function() {
-        var genreVal = $(this).val();
         var page = 1;
-        searchGenres(genreVal, page);
+        // nasty
+        var genreVal = $(this).val();
+        if (genreVal == 12 | genreVal == 33 | genreVal == 34) {
+            $(".content-anime").html("<h2 class='center-align'>Items Not Found</h2>");
+        } else {
+            var genreVal = $(this).val();
+            var page = 1;
+            searchGenres(genreVal, page);
+        }
 
     });
 
 
-    $(document).on('click touchstart', '.genres .button', function() {
+    $(document).on('click', '.genres .button', function() {
         $(".loading").show();
         $(this).each(function() {
             // nasty
