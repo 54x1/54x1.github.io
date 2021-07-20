@@ -1,0 +1,294 @@
+/* reset everything */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  height: 120px;
+}
+
+.section .row {
+  margin-bottom: 0;
+}
+
+#dates {
+  display: block;
+  margin: 0 50px;
+}
+
+#dates>a:first-child {
+  margin: 0;
+}
+
+/* make seearch icon have pointer cursor */
+#search-field .material-icons {
+  cursor: pointer;
+  font-size: 4rem !important;
+  position: absolute;
+}
+
+
+#search i {
+  top: 16px !important;
+}
+
+#search-field .material-icons {
+  top: 30px;
+}
+
+#searchD {
+  margin-left: -18px;
+}
+/* make seearch icon have pointer cursor */
+#searchD .material-icons {
+  cursor: pointer;
+}
+
+#searchDate {
+  padding: 0 24px;
+  width: -webkit-fill-available;
+  font-size: 1.64rem;
+  font-weight: 300;
+}
+
+#searchInput {
+  font-weight: 350;
+}
+
+/* inspiration for search ui https://blog.swiftype.com/2017/12/13/10-examples-well-designed-search-uis/ */
+#searchInput:focus {
+  box-shadow: 0 1px 0 0 #0277bd;
+  border-bottom: 1px solid #0277bd;
+}
+
+#search-field input,
+textarea.materialize-textarea {
+  font-size: 2.75rem !important;
+}
+
+.nav-wrapper .input-field input[type=search] {
+  padding-left: 6rem;
+  padding-right: 6rem;
+  width: calc(100% - 12rem);
+}
+
+/* #searchInput */
+#searchDate:focus {
+  box-shadow: 0 1px 0 0 #29b6f6;
+  border-bottom: 1px solid #29b6f6;
+}
+
+
+.input-field label {
+  pointer-events: auto;
+}
+
+.sDate>i.material-icons {
+  /* position: absolut; */
+  top: 8px !important;
+  right: 0px !important;
+}
+
+.sMax {
+  width: max-content;
+  margin: 6px;
+}
+
+.dDownContent {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .spanLocation {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #search-field input {
+    font-size: 2rem !important;
+  }
+}
+/* button on click css */
+.dDownImg {
+  display: block;
+  padding: 24px 24px 0 24px;
+  width: 100%;
+}
+
+.dDownContent .divider {
+  margin-bottom: 55px;
+}
+
+.tabcontent {
+  padding: 6px 12px;
+  border-top: none;
+  margin: 0;
+  padding: 0 !important;
+}
+
+
+.date-made,
+.title-h5,
+.title-h4 {
+  color: #01579b;
+}
+
+.made {
+  font-weight: 400;
+  color: #0091ea;
+  line-height: 130%;
+}
+
+.date-made,
+.made {
+  padding: 0 24px;
+}
+
+#read-more {
+  margin: 0 24px;
+}
+
+.desc {
+  display: none;
+}
+
+.desc-active {
+  display: block;
+}
+
+.title-h4 {
+  font-weight: 400;
+}
+
+
+/* preloading css */
+/* https://ihatetomatoes.net/create-custom-preloading-screen/ */
+header {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: white;
+  font-family: sans-serif;
+
+}
+
+#loader-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+/* circle */
+#loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 35%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border-radius: 100%;
+  border: 3px solid transparent;
+  border-top-color: #fff;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  z-index: 2;
+}
+/* circle */
+#loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 100%;
+  border: 2px solid transparent;
+  border-top-color: #fff;
+  -webkit-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite;
+}
+/* circle */
+#loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 100%;
+  border: 1px solid transparent;
+  border-top-color: #fff;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+/* circle loader https://www.w3schools.com/howto/howto_css_loader.asp*/
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#loader-wrapper .loader-section.section-left {
+  left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+  right: 0;
+}
+
+#loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  z-index: 1;
+  background-color: #01579b !important;
+}
+/* if it works header translateY fadeout*/
+.loaded header {
+  opacity: 0;
+  -webkit-transition: all 1s .25s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  transition: all 1s .25s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+/* if it works transition timing*/
+.loaded #loader-wrapper .loader-section.section-right,
+.loaded #loader-wrapper .loader-section.section-left {
+
+  -webkit-transition: all 1s .6s ease-out;
+  transition: all 1s .6s ease-out;
+}
+/* if it works section-left translateX-100 */
+.loaded #loader-wrapper .loader-section.section-left {
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+/* if it works section-right translateX100 */
+.loaded #loader-wrapper .loader-section.section-right {
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}

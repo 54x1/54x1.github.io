@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AniBUY Free Anime</title>
+		<link rel="icon" href="../img/icons/favicon.ico" type="image/x-icon">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="../js/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+      <script src="../js/respond.min.js"></script>
+    <![endif]-->
+	
+	<!-- Back To Top CSS-->
+    <script src="../js/float-panel.js"></script>
+    <style>
+        #backtop {
+	        position: fixed;
+            left:auto;right: 20px;top:auto;bottom: 20px;
+	        outline: none;
+            overflow:hidden;
+            color:#fff;
+            text-align:center;
+            background-color:#00afec;
+            height:40px;
+            width:40px;
+            line-height:40px;
+            font-size:14px;
+            border-radius:2px;
+            cursor:pointer;
+            transition:all 0.3s linear;
+            z-index:999999;
+
+            opacity:1;
+            display:none;
+        }
+        #backtop:hover {
+            background-color:#318de5;
+        }
+        #backtop.mcOut {
+            opacity:0;
+        }
+    </style>
+</head>
+<body>
+<!-- Back To Top -->
+<div id="backtop" class="mcOut" style="display: none;">▲</div>
+    <!-- NAVBAR
+    ================================================== -->
+    <style>
+        /* use navbar-wrapper to wrap navigation bar, the purpose is to overlay navigation bar above slider */
+        .navbar-wrapper {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            height: 51px;
+        }
+        .navbar-wrapper > .container {
+            padding: 0;
+        }
+
+        @media all and (max-width: 768px ){
+            .navbar-wrapper {
+                position: relative;
+                top: 0px;
+            }
+        }
+    </style>
+    <div class="navbar-wrapper">
+        <div class="container">
+
+            <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0px;">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="navbar-brand"><a href="index.html"><img src="../img/icons/logo-anibuy.jpg" style="width: 100px;"></a></div>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="../pages/index.html#anime">Anime & Movies</a></li>
+                            <li><a href="../pages/index.html#manga">Manga & Novels</a></li>
+                            <li><a href="../pages/#merchan">Merchandise</a></li>
+                            <li><a href="../pages/#figures">Figures & Collectibles</a></li>
+                            <li><a href="../pages/#music">Music</a></li>
+                            <li><a href="../pages/#games">Games</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+        </div>
+    </div>
+
+    <div style="min-height: 50px;">
+        <!-- Jssor Slider Begin -->
+        <!-- To move inline styles to css file/block, please specify a class name for each element. --> 
+        <!-- ================================================== -->
+        <div id="slider1_container" style="visibility: hidden; position: relative; margin: 0 auto;
+        top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
+            <!-- Loading Screen -->
+            <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+                <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block;
+                top: 0px; left: 0px; width: 100%; height: 100%;">
+                </div>
+                <div style="position: absolute; display: block; background: url(../img/loading.gif) no-repeat center center;
+                top: 0px; left: 0px; width: 100%; height: 100%;">
+                </div>
+            </div>
+            <!-- Slides Container -->
+            <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1300px; height: 500px; overflow: hidden;">
+                <div>
+                    <img u="image" src="../img/slides/bleach.jpg" />
+                </div>
+                <div>
+                    <img u="image" src="../img/slides/guilty.jpg" />
+                </div>	
+                <div>
+                    <img u="image" src="../img/slides/naruto.jpg" />
+                </div>
+				<div>
+                    <img u="image" src="../img/slides/snow.jpg" />
+                </div>
+                <div>
+                    <img u="image" src="../img/slides/reborn.jpg" />
+                </div>
+                <div>
+                    <img u="image" src="../img/slides/gargantia.jpg" />
+                </div>
+                <div>
+                    <img u="image" src="../img/slides/one.jpg" />
+                </div>
+            </div>
+            
+            <!--#region Bullet Navigator Skin Begin -->
+            <!-- Help: http://www.jssor.com/tutorial/set-bullet-navigator.html -->
+            <style>
+			
+			
+                /* jssor slider bullet navigator skin 21 css */
+                /*
+                .jssorb21 div           (normal)
+                .jssorb21 div:hover     (normal mouseover)
+                .jssorb21 .av           (active)
+                .jssorb21 .av:hover     (active mouseover)
+                .jssorb21 .dn           (mousedown)
+                */
+                .jssorb21 {
+                    position: absolute;
+                }
+                .jssorb21 div, .jssorb21 div:hover, .jssorb21 .av {
+                    position: absolute;
+                    /* size of bullet elment */
+                    width: 19px;
+                    height: 19px;
+                    text-align: center;
+                    line-height: 19px;
+                    color: white;
+                    font-size: 12px;
+                    background: url(../img/icons/dots.png) no-repeat;
+                    overflow: hidden;
+                    cursor: pointer;
+                }
+                .jssorb21 div { background-position: -5px -5px; }
+                .jssorb21 div:hover, .jssorb21 .av:hover { background-position: -35px -5px; }
+                .jssorb21 .av { background-position: -65px -5px; }
+                .jssorb21 .dn, .jssorb21 .dn:hover { background-position: -95px -5px; }
+            </style>
+            <!-- bullet navigator container -->
+            <div u="navigator" class="jssorb21" style="bottom: 26px; right: 6px;">
+                <!-- bullet navigator item prototype -->
+                <div u="prototype"></div>
+            </div>
+            <!--#endregion Bullet Navigator Skin End -->
+            
+            <!--#region Arrow Navigator Skin Begin -->
+            <!-- Help: http://www.jssor.com/tutorial/set-arrow-navigator.html -->
+            <style>
+                /* jssor slider arrow navigator skin 21 css */
+                /*
+                .jssora21l                  (normal)
+                .jssora21r                  (normal)
+                .jssora21l:hover            (normal mouseover)
+                .jssora21r:hover            (normal mouseover)
+                .jssora21l.jssora21ldn      (mousedown)
+                .jssora21r.jssora21rdn      (mousedown)
+                */
+                .jssora21l, .jssora21r {
+                    display: block;
+                    position: absolute;
+                    /* size of arrow element */
+                    width: 55px;
+                    height: 55px;
+                    cursor: pointer;
+                    background: url(../img/icons/arrows.png) center center no-repeat;
+                    overflow: hidden;
+                }
+                .jssora21l { background-position: -3px -33px; }
+                .jssora21r { background-position: -63px -33px; }
+                .jssora21l:hover { background-position: -123px -33px; }
+                .jssora21r:hover { background-position: -183px -33px; }
+                .jssora21l.jssora21ldn { background-position: -243px -33px; }
+                .jssora21r.jssora21rdn { background-position: -303px -33px; }
+            </style>
+            <!-- Arrow Left -->
+            <span u="arrowleft" class="jssora21l" style="top: 123px; left: 8px;">
+            </span>
+            <!-- Arrow Right -->
+            <span u="arrowright" class="jssora21r" style="top: 123px; right: 8px;">
+            </span>
+            <!--#endregion Arrow Navigator Skin End -->
+            <a style="display: none" href="http://www.jssor.com">Bootstrap Carousel</a>
+        </div>
+        <!-- Jssor Slider End -->
+    </div>
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+<h2 class="featurette-heading1">On Sale Now!</h2>
+<div class="home-page">
+<div class="home-page-onsale">
+    <div class="row featurette c1">
+            <div class="col-md-5">
+                <img class="featurette-image img-responsive" src="../img/home/sale/divine.jpg">
+        	</div>
+			<div class="col-md-4"><h2 class="featurette-heading">Divine Gate</h2>
+				<div class="col-md-7">
+					<p class="lead">After the Divine Gate opened, our world and the worlds beyond became connected, bringing an era of chaos. To restore order, the World Council was formed and the Divine Gate became a legend. <br></p><p></p><center><a href="www.anidl.org">BUY NOW</a></center><p></p>
+				</div>
+			</div>
+	</div>
+    <div class="row featurette c3">
+        <div class="col-md-5">
+             <img class="featurette-image img-responsive" src="../img/home/sale/c.jpg">
+        </div>
+		<div class="col-md-4"><h2 class="featurette-heading">C - Control</h2>
+			<div class="col-md-7">
+				<p class="lead">One day, Kimimaro is offered a large sum of money, but in exchange for his "future" as collateral. From then on he's drawn into a mysterious realm known as "The Financial District," for the possibility of "money".<br></p><p></p><center><a href="www.anidl.org">BUY NOW</a></center><p></p>
+			</div>
+		</div>
+	</div>   
+		
+	<div class="row featurette c1">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="../img/home/sale/say.jpg">
+        </div>
+        <div class="col-md-4"><h2 class="featurette-heading">Say "I Love You"</h2>
+				<div class="col-md-7">
+					<p class="lead">Say "I Love You" follows Mei Tachibana a cute, anti-social loner, because of a trumatic incident in the past. She now dates the popular and out going Yamato Kurosawa. How will their developing relationship? As well as their frequent disagreements, and how hard it really is to say "I love you"!<br></p><p></p><center><a href="www.anidl.org">BUY NOW</a></center><p></p>
+				</div>
+			</div>
+    </div>
+<div class="row featurette c3">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="../img/home/sale/ano.jpg">
+        </div>
+		<div class="col-md-4"><h2 class="featurette-heading">AnoHana</h2>
+				<div class="col-md-7">
+					<p class="lead">Jinta Yadomi lives a peacful and boring life, skiping school and playing video games instead. One day he is able to see the ghost of his childhood friend Menma. At first he though he was hallucinating because of the summer heat but its all real! How will he beable to move on?
+                        <br></p><p></p><center><a href="www.anidl.org">BUY NOW</a></center><p></p>
+				</div>
+			</div>
+    </div>
+</div>
+<h2 class="featurette-heading3">Now Partnered AniDL FREE SHIPPING Worldwide</h2>
+<div class="home-page-featured-anime">
+<div class="row featurette c2">
+
+<h2 class="featurette-heading2">Popular Anime</h2>
+<h2 class="featurette-heading5"><a href="../pages/index.html#b-manga">Manga</a></h2>
+<h2 class="featurette-heading4"><a href="../pages/index.html#pop-anime">Anime</a></h2>	
+
+<div class="home-page-featured-anime-under">
+    <div class="row">
+        
+<div class="span6">
+                <div class="spanimg">
+  <a target="_blank" href="www.anidl.org">
+    <img src="../img/home/best/mlm.jpg" width="100%" height="auto">
+  <div class="desc">Read More</div>
+  </a>
+</div>
+            </div>
+        
+  <div class="span7">
+  <div class="spanimg">
+	<a target="_blank" href="http://www.anidl.org">
+  <img src="../img/home/best/dfrag.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div></a></div><a target="_blank" href="http://www.anidl.org">
+	</a>
+  </div>
+			
+			<div class="span7">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="../img/home/best/from.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+</a>
+</div>
+            </div>
+        
+            <div class="span7">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="../img/home/best/parasyte.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+  </a>
+  
+</div>
+            </div>
+
+    </div>
+</div>
+</div>
+</div>
+<div class="home-page-new">
+<div class="row featurette c2">
+	<div id="new"></div>
+<h2 class="featurette-heading2">New Releases</h2>
+<h2 class="featurette-heading5"><a href="../pages/index.html#s-manga">Manga</a></h2>
+<h2 class="featurette-heading4"><a href="../pages/index.html#s-anime">Anime</a></h2>	
+
+<div class="home-page-new-under">
+<div class="row">
+        
+            
+        
+  <div class="span2">
+  <div class="spanimg">
+	<a target="_blank" href="http://www.anidl.org">
+  <img src="../img/home/season/atale.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+	</a>
+</div>
+  </div>
+			
+			<div class="span3">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="../img/home/season/dimen.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+</a>
+</div>
+            </div>
+        
+            <div class="span2">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="../img/home/season/grim.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+  </a>
+  
+</div>
+            </div>
+			
+			            <div class="span3">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="../img/home/season/erased.jpg" width="100%" height="auto">
+  <div class="desc">Read More</div>
+  </a>
+</div>
+            </div>
+        
+    </div>
+</div>
+</div>
+</div>
+<div class="home-page-featured">
+<div class="row featurette c2">
+	<div id="featured"></div>
+<h2 class="featurette-heading2">Popular Manga</h2>
+<h2 class="featurette-heading5"><a href="../pages/index.html#pop-manga">Manga</a></h2>
+<div class="home-page-featured-under">
+    <div class="row">
+        
+            
+        
+  <div class="span8">
+  <div class="spanimg">
+	<a target="_blank" href="http://www.anidl.org">
+  <img src="https://heartcrusadescans.files.wordpress.com/2015/04/kageroudaze_01.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div></a></div><a target="_blank" href="http://www.anidl.org">
+	</a>
+  </div>
+			
+			<div class="span9">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="../img/plc.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+</a>
+</div>
+            </div>
+        
+            <div class="span9">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="../img/breaker.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+  </a>
+  
+</div>
+            </div>
+    </div>
+                <div class="row">
+        
+            
+        
+  <div class="span2">
+  <div class="spanimg">
+	<a target="_blank" href="http://www.anidl.org">
+  <img src="http://www.worldoflumina.com/lumina1/en/img/lumina-slide-01.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+	</a>
+</div>
+  </div>
+			
+			<div class="span3">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="../img/freezing.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+</a>
+</div>
+            </div>
+        
+    </div>
+</div>
+</div>
+</div>
+<div id="anime" class="home-page-anime">
+<div class="row featurette c2">
+
+<h2 class="featurette-headinga">Anime &amp; Movies</h2>
+<br>
+
+
+<h2 id="pop-anime" class="featurette-headingab">Featured Anime</h2><div class="home-page-anime-under">
+    <div class="row">
+        
+<div class="span13">
+                <div class="spanimg">
+  <a target="_blank" href="www.anidl.org">
+    <img src="../img/beelze.jpg" width="100%" height="auto">
+  <div class="desc">Read More</div>
+  </a>
+</div>
+            </div>
+        
+  <div class="span14">
+  <div class="spanimg">
+	<a target="_blank" href="http://www.anidl.org">
+  <img src="../img/home/p4.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div></a></div><a target="_blank" href="http://www.anidl.org">
+	</a>
+  </div>
+			
+			<div class="span14">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="../img/home/how.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+</a>
+</div>
+            </div>
+        
+            <div class="span14">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="../img/home/maid.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+  </a>
+  
+</div>
+            </div>
+
+    </div>
+    <div class="row">
+        
+<div class="span10">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="http://img1.ak.crunchyroll.com/i/spire2/f67a9d25f1a79891bd8cc9e68bf6021c1435186459_full.jpg" width="100%" max-height="none">
+  <div class="desc">Read More</div>
+  </a>
+</div>
+            </div>
+        
+  <div class="span11">
+  <div class="spanimg">
+	<a target="_blank" href="http://www.anidl.org">
+  <img src="http://mega-torrent.org/uploads/posts/2016-01/1453510287_38703.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div></a></div><a target="_blank" href="http://www.anidl.org">
+	</a>
+  </div>
+			
+			<div class="span12">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="https://glanterncrit.files.wordpress.com/2015/03/1raxjp.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+</a>
+</div>
+            </div>
+        
+            <div class="span11">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="http://img1.ak.crunchyroll.com/i/spire1/297f6caa53b5cdf6eeeca965a7f0b8151301519740_full.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+  </a>
+  
+</div>
+            </div>
+
+    </div>
+</div>
+<h2 class="featurette-headingab">Best Sellers</h2>
+<div class="row">
+        <div class="span2">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="../img/home/kimi.jpg" width="100%" max-height="none">
+  <div class="desc">Read More</div>
+  </a>
+</div>
+            </div><div class="span3">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="../img/home/bakuman.jpg" width="100%" max-height="none">
+  <div class="desc">Read More</div>
+  </a>
+</div>
+            </div>
+<div class="span10">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="https://s-media-cache-ak0.pinimg.com/736x/d3/c9/2b/d3c92b72a5e7c60403c1d1a23eca30aa.jpg" width="100%" max-height="none">
+  <div class="desc">Read More</div>
+  </a>
+</div>
+            </div>
+        
+  <div class="span11">
+  <div class="spanimg">
+	<a target="_blank" href="http://www.anidl.org">
+  <img src="http://img1.ak.crunchyroll.com/i/spire1/217f6d6558643b256ad6510798cca5441438798488_full.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div></a></div><a target="_blank" href="http://www.anidl.org">
+	</a>
+  </div>
+			
+			<div class="span12">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="http://static1.squarespace.com/static/55398819e4b0885052e19653/t/570412e4e707eb76673681f5/1459884779313/" width="100%" height="auto">
+	<div class="desc">Read More</div>
+</a>
+</div>
+            </div>
+        
+            <div class="span11">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="http://4.bp.blogspot.com/-SYsiKrcayrM/USEcwDs6TOI/AAAAAAAAAY4/v7agp4v8vsI/s1600/phi+brain.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+  </a>
+  
+</div>
+            </div>
+
+    </div>
+<h2 id="s-anime" class="featurette-headingab">Spring Season</h2>
+<div class="row">
+        
+<div class="span10">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="https://dailyanimeart.files.wordpress.com/2016/04/re-zero-kara-hajimeru-isekai-seikatsu-poster.jpg" width="100%" max-height="none">
+  <div class="desc">Read More</div>
+  </a>
+</div>
+            </div>
+        
+  <div class="span11">
+  <div class="spanimg">
+	<a target="_blank" href="http://www.anidl.org">
+  <img src="../img/mha.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div></a></div><a target="_blank" href="http://www.anidl.org">
+	</a>
+  </div>
+			
+			<div class="span12">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="http://www.animeforce.org/wp-content/uploads/2016/02/Kabaneri1.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+</a>
+</div>
+            </div>
+        
+            <div class="span11">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="http://img1.ak.crunchyroll.com/i/spire2/e8fc8b44941d283ab521fca3ec0f69c11459476474_full.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+  </a>
+  
+</div>
+            </div>
+</div>
+<div class="row">
+        
+<div class="span10">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="http://img1.ak.crunchyroll.com/i/spire4/97bf9cd2af93d6f5ffedd66e561afb871460059575_full.png" width="100%" max-height="none">
+  <div class="desc">Read More</div>
+  </a>
+</div>
+            </div>
+        
+  <div class="span11">
+  <div class="spanimg">
+	<a target="_blank" href="http://www.anidl.org">
+  <img src="https://s-media-cache-ak0.pinimg.com/736x/e4/42/24/e442240b34aff7b34dbe33fe5e109d99.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div></a></div><a target="_blank" href="http://www.anidl.org">
+	</a>
+  </div>
+			
+			<div class="span12">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="http://img1.ak.crunchyroll.com/i/spire4/5517e03413168381261af82e78643b681459548646_full.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+</a>
+</div>
+            </div>
+        
+            <div class="span11">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img width="100%" height="auto" src="http://img1.ak.crunchyroll.com/i/spire1/febafc51c6b45e24e8898c6c581150da1450476785_full.jpg">
+	<div class="desc">Read More</div>
+  </a>
+  
+</div>
+            </div>
+</div>
+<h2 class="featurette-headingab">Action</h2>
+<div class="row">
+        
+<div class="span10">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="https://s-media-cache-ak0.pinimg.com/736x/ba/1f/13/ba1f13dda4a7fb33a00eff9f770369e7.jpg" width="100%" max-height="none">
+  <div class="desc">Read More</div>
+  </a>
+</div>
+            </div>
+        
+  <div class="span11">
+  <div class="spanimg">
+	<a target="_blank" href="http://www.anidl.org">
+  <img src="http://img1.ak.crunchyroll.com/i/spire1/217f6d6558643b256ad6510798cca5441438798488_full.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div></a></div><a target="_blank" href="http://www.anidl.org">
+	</a>
+  </div>
+			
+			<div class="span12">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="http://static1.squarespace.com/static/55398819e4b0885052e19653/t/570412e4e707eb76673681f5/1459884779313/" width="100%" height="auto">
+	<div class="desc">Read More</div>
+</a>
+</div>
+            </div>
+        
+            <div class="span11">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="http://4.bp.blogspot.com/-SYsiKrcayrM/USEcwDs6TOI/AAAAAAAAAY4/v7agp4v8vsI/s1600/phi+brain.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+  </a>
+  
+</div>
+            </div>
+
+<div class="span2">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="http://ib4.huluim.com/show_key_art/5669?size=1600x600&amp;region=US" width="100%" max-height="none">
+  <div class="desc">Read More</div>
+  </a>
+</div>
+            </div><div class="span3">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="http://cdn.myanimelist.net/s/common/uploaded_files/1446656033-c5922c53f4b557cd431aaf4a735bd519.jpeg" width="100%" max-height="none">
+  <div class="desc">Read More</div>
+  </a>
+</div>
+            </div>
+
+
+    </div>
+<h2 class="featurette-headingab">Romance</h2>
+<div class="row">
+        
+<div class="span10">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="https://s-media-cache-ak0.pinimg.com/736x/57/85/e7/5785e74c4daf13d125f291f5d16709f9.jpg" width="100%" max-height="none">
+  <div class="desc">Read More</div>
+  </a>
+</div>
+            </div>
+        
+  <div class="span11">
+  <div class="spanimg">
+	<a target="_blank" href="http://www.anidl.org">
+  <img src="http://amanime.c12web.com/wp-content/uploads/2013/10/Diabolik-Lovers.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div></a></div><a target="_blank" href="http://www.anidl.org">
+	</a>
+  </div>
+			
+			<div class="span12">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="http://3.bp.blogspot.com/-uTjSGhgpY68/UtQuJzyYOdI/AAAAAAAAAJE/IuvSxH8RDfM/s1600/fa08e2faa6e5bf7859618bf3a4e3edd51380926998_full.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+</a>
+</div>
+            </div>
+        
+            <div class="span11">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="http://img1.ak.crunchyroll.com/i/spire3/045f658134f40dd90bef9580e215b8241404404904_full.png" width="100%" height="auto">
+	<div class="desc">Read More</div>
+  </a>
+  
+</div>
+            </div>
+
+    <div class="span2">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="http://i.imgur.com/2NWYRfk.jpg" width="100%" max-height="none">
+  <div class="desc">Read More</div>
+  </a>
+</div>
+            </div><div class="span3">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="http://3.bp.blogspot.com/-EyKG0tdWIrk/VgBqIb3ttTI/AAAAAAAABJQ/RH1pHpnKYvY/s1600/18994.jpg" width="100%" max-height="none">
+  <div class="desc">Read More</div>
+  </a>
+</div>
+            </div></div>
+<h2 class="featurette-headingab">Fantasy</h2>
+<div class="row">
+        
+<div class="span10">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="http://pm1.narvii.com/5716/6374ab6ce4d2fe5dadef7374182652ceaca63659_hq.jpg" width="100%" max-height="none">
+  <div class="desc">Read More</div>
+  </a>
+</div>
+            </div>
+        
+  <div class="span11">
+  <div class="spanimg">
+	<a target="_blank" href="http://www.anidl.org">
+  <img src="http://pm1.narvii.com/5770/1893de1d6a86b3216537796449fd09e7f9cfcfae_hq.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div></a></div><a target="_blank" href="http://www.anidl.org">
+	</a>
+  </div>
+			
+			<div class="span12">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="http://img1.ak.crunchyroll.com/i/spire2/08918192d87bc1718efd977c683187031452280865_full.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+</a>
+</div>
+            </div>
+        
+            <div class="span11">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img width="100%" height="auto" src="http://s.animea.net/anime/covers/2538.jpg">
+	<div class="desc">Read More</div>
+  </a>
+  
+</div>
+            </div>
+
+    <div class="span2">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="../img/home/aki.jpg" width="100%" max-height="none">
+  <div class="desc">Read More</div>
+  </a>
+</div>
+            </div><div class="span3">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="../img/home/battle.jpg" width="100%" max-height="none">
+  <div class="desc">Read More</div>
+  </a>
+</div>
+            </div>
+            </div>
+            
+</div>
+
+
+<div id="manga" class="home-page-manga">
+<div class="row featurette c2">
+<h2 id="b-manga" class="featurette-headinga">Manga &amp; Novels</h2>
+<br>
+<h2 id="pop-manga" class="featurette-headingab">Featured Manga</h2>
+
+<div class="home-page-anime-under">
+    <div class="row">
+        
+<div class="span10">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="https://heartcrusadescans.files.wordpress.com/2016/02/irregularmhs_01.jpg" width="100%" max-height="none">
+  <div class="desc">Read More</div>
+  </a>
+</div>
+            </div>
+        
+  <div class="span11">
+  <div class="spanimg">
+	<a target="_blank" href="http://www.anidl.org">
+  <img src="https://heartcrusadescans.files.wordpress.com/2015/04/devil-is-a-part-timer-01.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div></a></div><a target="_blank" href="http://www.anidl.org">
+	</a>
+  </div>
+			
+			<div class="span12">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="https://heartcrusadescans.files.wordpress.com/2015/05/drrr01.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+</a>
+</div>
+            </div>
+        
+            <div class="span11">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="https://heartcrusadescans.files.wordpress.com/2016/01/pandorahearts-caucusrace-3.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+  </a>
+  
+</div>
+            </div>
+
+    </div>
+</div>
+<h2 class="featurette-headingab">Best Sellers</h2>
+<div class="home-page-anime-under">
+    <div class="row">
+        
+<div class="span10">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="../img/blackb.jpg" width="100%" max-height="none">
+  <div class="desc">Read More</div>
+  </a>
+</div>
+            </div>
+        
+  <div class="span11">
+  <div class="spanimg">
+	<a target="_blank" href="http://www.anidl.org">
+  <img src="https://heartcrusadescans.files.wordpress.com/2015/04/devil-is-a-part-timer-01.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div></a></div><a target="_blank" href="http://www.anidl.org">
+	</a>
+  </div>
+			
+			<div class="span12">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="https://heartcrusadescans.files.wordpress.com/2015/05/drrr01.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+</a>
+</div>
+            </div>
+        
+            <div class="span11">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="https://heartcrusadescans.files.wordpress.com/2016/01/pandorahearts-caucusrace-3.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+  </a>
+  
+</div>
+            </div>
+
+    </div>
+</div>
+<h2 id="s-manga" class="featurette-headingab">New Releases</h2>
+<div class="home-page-anime-under">
+    <div class="row">
+        
+<div class="span10">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="../img/blackb.jpg" width="100%" max-height="none">
+  <div class="desc">Read More</div>
+  </a>
+</div>
+            </div>
+        
+  <div class="span11">
+  <div class="spanimg">
+	<a target="_blank" href="http://www.anidl.org">
+  <img src="https://heartcrusadescans.files.wordpress.com/2015/04/devil-is-a-part-timer-01.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div></a></div><a target="_blank" href="http://www.anidl.org">
+	</a>
+  </div>
+			
+			<div class="span12">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="https://heartcrusadescans.files.wordpress.com/2015/05/drrr01.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+</a>
+</div>
+            </div>
+        
+            <div class="span11">
+                <div class="spanimg">
+  <a target="_blank" href="img_fjords.jpg">
+    <img src="https://heartcrusadescans.files.wordpress.com/2016/01/pandorahearts-caucusrace-3.jpg" width="100%" height="auto">
+	<div class="desc">Read More</div>
+  </a>
+  
+</div>
+            </div>
+
+    </div>
+</div>
+</div>
+
+
+
+        <!-- /END THE FEATURETTES -->
+        <!-- FOOTER -->
+        
+        <footer>
+            
+            
+            <div class="container-f1">
+                   <span><a href="index.html"><img src="../img/icons/logo-anibuy.jpg" style="width: 300px;text-align: right;float: right;padding: 20px;margin-right: -10px;"></a></span>
+		        <div class="site-footer-main-nav-f1">
+			<div class="header-f1">Help</div>
+			
+				<div>
+					<a href="/about-us" class="tab about-tab" data-touchpoint="home" data-hashtag="#about-us">
+					About Us
+					</a>
+			</div>
+			
+				<div>
+					<a href="/contact" class="tab contact-tab" data-touchpoint="home" data-hashtag="#contact">
+					Contact Us
+					</a>
+			</div>
+			
+				<div>
+					<a href="/policies" class="tab policies-tab" data-touchpoint="home" data-hashtag="#policies">
+					Policies
+					</a>
+			</div>
+			
+				<div>
+					<a href="/faq" class="tab faq-tab" data-touchpoint="home" data-hashtag="#faq">
+					Anime FAQ
+					</a>
+			</div>
+			
+				<div>
+					<a href="/anime-resources" class="tab resources-tab" data-touchpoint="home" data-hashtag="#anime-resources">
+					Anime Resources
+					</a>
+			</div>
+			
+				<div>
+					<a href="/community/anime-clubs" class="tab clubs-tab" data-touchpoint="home" data-hashtag="#community/anime-clubs">
+					Anime Clubs
+					</a>
+			</div>
+			
+				<div>
+					<a href="/catalog" class="tab catalog-tab" data-touchpoint="home" data-hashtag="#catalog">
+					Print Catalog
+					</a>
+			</div>
+			
+		</div>
+		        <div class="site-footer-main-nav-f1">
+			<div class="header-f1">Popular</div>
+			
+			<div>
+				<a href="/new-items/" class="tab newitems-tab">
+				Newly Added Items
+				</a>
+			</div>
+			
+			<div>
+				<a href="http://rightstufanime.tumblr.com/" class="tab home-tab">
+				News
+				</a>
+			</div>
+			
+			<div>
+				<a href="/community/contests" class="tab conests-tab" data-touchpoint="home" data-hashtag="#community/contests">
+				Contests
+				</a>
+			</div>
+			
+			<div>
+				<a href="/community/newsletters" class="tab howtoorder-tab" data-touchpoint="home" data-hashtag="#community/newsletters">
+				Newsletters
+				</a>
+			</div>
+			
+			<div>
+				<a href="/Got-Anime" class="tab gotanime-tab">
+				Got Anime
+				</a>
+			</div>
+			
+			<div>
+				<a href="http://www.animenation.net/forums/" class="tab forum-tab">
+				Forums
+				</a>
+			</div>
+			
+			<div>
+				<a href="http://www.nozomientertainment.com/" class="tab studio-tab">
+				Nozomi Entertainment
+				</a>
+			</div>
+			
+		    </div>
+	   </div>
+	   
+        <div class="copyright-container">
+
+        <p>Copyright 2016 © - AniBUY, Inc. | (800) 420-8405 | Contact@AniBUY.com | All Rights Reserved</p>
+        </div>
+        
+        </footer>
+        
+    </div>
+    <!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10.min.js"></script>
+
+    <!-- jssor slider scripts-->
+    <!-- use jssor.slider.debug.js for debug -->
+    <script type="text/javascript" src="../js/jssor.slider.mini.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+
+            var options = {
+                $FillMode: 2,                                       //[Optional] The way to fill image in slide, 0 stretch, 1 contain (keep aspect ratio and put all inside slide), 2 cover (keep aspect ratio and cover whole slide), 4 actual size, 5 contain for large image, actual size for small image, default value is 0
+                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $Idle: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 1,                                   //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+
+                $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideEasing: $JssorEasing$.$EaseOutQuint,          //[Optional] Specifies easing for right to left animation, default value is $JssorEasing$.$EaseOutQuad
+                $SlideDuration: 800,                               //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+                //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
+                $Cols: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+                $DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $Cols is greater than 1, or parking position is not 0)
+              
+                $BulletNavigatorOptions: {                          //[Optional] Options to specify and enable navigator or not
+                    $Class: $JssorBulletNavigator$,                 //[Required] Class to create navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 1,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+                    $Rows: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
+                    $SpacingX: 8,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+                    $SpacingY: 8,                                   //[Optional] Vertical space between each item in pixel, default value is 0
+                    $Orientation: 1,                                //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                    $Scale: false                                   //Scales bullets navigator or not while slider scale
+                },
+
+                $ArrowNavigatorOptions: {                           //[Optional] Options to specify and enable arrow navigator or not
+                    $Class: $JssorArrowNavigator$,                  //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 1,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 2,                                 //[Optional] Auto center arrows in parent container, 0 No, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
+                }
+            };
+
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizing
+            function ScaleSlider() {
+                var bodyWidth = document.body.clientWidth;
+                if (bodyWidth)
+                    jssor_slider1.$ScaleWidth(Math.min(bodyWidth, 1920));
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+            ScaleSlider();
+
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+    </script>
+</body>
+</html>
