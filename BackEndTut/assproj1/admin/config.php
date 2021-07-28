@@ -8,8 +8,6 @@ $host = "localhost";
 $username   = "root";
 $password   = "";
 $dbname     = "anidexv2";
-// $username   = "nathant1";
-// $password   = "47lightqwer123";
 // $dbname     = "nathant1_anibase";
 $dsn        = "mysql:host=$host;dbname=$dbname";
 $options    = array(
