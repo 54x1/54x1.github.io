@@ -461,7 +461,7 @@ getWarMemDate(inputD, input, date);
       ipD = ipDate.city;
   }, "jsonp").fail(function(){
     // get ip request fail use cbr as dummy
-  ipD = 'Canberra';
+  ipD = 'Canada';
   });
 
   return ipD;
