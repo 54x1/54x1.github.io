@@ -36,7 +36,7 @@ var sortedCity = getCitys.sort();
             loadit(city);
             city = '';
       });
-function loadit(city){
+ async function loadit(city){
   $('.city').hide();
   var circleData = {
     "name": "" +city.charAt(0).toUpperCase()+city.substring(1)+ "",
@@ -75,26 +75,9 @@ function loadit(city){
   //========= NGA OLD URL=======
   // let oldNGAURL = 'https://stc-api-prod.azurewebsites.net/stcapi/service/ngacd/search?advSearch=%7B%0A%20%20%22objectTypeFacet%22%3A%20%22drawings%22%2C%0A%20%20%22placeOfCreationFacet%22%3A%20%22%' + city + '%22%0A%7D&pageSize=99999999&startIndex=0&searchTerm=' + city + ''
   //========= NGA OLD URL=======
-  var ngaUrl1 = 'https://stc-api-prod.azurewebsites.net/stcapi/service/ngacd/search?advSearch=%7B%0A%22objectTypeFacet%22%3A%22drawings%22%2C%0A%22placeOfCreationFacet%22%3A%22'+city+'%22%0A%7D&pageSize=99&startIndex=0&searchTerm='+city+'';
- 
-  var settings = {
-    'cache': false,
-    'dataType': "jsonp",
-    "async": true,
-    "crossDomain": true,
-    "url": ngaUrl1,
-    "method": "GET",
-    "headers": {
-        "accept": "application/json",
-        "Access-Control-Allow-Origin":"*"
-    }
-}
-
-$.getJSON(settings).done(function (response) {
-  console.log(settings)
-    console.log("response", response);
-
-});
+  let bypassCORS = 'https://cors-anywhere.herokuapp.com/'
+  // found bypassCORS HERE: https://gist.github.com/jesperorb/6ca596217c8dfba237744966c2b5ab1e
+  var ngaUrl1 = bypassCORS +'https://stc-api-prod.azurewebsites.net/stcapi/service/ngacd/search?advSearch=%7B%0A%22objectTypeFacet%22%3A%22drawings%22%2C%0A%22placeOfCreationFacet%22%3A%22'+city+'%22%0A%7D&pageSize=99&startIndex=0&searchTerm='+city+'';
 
   console.log('ngaUrl1', ngaUrl1)
   $.getJSON(ngaUrl1, function(ngaFuncData) {
