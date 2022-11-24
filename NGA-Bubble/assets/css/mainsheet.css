@@ -4,7 +4,7 @@
 /* time progression with how many art works are each date creation bracket */
 body{
   margin: 0;
-  padding: 0;
+  padding: 12px;
 }
 h1{
   width: fit-content;
