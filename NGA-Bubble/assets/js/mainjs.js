@@ -1,7 +1,6 @@
 // NGA JS
 var ngaObjsArray = [];
 $(document).ready(function() {
-
 var city = 'Melbourne';
   loadit(city);
 var getCitys = ['Sydney', 'Brisbane', 'Hobart', 'Melbourne', 'Perth'];
@@ -71,9 +70,35 @@ function loadit(city){
   //       });
   //     }
 
+
   //get json url request
-  var ngaUrl1 = 'https://stc-api-prod.azurewebsites.net/stcapi/service/ngacd/search?advSearch=%7B%0A%20%20%22objectTypeFacet%22%3A%20%22drawings%22%2C%0A%20%20%22placeOfCreationFacet%22%3A%20%22%' + city + '%22%0A%7D&pageSize=99999999&startIndex=0&searchTerm=' + city + '';
+  //========= NGA OLD URL=======
+  // let oldNGAURL = 'https://stc-api-prod.azurewebsites.net/stcapi/service/ngacd/search?advSearch=%7B%0A%20%20%22objectTypeFacet%22%3A%20%22drawings%22%2C%0A%20%20%22placeOfCreationFacet%22%3A%20%22%' + city + '%22%0A%7D&pageSize=99999999&startIndex=0&searchTerm=' + city + ''
+  //========= NGA OLD URL=======
+  var ngaUrl1 = 'https://stc-api-prod.azurewebsites.net/stcapi/service/ngacd/search?advSearch=%7B%0A%22objectTypeFacet%22%3A%22drawings%22%2C%0A%22placeOfCreationFacet%22%3A%22'+city+'%22%0A%7D&pageSize=99&startIndex=0&searchTerm='+city+'';
+ 
+  var settings = {
+    'cache': false,
+    'dataType': "jsonp",
+    "async": true,
+    "crossDomain": true,
+    "url": ngaUrl1,
+    "method": "GET",
+    "headers": {
+        "accept": "application/json",
+        "Access-Control-Allow-Origin":"*"
+    }
+}
+
+$.getJSON(settings).done(function (response) {
+  console.log(settings)
+    console.log("response", response);
+
+});
+
+  console.log('ngaUrl1', ngaUrl1)
   $.getJSON(ngaUrl1, function(ngaFuncData) {
+    
     }).always(function(ngaFuncData) {
 
           $(".loading").hide();
@@ -250,9 +275,7 @@ if (n[0] != null && n[0] != ''+city+' Drawing Artists'){
 
 
 });
-
     zoomTo([root.x, root.y, root.r * 2.7]);
-
     function zoomTo(v) {
       const k = width / v[2];
 
