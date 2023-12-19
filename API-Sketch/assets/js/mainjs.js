@@ -156,7 +156,7 @@ $(document).ready(function() {
 
 
       function aWarMem(search, date, dY) {
-
+console.log('function aWarMem here')
         var date = $('#searchDate').val();
         var search = $('#searchInput').val();
         if (search == '') {
@@ -166,7 +166,7 @@ $(document).ready(function() {
           search = $('#searchInput').val();
           date = $('#searchDate').val();
         }
-        fetch('https://qjeqzny91m.execute-api.ap-southeast-2.amazonaws.com/alpha?q=*' + search + '*&fq=' + date + '&wt=json', {
+        fetch('https://qjeqzny91m.execute-api.ap-southeast-2.amazonaws.com/alpha?q=*' + search + '*&fq=' + date +  '&wt=json&start=-0&rows=150', {
           headers: new Headers({
             'X-Api-Key': 'AYNgg1v9Nm3VhoZFX0Bve65FNQJiBqCJ6dNonCWr'
           })
