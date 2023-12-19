@@ -166,7 +166,7 @@ console.log('function aWarMem here')
           search = $('#searchInput').val();
           date = $('#searchDate').val();
         }
-        fetch('https://qjeqzny91m.execute-api.ap-southeast-2.amazonaws.com/alpha?q=*' + search + '*&fq=' + date +  '&wt=json&start=-0&rows=150', {
+        fetch('https://qjeqzny91m.execute-api.ap-southeast-2.amazonaws.com/alpha?q=*' + search + '*&fq=' + date +  '&wt=json&start=-0&rows=200', {
           headers: new Headers({
             'X-Api-Key': 'AYNgg1v9Nm3VhoZFX0Bve65FNQJiBqCJ6dNonCWr'
           })
